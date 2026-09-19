@@ -4,20 +4,24 @@
 
 **Guild 86**
 
-Decisión tomada por Vicente. Doble lectura, intencional:
+Decisión tomada por Vicente. Punto de partida: desde el principio la idea NO era ponerle un
+nombre robótico a la marca. La inteligencia artificial ya suena bastante fría e impersonal en
+la cabeza de cualquiera — se buscaba lo contrario, un nombre humanizado, que se sienta hecho
+por gente.
 
-- **Guild** ("gremio" en inglés): posiciona a Vicente no como un freelancer suelto sino como un
-  colectivo de oficio — gente que domina un arte técnico (IA, automatización, desarrollo) y lo
-  pone al servicio de quien lo necesita. Es una palabra con peso histórico (los gremios
-  medievales de artesanos especializados) que hoy se usa mucho en tech/gaming para comunidades
-  de expertos. Encaja perfecto con vender **sistemas a medida**, no productos enlatados.
+- **Guild** ("gremio" en inglés): en vez de nombrar un producto o repetir el nombre de un
+  fundador, nombra a un grupo de personas con oficio trabajando juntas — gente que domina un
+  arte técnico (IA, automatización, desarrollo) y lo pone al servicio de quien lo necesita. Es
+  una palabra con peso histórico (los gremios medievales de artesanos especializados) que hoy
+  se usa mucho en tech/gaming para comunidades de expertos. Encaja perfecto con vender
+  **sistemas a medida**, no productos enlatados.
 - **86**: guiño a "Agente 86" (Get Smart / El Superagente 86) — inteligencia con picardía,
   resuelve problemas complejos por detrás de escena, con un toque de humor. También es un
   número fácil de recordar, corto, y con mejor disponibilidad de dominio que un nombre 100%
   descriptivo tipo "AutomatizacionesIA".
 
-Juntas, las dos partes comunican: **un equipo de oficio, con inteligencia aplicada, resolviendo
-por vos.**
+Juntas, las dos partes comunican: **un gremio de personas, no un bot con nombre de marca,
+detrás de cada sistema.**
 
 ## Naming rationale para reutilizar en textos de marca
 

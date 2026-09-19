@@ -1,25 +1,24 @@
-<title>Guild 86</title>
+<title>Guild86</title>
 <style>
   :root {
     --bg: #FFFFFF;
     --surface: #F7F7F7;
     --fg: #111111;
     --fg-muted: #6B6B6B;
-    --border: #E4E4E4;
+    --border: #DADADA;
     --accent: #1D4ED8;
-    --accent-soft: #E7EDFF;
     --mark-ink: #111111;
     --mark-paper: #FFFFFF;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #111111; --surface: #1A1A1A; --fg: #FAFAFA; --fg-muted: #A3A3A3;
-      --border: #2C2C2C; --accent: #5B7FFF; --accent-soft: #1E2748;
+      --border: #2C2C2C; --accent: #5B7FFF;
     }
   }
   :root[data-theme="dark"] {
     --bg: #111111; --surface: #1A1A1A; --fg: #FAFAFA; --fg-muted: #A3A3A3;
-    --border: #2C2C2C; --accent: #5B7FFF; --accent-soft: #1E2748;
+    --border: #2C2C2C; --accent: #5B7FFF;
   }
 
   * { box-sizing: border-box; }
@@ -29,210 +28,220 @@
     font-size: 16px; line-height: 1.65; padding: 0 20px;
   }
   .mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace; }
-  .wrap { max-width: 760px; margin: 0 auto; padding-block: 56px 96px; }
+  .wrap { max-width: 680px; margin: 0 auto; padding-block: 64px 100px; }
   h1, h2 { font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; margin: 0; }
   a { color: var(--accent); }
+  em, i { font-style: italic; }
 
-  /* Hero */
-  .hero { display: flex; flex-direction: column; gap: 22px; padding-block: 12px 48px; border-bottom: 1px solid var(--border); }
-  .hero-word { font-weight: 700; font-size: clamp(34px, 8vw, 52px); letter-spacing: -0.02em; }
-  .hero-word .dot { color: var(--accent); }
-  .hero-tag { font-size: 18px; color: var(--fg-muted); max-width: 46ch; }
-  .hero-meta { display: flex; gap: 10px; flex-wrap: wrap; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fg-muted); font-family: ui-monospace, "SF Mono", Consolas, monospace; }
-  .hero-meta span { border: 1px solid var(--border); border-radius: 100px; padding: 5px 12px; }
+  /* Cover */
+  .cover { padding-block: 40px 64px; }
+  .cover-word { font-weight: 700; font-size: clamp(38px, 9vw, 58px); letter-spacing: -0.02em; }
+  .cover-word .dot { color: var(--accent); }
+  .cover-manifesto { font-style: italic; font-size: 19px; line-height: 1.55; color: var(--fg); max-width: 40ch; margin-top: 22px; }
+  .cover-meta { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-muted); margin-top: 30px; }
+  .cover-scope { font-style: italic; font-size: 13.5px; color: var(--fg-muted); margin-top: 8px; }
 
-  /* Articles */
-  article { padding-block: 44px; border-bottom: 1px solid var(--border); }
-  article:last-of-type { border-bottom: none; }
-  .art-num { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 13px; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase; display: block; margin-bottom: 10px; }
-  article h2 { font-size: clamp(22px, 4vw, 27px); margin-bottom: 18px; }
-  article > p { max-width: 65ch; color: var(--fg); }
-  article > p.lead { font-size: 17px; }
+  /* Sections */
+  section.block { padding-block: 40px; border-top: 1px solid var(--border); }
+  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; display: block; }
+  h2 { font-size: clamp(21px, 4vw, 25px); margin-bottom: 16px; }
+  p { max-width: 62ch; color: var(--fg); margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
   .muted { color: var(--fg-muted); }
 
-  blockquote { margin: 20px 0 0; padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; font-size: 16px; }
-  blockquote p { margin: 0; }
-
   table { border-collapse: collapse; width: 100%; margin-top: 16px; font-size: 14.5px; }
-  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fg-muted); font-weight: 500; }
+  th, td { text-align: left; padding: 9px 14px 9px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-family: ui-monospace, monospace; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fg-muted); font-weight: 500; }
   .tbl-wrap { overflow-x: auto; }
 
-  /* Palette */
-  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px; margin-top: 20px; }
-  .swatch { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); cursor: pointer; text-align: left; font: inherit; color: inherit; padding: 0; }
-  .swatch .chip { height: 64px; }
-  .swatch .info { padding: 10px 12px 12px; }
-  .swatch .name { font-size: 13px; font-weight: 500; }
-  .swatch .hex { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 12px; color: var(--fg-muted); margin-top: 2px; }
-  .swatch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; margin-top: 16px; }
+  .compare .col-head { font-family: ui-monospace, monospace; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fg-muted); padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .compare .item { padding: 8px 0; font-size: 14.5px; border-bottom: 1px solid var(--border); }
+  .compare .col:first-child { border-right: 1px solid var(--border); }
+  .compare .col:first-child .item, .compare .col:first-child .col-head { padding-right: 16px; }
+  .compare .col:last-child .item, .compare .col:last-child .col-head { padding-left: 16px; }
 
-  /* Type specimens */
-  .specimen { margin-top: 20px; border: 1px solid var(--border); border-radius: 12px; padding: 22px; background: var(--surface); }
-  .specimen + .specimen { margin-top: 14px; }
-  .specimen .role { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-muted); margin-bottom: 10px; }
-  .specimen .sample-display { font-weight: 700; font-size: 30px; letter-spacing: -0.01em; }
-  .specimen .sample-body { font-size: 17px; max-width: 55ch; }
-  .specimen .sample-mono { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 15px; }
+  ul.dash { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  ul.dash li { padding-left: 20px; position: relative; font-size: 15px; max-width: 60ch; }
+  ul.dash li::before { content: "—"; position: absolute; left: 0; color: var(--fg-muted); }
 
-  /* Applications */
-  .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 20px; }
-  .card-mock { aspect-ratio: 1.6/1; background: var(--mark-ink); color: var(--mark-paper); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; }
-  .card-mock .brand { font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
-  .card-mock .brand .dot { color: #5B7FFF; }
-  .card-mock .who { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 11px; opacity: 0.75; }
-  .post-mock { background: var(--mark-ink); color: var(--mark-paper); border-radius: 14px; padding: 26px 22px; display: flex; flex-direction: column; justify-content: center; gap: 10px; aspect-ratio: 1.6/1; }
-  .post-mock .brand { font-weight: 700; font-size: 18px; }
-  .post-mock .brand .dot { color: #5B7FFF; }
-  .post-mock .line { font-size: 13px; opacity: 0.8; max-width: 30ch; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 14px; margin-top: 18px; }
+  .swatch { border: none; background: none; padding: 0; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+  .swatch .chip { height: 56px; border-radius: 3px; }
+  .swatch .name { font-size: 13px; font-weight: 700; margin-top: 8px; }
+  .swatch .hex { font-family: ui-monospace, monospace; font-size: 12px; color: var(--fg-muted); }
+  .swatch:focus-visible .chip { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-  ol.roadmap { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .specimen-label { font-family: ui-monospace, monospace; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-muted); margin: 20px 0 8px; }
+  .specimen-display { font-weight: 700; font-size: 28px; letter-spacing: -0.01em; }
+  .specimen-body { font-size: 16px; max-width: 52ch; }
+
+  ol.roadmap { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
   ol.roadmap li { display: flex; gap: 14px; align-items: baseline; }
-  ol.roadmap .n { font-family: ui-monospace, "SF Mono", Consolas, monospace; color: var(--accent); font-size: 13px; flex-shrink: 0; width: 22px; }
+  ol.roadmap .n { font-family: ui-monospace, monospace; color: var(--accent); font-weight: 700; font-size: 13px; flex-shrink: 0; width: 20px; }
 
-  footer { padding-top: 40px; font-size: 13px; color: var(--fg-muted); }
+  .colophon { font-style: italic; font-size: 13px; color: var(--fg-muted); margin-top: 8px; }
+  footer { padding-top: 44px; font-size: 12.5px; color: var(--fg-muted); border-top: 1px solid var(--border); margin-top: 4px; }
 
-  #toast { position: fixed; bottom: 22px; left: 50%; transform: translate(-50%, 8px); background: var(--fg); color: var(--bg); font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 13px; padding: 9px 16px; border-radius: 100px; opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; }
+  #toast { position: fixed; bottom: 22px; left: 50%; transform: translate(-50%, 8px); background: var(--fg); color: var(--bg); font-family: ui-monospace, monospace; font-size: 13px; padding: 9px 16px; border-radius: 100px; opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; }
   #toast.show { opacity: 1; transform: translate(-50%, 0); }
-
-  @media (max-width: 480px) { .hero-word { font-size: 32px; } }
 </style>
 
 <div class="wrap">
 
-  <section class="hero">
-    <div class="hero-word">GUILD86<span class="dot">.</span></div>
-    <p class="hero-tag">El gremio que hace que la inteligencia artificial trabaje de verdad:
-      sistemas, automatizaciones y productos digitales hechos a medida, con oficio.</p>
-    <div class="hero-meta">
-      <span>Carta de marca · v2, final</span>
-      <span>Fase 1 — Identidad</span>
-      <span>Logo: a cargo de diseñadora externa</span>
-    </div>
+  <div class="cover">
+    <div class="cover-word">Guild86<span class="dot">.</span></div>
+    <p class="cover-manifesto">Cualquiera puede vender inteligencia artificial. Muy pocos te
+      muestran quién la construye. Guild86 es un gremio de personas —no un bot con nombre de
+      marca— que diseña, prueba y firma cada sistema que sale de acá.</p>
+    <div class="cover-meta">Manual de marca</div>
+    <p class="cover-scope">El logo lo define una diseñadora, aparte. Esto es todo lo demás.</p>
+  </div>
+
+  <section class="block">
+    <span class="eyebrow">El nombre</span>
+    <h2>Guild86</h2>
+    <p>Desde el principio, la idea no era ponerle un nombre robótico a la marca. La
+      inteligencia artificial ya suena bastante fría e impersonal en la cabeza de cualquiera
+      —buscábamos lo contrario: un nombre humanizado, que se sienta hecho por gente.</p>
+    <p><i>Guild</i> ("gremio") hace exactamente eso: en vez de nombrar un producto o repetir el
+      nombre de un fundador, nombra a un grupo de personas con oficio, trabajando juntas. El
+      <i>86</i> es el guiño a Agente 86 —inteligencia con picardía, resolviendo todo por detrás
+      de escena— y, de paso, un número corto que todavía nadie usa en el dominio.</p>
   </section>
 
-  <article>
-    <span class="art-num">Artículo I — El nombre</span>
-    <h2>Guild 86</h2>
-    <p class="lead"><strong>Guild</strong> ("gremio"): un colectivo de oficio, no un freelancer
-      suelto — gente que domina un arte técnico y lo pone al servicio de quien lo necesita.
-      <strong>86</strong>: guiño al Agente 86 — inteligencia con picardía, que resuelve problemas
-      complejos por detrás de escena — y un número corto, fácil de recordar y de conseguir en
-      dominio.</p>
-    <blockquote><p>Un equipo de oficio, con inteligencia aplicada, resolviendo por vos.</p></blockquote>
-  </article>
-
-  <article>
-    <span class="art-num">Artículo II — El propósito</span>
-    <h2>Misión</h2>
-    <p class="lead">Guild 86 diseña e implementa sistemas de inteligencia artificial y
-      automatización a medida para que negocios, profesionales y campañas dejen de perder
-      tiempo en tareas repetitivas y operen como si tuvieran un equipo extra trabajando 24/7.</p>
+  <section class="block">
+    <span class="eyebrow">Qué hacemos</span>
+    <h2>Sistemas, no plantillas</h2>
+    <p>Automatizaciones, portales y sistemas de gestión —pero cada uno pensado y probado por
+      una persona para un problema puntual, no tirado de un molde genérico.</p>
     <div class="tbl-wrap">
       <table>
         <tr><th>Rubro</th><th>Ejemplo real</th></tr>
-        <tr><td>Sistemas a medida</td><td>Sistema de gestión médica — clínica Visión Norte</td></tr>
-        <tr><td>Automatización WhatsApp</td><td>Atención y seguimiento de pacientes — Visión Norte</td></tr>
+        <tr><td>Sistemas a medida</td><td>Gestión médica — clínica Visión Norte</td></tr>
+        <tr><td>Automatización de WhatsApp</td><td>Turnos y seguimiento de pacientes — Visión Norte</td></tr>
         <tr><td>Automatización de procesos</td><td>Gestión de denuncias</td></tr>
-        <tr><td>Portales + CMS con IA</td><td>Portal de campaña política con skills de IA como CMS</td></tr>
-        <tr><td>Sitios web</td><td>Páginas web para clientes diversos</td></tr>
+        <tr><td>Portales + CMS con IA</td><td>Portal de campaña política, con IA como editor de contenido</td></tr>
+        <tr><td>Sitios web</td><td>Páginas a medida para distintos clientes</td></tr>
       </table>
     </div>
-  </article>
+  </section>
 
-  <article>
-    <span class="art-num">Artículo III — Personalidad de marca</span>
-    <h2>Técnico y cercano</h2>
-    <p>Ni un estudio frío y corporativo, ni un freelancer informal. Frases cortas, verbos de
-      acción, sin jerga innecesaria. Lo técnico se explica en términos del resultado para el
-      cliente, no del stack.</p>
-    <div class="tbl-wrap">
-      <table>
-        <tr><th>Es</th><th>No es</th></tr>
-        <tr><td>Preciso, va al grano</td><td>Frío o distante</td></tr>
-        <tr><td>Con oficio, cuidado en el detalle</td><td>Solemne o acartonado</td></tr>
-        <tr><td>Directo al hablar de resultados</td><td>Vendedor de humo / hype de IA</td></tr>
-        <tr><td>Cercano, explica sin subestimar</td><td>Técnico incomprensible</td></tr>
-      </table>
+  <section class="block">
+    <span class="eyebrow">La voz</span>
+    <h2>Ni agencia fría, ni freelancer suelto</h2>
+    <p>Nada de "sinergias" ni "disrupción", y nada de audios de WhatsApp sin firmar tampoco.
+      En el medio: alguien que explica lo técnico en criollo, sin bajar la vara, y que se hace
+      cargo de lo que entrega.</p>
+    <div class="compare">
+      <div class="col">
+        <div class="col-head">Es</div>
+        <div class="item">Preciso, va al grano</div>
+        <div class="item">Con oficio, cuidado en el detalle</div>
+        <div class="item">Directo al hablar de resultados</div>
+        <div class="item">Cercano, explica sin subestimar</div>
+      </div>
+      <div class="col">
+        <div class="col-head">No es</div>
+        <div class="item">Frío o distante</div>
+        <div class="item">Solemne o acartonado</div>
+        <div class="item">Vendedor de humo de IA</div>
+        <div class="item">Técnico incomprensible</div>
+      </div>
     </div>
-  </article>
+  </section>
 
-  <article>
-    <span class="art-num">Artículo IV — Paleta</span>
-    <h2>Blanco, negro y azul cobalto</h2>
-    <p>Base neutra en blanco y negro con azul cobalto como único acento — confianza técnica,
-      sin sonar al celeste corporativo genérico. Se usa con moderación: para links, botones y
-      detalles, nunca como fondo grande.
+  <section class="block">
+    <span class="eyebrow">La firma</span>
+    <h2>Blanco, negro y una firma de color</h2>
+    <p>El blanco y negro es la base: limpio, sin ruido, deja que el trabajo hable. El azul es
+      la firma —el color que marca que una persona, no un proceso automático, revisó y aprobó
+      lo que estás viendo. Se usa como se usa una firma real: chica, puntual, nunca como fondo.
       <span class="muted">(Tocá un color para copiar su hex.)</span></p>
     <div class="swatches">
-      <button class="swatch" data-hex="#111111"><div class="chip" style="background:#111111"></div><div class="info"><div class="name">Ink</div><div class="hex">#111111</div></div></button>
-      <button class="swatch" data-hex="#FFFFFF"><div class="chip" style="background:#FFFFFF;border-bottom:1px solid var(--border)"></div><div class="info"><div class="name">Paper</div><div class="hex">#FFFFFF</div></div></button>
-      <button class="swatch" data-hex="#6B6B6B"><div class="chip" style="background:#6B6B6B"></div><div class="info"><div class="name">Steel</div><div class="hex">#6B6B6B</div></div></button>
-      <button class="swatch" data-hex="#E4E4E4"><div class="chip" style="background:#E4E4E4"></div><div class="info"><div class="name">Line</div><div class="hex">#E4E4E4</div></div></button>
-      <button class="swatch" data-hex="#1D4ED8"><div class="chip" style="background:#1D4ED8"></div><div class="info"><div class="name">Cobalto (acento)</div><div class="hex">#1D4ED8</div></div></button>
-      <button class="swatch" data-hex="#5B7FFF"><div class="chip" style="background:#5B7FFF"></div><div class="info"><div class="name">Cobalto (dark bg)</div><div class="hex">#5B7FFF</div></div></button>
+      <button class="swatch" data-hex="#111111"><div class="chip" style="background:#111111"></div><div class="name">Tinta</div><div class="hex">#111111</div></button>
+      <button class="swatch" data-hex="#FFFFFF"><div class="chip" style="background:#FFFFFF;border:1px solid var(--border)"></div><div class="name">Papel</div><div class="hex">#FFFFFF</div></button>
+      <button class="swatch" data-hex="#6B6B6B"><div class="chip" style="background:#6B6B6B"></div><div class="name">Acero</div><div class="hex">#6B6B6B</div></button>
+      <button class="swatch" data-hex="#DADADA"><div class="chip" style="background:#DADADA"></div><div class="name">Línea</div><div class="hex">#DADADA</div></button>
+      <button class="swatch" data-hex="#1D4ED8"><div class="chip" style="background:#1D4ED8"></div><div class="name">Firma</div><div class="hex">#1D4ED8</div></button>
+      <button class="swatch" data-hex="#5B7FFF"><div class="chip" style="background:#5B7FFF"></div><div class="name">Firma (fondo oscuro)</div><div class="hex">#5B7FFF</div></button>
     </div>
-  </article>
+  </section>
 
-  <article>
-    <span class="art-num">Artículo V — Tipografía</span>
+  <section class="block">
+    <span class="eyebrow">La tipografía</span>
     <h2>Helvetica</h2>
-    <p>Una sola familia para todo — títulos, cuerpo y datos — jugando con tamaño y peso para la
-      jerarquía. Vía el stack <span class="sample-mono mono">"Helvetica Neue", Helvetica, Arial, sans-serif</span>:
-      Helvetica real en Mac/iOS (viene con el sistema, sin costo), Arial en Windows/Android (clon
-      casi idéntico, también gratis).</p>
-    <div class="specimen">
-      <div class="role">Títulos — Helvetica Bold</div>
-      <div class="sample-display">Sistemas que trabajan solos</div>
-    </div>
-    <div class="specimen">
-      <div class="role">Cuerpo — Helvetica Regular</div>
-      <div class="sample-body">Automatizamos WhatsApp, sistemas de gestión y portales a medida
-        para que tu equipo se dedique a lo que un bot no puede hacer.</div>
-    </div>
-    <div class="specimen">
-      <div class="role">Datos / cifras — monoespaciada del sistema (solo para alinear números)</div>
-      <div class="sample-mono">guild86.com · #1D4ED8 · 24/7</div>
-    </div>
-  </article>
+    <p>Una sola familia para todo. Es una decisión de honestidad tanto como estética: la
+      tipografía suiza nació de la idea de que la claridad es una forma de respeto por quien
+      lee. Nada de letras que griten "somos una startup de IA". En Mac o iPhone se ve la
+      Helvetica real —viene con el sistema, sin costo—; en Windows o Android cae a Arial, un
+      clon casi idéntico, también gratis.</p>
+    <div class="specimen-label">Títulos — Helvetica Bold</div>
+    <div class="specimen-display">Sistemas que trabajan solos</div>
+    <div class="specimen-label">Cuerpo — Helvetica Regular</div>
+    <p class="specimen-body">Automatizamos WhatsApp, sistemas de gestión y portales a medida
+      para que el equipo se dedique a lo que un bot no puede hacer.</p>
+  </section>
 
-  <article>
-    <span class="art-num">Artículo VI — El logo</span>
-    <h2>A cargo de una diseñadora externa</h2>
-    <p class="lead">El isotipo definitivo no lo define este documento — lo va a crear una
-      diseñadora. Este manual (nombre, propósito, personalidad, paleta y tipografía) es
-      exactamente lo que se le pasa como brief para que trabaje.</p>
-    <p class="muted">Quedan guardados en el repositorio unos bocetos exploratorios anteriores,
-      solo como referencia de posibles direcciones — no son parte de esta decisión de marca.</p>
-  </article>
+  <section class="block">
+    <span class="eyebrow">El logo</span>
+    <h2>Aparte, con una diseñadora</h2>
+    <p>No está en este documento. El brief que le corresponde llevar es exactamente lo de
+      arriba: el nombre, la idea de fondo, la paleta y la tipografía. Nada más.</p>
+  </section>
 
-  <article>
-    <span class="art-num">Artículo VII — Aplicaciones</span>
-    <h2>Cómo se ve en el mundo</h2>
-    <div class="app-grid">
-      <div class="card-mock">
-        <div class="brand">GUILD86<span class="dot">.</span></div>
-        <div class="who">VICENTE · IA &amp; AUTOMATIZACIÓN<br>guild86.com</div>
-      </div>
-      <div class="post-mock">
-        <div class="brand">GUILD86<span class="dot">.</span></div>
-        <div class="line">Sistemas de IA y automatización a medida.</div>
-      </div>
-    </div>
-  </article>
+  <section class="block">
+    <span class="eyebrow">En redes sociales</span>
+    <h2>Mostrar gente, no íconos de robot</h2>
+    <p>La regla general: si el feed podría ser de cualquier otra cuenta que vende IA, algo
+      está mal. Cuatro líneas para sostenerlo:</p>
+    <ul class="dash">
+      <li><b>Bitácora del trabajo</b> — procesos reales, capturas de sistemas a medio armar,
+        una decisión técnica explicada en criollo.</li>
+      <li><b>Casos con nombre y apellido</b> — cada proyecto (Visión Norte, el sistema de
+        denuncias, el portal de campaña) contado como historia: problema, qué se armó,
+        resultado. No un logo más en una grilla de "clientes".</li>
+      <li><b>La cara de Vicente</b> — al menos algunas piezas con su cara o su voz. Un feed
+        sin caras es indistinguible de cualquier cuenta que revende IA.</li>
+      <li><b>Cero robots de stock</b> — nada de cerebros digitales ni manos tocando
+        hologramas. Si hace falta una imagen, que sea real: una pantalla, una nota a mano, el
+        proceso.</li>
+    </ul>
+    <p style="margin-top:16px">Plataforma sugerida: LinkedIn primero —ahí están los clientes
+      tipo clínica o campaña—, Instagram para el detrás de escena.</p>
+  </section>
 
-  <article>
-    <span class="art-num">Artículo VIII — Próximos pasos</span>
+  <section class="block">
+    <span class="eyebrow">En la web</span>
+    <h2>El portfolio manda</h2>
+    <ul class="dash">
+      <li>El portfolio va arriba de todo, antes que cualquier lista de "servicios" genérica.</li>
+      <li>Una sección <b>"Quién está detrás"</b> visible —no escondida en el footer— con una
+        foto real y una bio corta, humana.</li>
+      <li>Texto en primera persona ("armamos", "así lo resolvimos"), nunca la voz impersonal
+        de agencia ("brindamos soluciones integrales").</li>
+      <li>Cada caso, una historia corta: qué problema tenía el cliente, qué se armó, qué
+        cambió.</li>
+      <li>Un solo llamado a la acción, directo: agendar una charla. Nada de formularios
+        largos.</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <span class="eyebrow">Próximos pasos</span>
     <h2>Roadmap</h2>
     <ol class="roadmap">
-      <li><span class="n">01</span><span>Registrar dominio — <span class="mono">guild86.com</span> / <span class="mono">.ai</span> / <span class="mono">.com.ar</span> — y reservar handles de redes.</span></li>
-      <li><span class="n">02</span><span>Pasarle este manual a la diseñadora para el logo definitivo.</span></li>
-      <li><span class="n">03</span><span>Fase 2: sitio web propio con portfolio (Visión Norte, sistema de denuncias, portal de campaña).</span></li>
-      <li><span class="n">04</span><span>Fase 3: tarjeta personal para imprimir y plantillas de redes sociales (una vez esté el logo).</span></li>
+      <li><span class="n">01</span><span>Registrar el dominio — <span class="mono">guild86.com</span> / <span class="mono">.ai</span> / <span class="mono">.com.ar</span> — sigue sin dueño.</span></li>
+      <li><span class="n">02</span><span>Pasarle este documento a la diseñadora para el logo definitivo.</span></li>
+      <li><span class="n">03</span><span>Fase 2: sitio web propio con el portfolio real.</span></li>
+      <li><span class="n">04</span><span>Fase 3: piezas para redes e impresos, una vez esté el logo.</span></li>
     </ol>
-  </article>
+  </section>
 
-  <footer>Guild 86 — Carta de marca v2, final · repositorio del proyecto</footer>
+  <footer>
+    Guild86 — manual de marca
+    <p class="colophon">Documento vivo: se ajusta a medida que la marca crece, no un archivo cerrado.</p>
+  </footer>
 </div>
 
 <div id="toast" role="status"></div>

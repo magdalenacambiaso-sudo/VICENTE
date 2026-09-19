@@ -1,12 +1,19 @@
-# Guild 86 — Manual de Marca (v2, final)
+# Guild 86 — Manual de Marca (v3, final)
 
 Documento base de identidad de marca. Fase 1 del proyecto de branding de Vicente, cerrada. Ver
 también [`naming.md`](./naming.md) para el racional del nombre y el chequeo de dominios, y
-[`style-guide.html`](./style-guide.html) para la versión visual navegable de este documento.
+[`style-guide.html`](./style-guide.html) para la versión visual navegable de este documento
+(la versión recomendada para mandar).
 
 **Nota de alcance:** el diseño del logo final queda a cargo de una diseñadora externa. Este
-manual define nombre, tono, paleta y tipografía como brief para ella — no incluye un logo
-definitivo (ver sección 5).
+manual define nombre, narrativa, tono, paleta y tipografía como brief para ella — no incluye
+un logo definitivo (ver sección 5).
+
+**La idea central:** cualquiera puede vender inteligencia artificial; muy pocos muestran quién
+la construye. Guild86 es un gremio de personas —no un bot con nombre de marca— que diseña,
+prueba y firma cada sistema que sale de ahí. Desde el arranque, la decisión de nombre y de tono
+fue evitar que la marca sonara robótica: todo lo de abajo (nombre, voz, color, tipografía)
+existe para reforzar esa idea.
 
 ---
 
@@ -15,6 +22,11 @@ definitivo (ver sección 5).
 **Nombre:** Guild 86
 **Rubro:** Ingeniería de IA y automatización a medida — sistemas, automatizaciones de
 WhatsApp, portales web, CMS con skills de IA.
+
+**Por qué Guild86 (no un nombre robótico):** desde el principio la idea era evitar un nombre
+que sonara a producto de IA genérico. *Guild* ("gremio") nombra a un grupo de personas con
+oficio trabajando juntas, en vez de nombrar un producto o repetir el nombre de un fundador —
+ver [`naming.md`](./naming.md) para el racional completo.
 
 **Misión (borrador):**
 > Guild 86 diseña e implementa sistemas de inteligencia artificial y automatización a medida
@@ -84,14 +96,41 @@ Como referencia exploratoria (no vinculante, no usar en producción) quedaron gu
 conceptuales anteriores en [`/brand/logo`](./logo) y [`/brand/logo-options.html`](./logo-options.html) —
 pueden servir de insumo/inspiración para la diseñadora, pero no son la decisión final.
 
-## 6. Aplicaciones previstas (fase 2/3)
+## 6. En redes sociales
+
+Regla general: si el feed podría ser de cualquier otra cuenta que vende IA, algo está mal.
+
+- **Bitácora del trabajo** — procesos reales, capturas de sistemas a medio armar, una decisión
+  técnica explicada en criollo.
+- **Casos con nombre y apellido** — cada proyecto (Visión Norte, el sistema de denuncias, el
+  portal de campaña) contado como historia: problema, qué se armó, resultado. No un logo más
+  en una grilla de "clientes".
+- **La cara de Vicente** — al menos algunas piezas con su cara o su voz. Un feed sin caras es
+  indistinguible de cualquier cuenta que revende IA.
+- **Cero robots de stock** — nada de cerebros digitales ni manos tocando hologramas. Si hace
+  falta una imagen, que sea real: una pantalla, una nota a mano, el proceso.
+
+Plataforma sugerida: LinkedIn primero (ahí están los clientes tipo clínica o campaña),
+Instagram para el detrás de escena.
+
+## 7. En la web
+
+- El portfolio va arriba de todo, antes que cualquier lista de "servicios" genérica.
+- Una sección **"Quién está detrás"** visible —no escondida en el footer— con una foto real y
+  una bio corta, humana.
+- Texto en primera persona ("armamos", "así lo resolvimos"), nunca la voz impersonal de
+  agencia ("brindamos soluciones integrales").
+- Cada caso, una historia corta: qué problema tenía el cliente, qué se armó, qué cambió.
+- Un solo llamado a la acción, directo: agendar una charla. Nada de formularios largos.
+
+## 8. Aplicaciones previstas (fase 2/3)
 
 - Tarjeta personal (una vez que la diseñadora entregue el logo)
 - Sitio web propio con portfolio (Visión Norte, sistema de denuncias, portal de campaña, etc.)
 - Redes sociales: misma paleta y tipografía, avatar a definir con el logo final
 - Firma de email y propuestas comerciales (PDF) con la misma paleta y tipografía
 
-## 7. Próximos pasos
+## 9. Próximos pasos
 
 1. Confirmar y registrar dominio (`guild86.com` / `guild86.ai` / `guild86.com.ar`) — ver
    `naming.md`.
