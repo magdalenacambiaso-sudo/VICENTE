@@ -1,70 +1,51 @@
 <title>Guild 86</title>
 <style>
   :root {
-    --bg: #FAF9F5;
-    --surface: #FFFFFF;
-    --fg: #111110;
-    --fg-muted: #6E6B63;
-    --border: #E2DFD5;
-    --accent: #D9891F;
-    --accent-soft: #F3E3CB;
-    --accent-ink: #111110;
-    --mark-ink: #111110;
-    --mark-paper: #FAF9F5;
+    --bg: #FFFFFF;
+    --surface: #F7F7F7;
+    --fg: #111111;
+    --fg-muted: #6B6B6B;
+    --border: #E4E4E4;
+    --accent: #1D4ED8;
+    --accent-soft: #E7EDFF;
+    --mark-ink: #111111;
+    --mark-paper: #FFFFFF;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #111110;
-      --surface: #191815;
-      --fg: #FAF9F5;
-      --fg-muted: #A8A499;
-      --border: #2C2A26;
-      --accent: #E8A94D;
-      --accent-soft: #3A2C15;
-      --accent-ink: #111110;
+      --bg: #111111; --surface: #1A1A1A; --fg: #FAFAFA; --fg-muted: #A3A3A3;
+      --border: #2C2C2C; --accent: #5B7FFF; --accent-soft: #1E2748;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #111110;
-    --surface: #191815;
-    --fg: #FAF9F5;
-    --fg-muted: #A8A499;
-    --border: #2C2A26;
-    --accent: #E8A94D;
-    --accent-soft: #3A2C15;
-    --accent-ink: #111110;
+    --bg: #111111; --surface: #1A1A1A; --fg: #FAFAFA; --fg-muted: #A3A3A3;
+    --border: #2C2C2C; --accent: #5B7FFF; --accent-soft: #1E2748;
   }
 
   * { box-sizing: border-box; }
   body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: 'IBM Plex Sans', system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-    padding: 0 20px;
+    background: var(--bg); color: var(--fg);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px; line-height: 1.65; padding: 0 20px;
   }
+  .mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace; }
   .wrap { max-width: 760px; margin: 0 auto; padding-block: 56px 96px; }
-
-  h1, h2, h3 { font-family: 'Space Grotesk', system-ui, sans-serif; text-wrap: balance; margin: 0; }
+  h1, h2 { font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; margin: 0; }
   a { color: var(--accent); }
-  .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
 
   /* Hero */
-  .hero { display: flex; flex-direction: column; gap: 28px; padding-block: 12px 48px; border-bottom: 1px solid var(--border); }
-  .hero-lockup { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-  .hero-lockup svg { width: 56px; height: 56px; flex-shrink: 0; }
-  .hero-word { font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 700; font-size: clamp(32px, 7vw, 44px); letter-spacing: 0.5px; }
-  .hero-word .num { color: var(--accent); }
+  .hero { display: flex; flex-direction: column; gap: 22px; padding-block: 12px 48px; border-bottom: 1px solid var(--border); }
+  .hero-word { font-weight: 700; font-size: clamp(34px, 8vw, 52px); letter-spacing: -0.02em; }
+  .hero-word .dot { color: var(--accent); }
   .hero-tag { font-size: 18px; color: var(--fg-muted); max-width: 46ch; }
-  .hero-meta { display: flex; gap: 10px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-muted); }
+  .hero-meta { display: flex; gap: 10px; flex-wrap: wrap; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fg-muted); font-family: ui-monospace, "SF Mono", Consolas, monospace; }
   .hero-meta span { border: 1px solid var(--border); border-radius: 100px; padding: 5px 12px; }
 
   /* Articles */
   article { padding-block: 44px; border-bottom: 1px solid var(--border); }
   article:last-of-type { border-bottom: none; }
-  .art-num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 10px; }
-  article h2 { font-size: clamp(22px, 4vw, 27px); font-weight: 600; margin-bottom: 18px; }
+  .art-num { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 13px; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase; display: block; margin-bottom: 10px; }
+  article h2 { font-size: clamp(22px, 4vw, 27px); margin-bottom: 18px; }
   article > p { max-width: 65ch; color: var(--fg); }
   article > p.lead { font-size: 17px; }
   .muted { color: var(--fg-muted); }
@@ -74,7 +55,7 @@
 
   table { border-collapse: collapse; width: 100%; margin-top: 16px; font-size: 14.5px; }
   th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-muted); font-weight: 500; }
+  th { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fg-muted); font-weight: 500; }
   .tbl-wrap { overflow-x: auto; }
 
   /* Palette */
@@ -83,77 +64,50 @@
   .swatch .chip { height: 64px; }
   .swatch .info { padding: 10px 12px 12px; }
   .swatch .name { font-size: 13px; font-weight: 500; }
-  .swatch .hex { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--fg-muted); margin-top: 2px; }
+  .swatch .hex { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 12px; color: var(--fg-muted); margin-top: 2px; }
   .swatch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
   /* Type specimens */
   .specimen { margin-top: 20px; border: 1px solid var(--border); border-radius: 12px; padding: 22px; background: var(--surface); }
   .specimen + .specimen { margin-top: 14px; }
-  .specimen .role { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--fg-muted); margin-bottom: 10px; }
-  .specimen .sample-display { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 30px; }
-  .specimen .sample-body { font-family: 'IBM Plex Sans', sans-serif; font-size: 17px; max-width: 55ch; }
-  .specimen .sample-mono { font-family: 'IBM Plex Mono', monospace; font-size: 15px; }
-
-  /* Logo grid */
-  .logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 20px; }
-  .logo-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
-  .logo-card .stage { height: 130px; display: flex; align-items: center; justify-content: center; }
-  .logo-card .stage.light { background: var(--mark-paper); }
-  .logo-card .stage.dark { background: var(--mark-ink); }
-  .logo-card .cap { padding: 10px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--fg-muted); border-top: 1px solid var(--border); }
-
-  .rules { margin-top: 22px; padding-left: 20px; }
-  .rules li { margin-bottom: 8px; max-width: 62ch; }
+  .specimen .role { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-muted); margin-bottom: 10px; }
+  .specimen .sample-display { font-weight: 700; font-size: 30px; letter-spacing: -0.01em; }
+  .specimen .sample-body { font-size: 17px; max-width: 55ch; }
+  .specimen .sample-mono { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 15px; }
 
   /* Applications */
   .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 20px; }
-  .card-mock { aspect-ratio: 1.6/1; background: var(--mark-ink); color: var(--mark-paper); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
-  .card-mock .brand { display: flex; align-items: center; gap: 8px; }
-  .card-mock .brand svg { width: 26px; height: 26px; }
-  .card-mock .brand span { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; }
-  .card-mock .who { font-family: 'IBM Plex Mono', monospace; font-size: 11px; opacity: 0.75; }
-  .avatar-mock { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
-  .avatar-mock .circle { width: 84px; height: 84px; border-radius: 50%; background: var(--mark-ink); display: flex; align-items: center; justify-content: center; }
-  .avatar-mock .circle svg { width: 44px; height: 44px; }
-  .avatar-mock .label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--fg-muted); }
+  .card-mock { aspect-ratio: 1.6/1; background: var(--mark-ink); color: var(--mark-paper); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card-mock .brand { font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
+  .card-mock .brand .dot { color: #5B7FFF; }
+  .card-mock .who { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 11px; opacity: 0.75; }
+  .post-mock { background: var(--mark-ink); color: var(--mark-paper); border-radius: 14px; padding: 26px 22px; display: flex; flex-direction: column; justify-content: center; gap: 10px; aspect-ratio: 1.6/1; }
+  .post-mock .brand { font-weight: 700; font-size: 18px; }
+  .post-mock .brand .dot { color: #5B7FFF; }
+  .post-mock .line { font-size: 13px; opacity: 0.8; max-width: 30ch; }
 
   ol.roadmap { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
   ol.roadmap li { display: flex; gap: 14px; align-items: baseline; }
-  ol.roadmap .n { font-family: 'IBM Plex Mono', monospace; color: var(--accent); font-size: 13px; flex-shrink: 0; width: 22px; }
+  ol.roadmap .n { font-family: ui-monospace, "SF Mono", Consolas, monospace; color: var(--accent); font-size: 13px; flex-shrink: 0; width: 22px; }
 
   footer { padding-top: 40px; font-size: 13px; color: var(--fg-muted); }
 
-  #toast { position: fixed; bottom: 22px; left: 50%; transform: translate(-50%, 8px); background: var(--fg); color: var(--bg); font-family: 'IBM Plex Mono', monospace; font-size: 13px; padding: 9px 16px; border-radius: 100px; opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; }
+  #toast { position: fixed; bottom: 22px; left: 50%; transform: translate(-50%, 8px); background: var(--fg); color: var(--bg); font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 13px; padding: 9px 16px; border-radius: 100px; opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; }
   #toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-  @media (max-width: 480px) {
-    .hero-word { font-size: 30px; }
-  }
+  @media (max-width: 480px) { .hero-word { font-size: 32px; } }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <div class="wrap">
 
   <section class="hero">
-    <div class="hero-lockup">
-      <svg viewBox="0 0 120 120" aria-hidden="true">
-        <polygon points="106,60 83,100 37,100 14,60 37,20 83,20" fill="none" stroke="var(--fg)" stroke-width="4"/>
-        <line x1="60" y1="42" x2="46" y2="72" stroke="var(--fg)" stroke-width="2.5"/>
-        <line x1="60" y1="42" x2="74" y2="72" stroke="var(--fg)" stroke-width="2.5"/>
-        <line x1="46" y1="72" x2="74" y2="72" stroke="var(--fg)" stroke-width="2.5"/>
-        <circle cx="60" cy="42" r="5" fill="var(--accent)"/>
-        <circle cx="46" cy="72" r="5" fill="var(--fg)"/>
-        <circle cx="74" cy="72" r="5" fill="var(--fg)"/>
-      </svg>
-      <div class="hero-word">GUILD<span class="num">86</span></div>
-    </div>
+    <div class="hero-word">GUILD86<span class="dot">.</span></div>
     <p class="hero-tag">El gremio que hace que la inteligencia artificial trabaje de verdad:
       sistemas, automatizaciones y productos digitales hechos a medida, con oficio.</p>
     <div class="hero-meta">
-      <span>Carta de marca · v1</span>
-      <span>19 sep 2026</span>
+      <span>Carta de marca · v2, final</span>
       <span>Fase 1 — Identidad</span>
+      <span>Logo: a cargo de diseñadora externa</span>
     </div>
   </section>
 
@@ -205,106 +159,51 @@
 
   <article>
     <span class="art-num">Artículo IV — Paleta</span>
-    <h2>Blanco, negro y un sello de color</h2>
-    <p>Base minimalista con un único acento cálido — un ámbar tipo sello de cera, referencia
-      directa a la insignia de un gremio. Se usa con moderación: es un acento, no un fondo.
+    <h2>Blanco, negro y azul cobalto</h2>
+    <p>Base neutra en blanco y negro con azul cobalto como único acento — confianza técnica,
+      sin sonar al celeste corporativo genérico. Se usa con moderación: para links, botones y
+      detalles, nunca como fondo grande.
       <span class="muted">(Tocá un color para copiar su hex.)</span></p>
     <div class="swatches">
-      <button class="swatch" data-hex="#111110"><div class="chip" style="background:#111110"></div><div class="info"><div class="name">Ink</div><div class="hex">#111110</div></div></button>
-      <button class="swatch" data-hex="#FAF9F5"><div class="chip" style="background:#FAF9F5;border-bottom:1px solid var(--border)"></div><div class="info"><div class="name">Paper</div><div class="hex">#FAF9F5</div></div></button>
-      <button class="swatch" data-hex="#6E6B63"><div class="chip" style="background:#6E6B63"></div><div class="info"><div class="name">Steel</div><div class="hex">#6E6B63</div></div></button>
-      <button class="swatch" data-hex="#E2DFD5"><div class="chip" style="background:#E2DFD5"></div><div class="info"><div class="name">Line</div><div class="hex">#E2DFD5</div></div></button>
-      <button class="swatch" data-hex="#D9891F"><div class="chip" style="background:#D9891F"></div><div class="info"><div class="name">Sello (acento)</div><div class="hex">#D9891F</div></div></button>
-      <button class="swatch" data-hex="#E8A94D"><div class="chip" style="background:#E8A94D"></div><div class="info"><div class="name">Sello (dark bg)</div><div class="hex">#E8A94D</div></div></button>
+      <button class="swatch" data-hex="#111111"><div class="chip" style="background:#111111"></div><div class="info"><div class="name">Ink</div><div class="hex">#111111</div></div></button>
+      <button class="swatch" data-hex="#FFFFFF"><div class="chip" style="background:#FFFFFF;border-bottom:1px solid var(--border)"></div><div class="info"><div class="name">Paper</div><div class="hex">#FFFFFF</div></div></button>
+      <button class="swatch" data-hex="#6B6B6B"><div class="chip" style="background:#6B6B6B"></div><div class="info"><div class="name">Steel</div><div class="hex">#6B6B6B</div></div></button>
+      <button class="swatch" data-hex="#E4E4E4"><div class="chip" style="background:#E4E4E4"></div><div class="info"><div class="name">Line</div><div class="hex">#E4E4E4</div></div></button>
+      <button class="swatch" data-hex="#1D4ED8"><div class="chip" style="background:#1D4ED8"></div><div class="info"><div class="name">Cobalto (acento)</div><div class="hex">#1D4ED8</div></div></button>
+      <button class="swatch" data-hex="#5B7FFF"><div class="chip" style="background:#5B7FFF"></div><div class="info"><div class="name">Cobalto (dark bg)</div><div class="hex">#5B7FFF</div></div></button>
     </div>
   </article>
 
   <article>
     <span class="art-num">Artículo V — Tipografía</span>
-    <h2>Space Grotesk + IBM Plex</h2>
+    <h2>Helvetica</h2>
+    <p>Una sola familia para todo — títulos, cuerpo y datos — jugando con tamaño y peso para la
+      jerarquía. Vía el stack <span class="sample-mono mono">"Helvetica Neue", Helvetica, Arial, sans-serif</span>:
+      Helvetica real en Mac/iOS (viene con el sistema, sin costo), Arial en Windows/Android (clon
+      casi idéntico, también gratis).</p>
     <div class="specimen">
-      <div class="role">Títulos — Space Grotesk 700</div>
+      <div class="role">Títulos — Helvetica Bold</div>
       <div class="sample-display">Sistemas que trabajan solos</div>
     </div>
     <div class="specimen">
-      <div class="role">Cuerpo — IBM Plex Sans 400</div>
+      <div class="role">Cuerpo — Helvetica Regular</div>
       <div class="sample-body">Automatizamos WhatsApp, sistemas de gestión y portales a medida
         para que tu equipo se dedique a lo que un bot no puede hacer.</div>
     </div>
     <div class="specimen">
-      <div class="role">Datos / mono — IBM Plex Mono</div>
-      <div class="sample-mono">guild86.com · #D9891F · 24/7</div>
+      <div class="role">Datos / cifras — monoespaciada del sistema (solo para alinear números)</div>
+      <div class="sample-mono">guild86.com · #1D4ED8 · 24/7</div>
     </div>
   </article>
 
   <article>
-    <span class="art-num">Artículo VI — El sello y el logotipo</span>
-    <h2>Marca gráfica</h2>
-    <p>El isotipo es una insignia hexagonal — el "sello del gremio" — con tres nodos conectados:
-      el nodo superior, en color de acento, es la capa de IA; los otros dos, en negro, son el
-      equipo y el cliente trabajando juntos.</p>
-    <div class="logo-grid">
-      <div class="logo-card">
-        <div class="stage light">
-          <svg viewBox="0 0 120 120" style="width:72px;height:72px">
-            <polygon points="106,60 83,100 37,100 14,60 37,20 83,20" fill="none" stroke="#111110" stroke-width="4"/>
-            <line x1="60" y1="42" x2="46" y2="72" stroke="#111110" stroke-width="2.5"/>
-            <line x1="60" y1="42" x2="74" y2="72" stroke="#111110" stroke-width="2.5"/>
-            <line x1="46" y1="72" x2="74" y2="72" stroke="#111110" stroke-width="2.5"/>
-            <circle cx="60" cy="42" r="5" fill="#D9891F"/>
-            <circle cx="46" cy="72" r="5" fill="#111110"/>
-            <circle cx="74" cy="72" r="5" fill="#111110"/>
-          </svg>
-        </div>
-        <div class="cap">seal-mark — sobre claro</div>
-      </div>
-      <div class="logo-card">
-        <div class="stage dark">
-          <svg viewBox="0 0 120 120" style="width:72px;height:72px">
-            <polygon points="106,60 83,100 37,100 14,60 37,20 83,20" fill="none" stroke="#FAF9F5" stroke-width="4"/>
-            <line x1="60" y1="42" x2="46" y2="72" stroke="#FAF9F5" stroke-width="2.5"/>
-            <line x1="60" y1="42" x2="74" y2="72" stroke="#FAF9F5" stroke-width="2.5"/>
-            <line x1="46" y1="72" x2="74" y2="72" stroke="#FAF9F5" stroke-width="2.5"/>
-            <circle cx="60" cy="42" r="5" fill="#E8A94D"/>
-            <circle cx="46" cy="72" r="5" fill="#FAF9F5"/>
-            <circle cx="74" cy="72" r="5" fill="#FAF9F5"/>
-          </svg>
-        </div>
-        <div class="cap">seal-mark — sobre oscuro</div>
-      </div>
-      <div class="logo-card">
-        <div class="stage light">
-          <svg viewBox="0 0 64 64" style="width:64px;height:64px">
-            <rect width="64" height="64" rx="14" fill="#111110"/>
-            <text x="32" y="40" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="22" fill="#FAF9F5" text-anchor="middle">G86</text>
-          </svg>
-        </div>
-        <div class="cap">monogram — favicon / avatar</div>
-      </div>
-      <div class="logo-card">
-        <div class="stage light">
-          <svg viewBox="0 0 420 100" style="width:220px">
-            <g transform="scale(0.75)">
-              <polygon points="106,60 83,100 37,100 14,60 37,20 83,20" fill="none" stroke="#111110" stroke-width="4"/>
-              <line x1="60" y1="42" x2="46" y2="72" stroke="#111110" stroke-width="2.5"/>
-              <line x1="60" y1="42" x2="74" y2="72" stroke="#111110" stroke-width="2.5"/>
-              <line x1="46" y1="72" x2="74" y2="72" stroke="#111110" stroke-width="2.5"/>
-              <circle cx="60" cy="42" r="5" fill="#D9891F"/>
-              <circle cx="46" cy="72" r="5" fill="#111110"/>
-              <circle cx="74" cy="72" r="5" fill="#111110"/>
-            </g>
-            <text x="110" y="62" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="34" fill="#111110">GUILD<tspan fill="#D9891F">86</tspan></text>
-          </svg>
-        </div>
-        <div class="cap">lockup-horizontal — principal</div>
-      </div>
-    </div>
-    <ul class="rules">
-      <li>Espacio de resguardo mínimo: el ancho del isotipo hexagonal alrededor (nada de texto o bordes pegados).</li>
-      <li>Tamaño mínimo: isotipo no menor a 24px de alto; lockup no menor a 120px de ancho.</li>
-      <li>No estirar, no rotar, no cambiar el color del acento por otro.</li>
-      <li>Sobre fondos oscuros: invertir a la variante clara (arriba) — nunca dejar el trazo negro sobre fondo oscuro.</li>
-    </ul>
+    <span class="art-num">Artículo VI — El logo</span>
+    <h2>A cargo de una diseñadora externa</h2>
+    <p class="lead">El isotipo definitivo no lo define este documento — lo va a crear una
+      diseñadora. Este manual (nombre, propósito, personalidad, paleta y tipografía) es
+      exactamente lo que se le pasa como brief para que trabaje.</p>
+    <p class="muted">Quedan guardados en el repositorio unos bocetos exploratorios anteriores,
+      solo como referencia de posibles direcciones — no son parte de esta decisión de marca.</p>
   </article>
 
   <article>
@@ -312,22 +211,12 @@
     <h2>Cómo se ve en el mundo</h2>
     <div class="app-grid">
       <div class="card-mock">
-        <div class="brand">
-          <svg viewBox="0 0 120 120" aria-hidden="true">
-            <polygon points="106,60 83,100 37,100 14,60 37,20 83,20" fill="none" stroke="#FAF9F5" stroke-width="6"/>
-            <circle cx="60" cy="42" r="6" fill="#E8A94D"/>
-            <circle cx="46" cy="72" r="6" fill="#FAF9F5"/>
-            <circle cx="74" cy="72" r="6" fill="#FAF9F5"/>
-          </svg>
-          <span>GUILD<span style="color:#E8A94D">86</span></span>
-        </div>
+        <div class="brand">GUILD86<span class="dot">.</span></div>
         <div class="who">VICENTE · IA &amp; AUTOMATIZACIÓN<br>guild86.com</div>
       </div>
-      <div class="avatar-mock">
-        <div class="circle">
-          <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#111110"/><text x="32" y="40" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="22" fill="#FAF9F5" text-anchor="middle">G86</text></svg>
-        </div>
-        <div class="label">avatar de redes</div>
+      <div class="post-mock">
+        <div class="brand">GUILD86<span class="dot">.</span></div>
+        <div class="line">Sistemas de IA y automatización a medida.</div>
       </div>
     </div>
   </article>
@@ -336,14 +225,14 @@
     <span class="art-num">Artículo VIII — Próximos pasos</span>
     <h2>Roadmap</h2>
     <ol class="roadmap">
-      <li><span class="n">01</span><span>Vicente valida nombre, paleta y logo (o pide ajustes).</span></li>
-      <li><span class="n">02</span><span>Registrar dominio — <span class="mono">guild86.com</span> / <span class="mono">.ai</span> / <span class="mono">.com.ar</span> — y reservar handles de redes.</span></li>
+      <li><span class="n">01</span><span>Registrar dominio — <span class="mono">guild86.com</span> / <span class="mono">.ai</span> / <span class="mono">.com.ar</span> — y reservar handles de redes.</span></li>
+      <li><span class="n">02</span><span>Pasarle este manual a la diseñadora para el logo definitivo.</span></li>
       <li><span class="n">03</span><span>Fase 2: sitio web propio con portfolio (Visión Norte, sistema de denuncias, portal de campaña).</span></li>
-      <li><span class="n">04</span><span>Fase 3: tarjeta personal para imprimir y plantillas de redes sociales.</span></li>
+      <li><span class="n">04</span><span>Fase 3: tarjeta personal para imprimir y plantillas de redes sociales (una vez esté el logo).</span></li>
     </ol>
   </article>
 
-  <footer>Guild 86 — Carta de marca v1 · repositorio del proyecto</footer>
+  <footer>Guild 86 — Carta de marca v2, final · repositorio del proyecto</footer>
 </div>
 
 <div id="toast" role="status"></div>
@@ -355,9 +244,7 @@
     document.querySelectorAll('.swatch').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var hex = btn.getAttribute('data-hex');
-        try {
-          navigator.clipboard.writeText(hex);
-        } catch (e) {}
+        try { navigator.clipboard.writeText(hex); } catch (e) {}
         toast.textContent = 'Copiado ' + hex;
         toast.classList.add('show');
         clearTimeout(timer);

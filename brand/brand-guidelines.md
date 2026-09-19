@@ -1,9 +1,8 @@
-# Guild 86 — Manual de Marca (v1)
+# Guild 86 — Manual de Marca (v2, final)
 
-Documento base de identidad de marca. Fase 1 del proyecto de branding de Vicente. Ver también
-[`naming.md`](./naming.md) para el racional del nombre y el chequeo de dominios,
-[`style-guide.html`](./style-guide.html) para la versión visual navegable de este documento, y
-[`color-options.html`](./color-options.html) para comparar los 4 acentos de color propuestos.
+Documento base de identidad de marca. Fase 1 del proyecto de branding de Vicente, cerrada. Ver
+también [`naming.md`](./naming.md) para el racional del nombre y el chequeo de dominios, y
+[`style-guide.html`](./style-guide.html) para la versión visual navegable de este documento.
 
 **Nota de alcance:** el diseño del logo final queda a cargo de una diseñadora externa. Este
 manual define nombre, tono, paleta y tipografía como brief para ella — no incluye un logo
@@ -45,9 +44,8 @@ Tono elegido: **técnico + cercano**. Ni un estudio frío y corporativo, ni un f
 
 ## 3. Paleta de colores
 
-Base neutra blanco/negro (sin cambios) + un acento a confirmar. Se descartó el ámbar/naranja
-original. Cuatro opciones en evaluación — ver [`color-options.html`](./color-options.html) para
-verlas aplicadas:
+Base neutra blanco/negro + **azul cobalto** como acento oficial (reemplaza al ámbar original,
+descartado).
 
 | Token | Uso | Hex |
 |---|---|---|
@@ -55,15 +53,15 @@ verlas aplicadas:
 | Paper | Fondo principal, texto sobre oscuro | `#FFFFFF` |
 | Steel | Texto secundario, metadata | `#6B6B6B` |
 | Line | Bordes, separadores | `#E4E4E4` |
+| **Accent — Cobalto** | Links, CTA, highlights | `#1D4ED8` |
+| Accent (tint, fondos oscuros) | Variante clara del acento en dark mode | `#5B7FFF` |
+| Accent soft (fondo de bloques destacados) | Fondo tenue detrás de texto con acento | `#E7EDFF` |
 
-| Opción de acento | Hex | Nota |
-|---|---|---|
-| 1 — Azul cobalto | `#1D4ED8` | Recomendado: confianza técnica, sirve para clínicas y campañas |
-| 2 — Verde pino | `#14532D` | Sobrio, evita el verde neón típico de IA |
-| 3 — Rojo ladrillo | `#9A2B2B` | El más audaz, poco usado en marcas de IA |
-| 4 — Violeta ciruela | `#4C2A63` | Asociado a IA pero en tono apagado, no brillante |
+Usar el acento con moderación — para links, botones/CTA y detalles, nunca como color de fondo
+grande. El resto de la marca vive en blanco y negro.
 
-**Pendiente:** confirmar cuál de las 4 queda como acento oficial (o descartar y pedir otra ronda).
+*Otras opciones evaluadas y descartadas: verde pino `#14532D`, rojo ladrillo `#9A2B2B`, violeta
+ciruela `#4C2A63` (quedan documentadas en el historial de [`color-options.html`](./color-options.html)).*
 
 ## 4. Tipografía
 
@@ -95,12 +93,11 @@ pueden servir de insumo/inspiración para la diseñadora, pero no son la decisi�
 
 ## 7. Próximos pasos
 
-1. Confirmar el acento de color entre las 4 opciones (o pedir otra ronda).
-2. Confirmar y registrar dominio (`guild86.com` / `guild86.ai` / `guild86.com.ar`) — ver
+1. Confirmar y registrar dominio (`guild86.com` / `guild86.ai` / `guild86.com.ar`) — ver
    `naming.md`.
-3. Reservar handles de redes sociales.
-4. Briefear a la diseñadora externa con este documento (nombre, tono, paleta, tipografía) para
+2. Reservar handles de redes sociales.
+3. Briefear a la diseñadora externa con este documento (nombre, tono, paleta, tipografía) para
    el logo definitivo.
-5. Fase 2: sitio web propio con portfolio de proyectos (Visión Norte, sistema de denuncias,
+4. Fase 2: sitio web propio con portfolio de proyectos (Visión Norte, sistema de denuncias,
    portal de campaña) — puede arrancar en paralelo, usando placeholder de logo hasta que esté listo.
-6. Fase 3: plantillas de redes sociales y tarjeta personal para imprimir.
+5. Fase 3: plantillas de redes sociales y tarjeta personal para imprimir.

@@ -3,12 +3,12 @@
 Repositorio de trabajo para armar la identidad de marca de **Vicente** — su estudio de
 ingeniería de IA y automatización — y, más adelante, su sitio web con portfolio.
 
-## Estado: Fase 1 — Identidad de marca (en revisión)
+## Estado: Fase 1 — Identidad de marca ✅ cerrada
 
 - [x] Nombre: **Guild 86** (ver [`brand/naming.md`](brand/naming.md))
 - [x] Tipografía: Helvetica
-- [ ] Paleta de colores — 4 opciones de acento en evaluación (ver [`brand/color-options.html`](brand/color-options.html))
-- [x] Manual de marca v1 ([`brand/brand-guidelines.md`](brand/brand-guidelines.md))
+- [x] Paleta: blanco/negro + **azul cobalto** `#1D4ED8` (ver [`brand/color-options.html`](brand/color-options.html) para el historial de opciones)
+- [x] Manual de marca final ([`brand/brand-guidelines.md`](brand/brand-guidelines.md) / [`brand/style-guide.html`](brand/style-guide.html))
 - [~] Logo — **fuera de alcance**, lo hace una diseñadora externa (quedan bocetos exploratorios
       como referencia, no vinculantes)
 - [ ] Registro de dominio y handles de redes
