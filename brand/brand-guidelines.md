@@ -1,8 +1,13 @@
 # Guild 86 — Manual de Marca (v1)
 
 Documento base de identidad de marca. Fase 1 del proyecto de branding de Vicente. Ver también
-[`naming.md`](./naming.md) para el racional del nombre y el chequeo de dominios, y
-[`style-guide.html`](./style-guide.html) para la versión visual navegable de este documento.
+[`naming.md`](./naming.md) para el racional del nombre y el chequeo de dominios,
+[`style-guide.html`](./style-guide.html) para la versión visual navegable de este documento, y
+[`color-options.html`](./color-options.html) para comparar los 4 acentos de color propuestos.
+
+**Nota de alcance:** el diseño del logo final queda a cargo de una diseñadora externa. Este
+manual define nombre, tono, paleta y tipografía como brief para ella — no incluye un logo
+definitivo (ver sección 5).
 
 ---
 
@@ -40,71 +45,62 @@ Tono elegido: **técnico + cercano**. Ni un estudio frío y corporativo, ni un f
 
 ## 3. Paleta de colores
 
-Base minimalista blanco/negro + un acento cálido ("sello" — referencia directa al sello de cera
-de un gremio/insignia).
+Base neutra blanco/negro (sin cambios) + un acento a confirmar. Se descartó el ámbar/naranja
+original. Cuatro opciones en evaluación — ver [`color-options.html`](./color-options.html) para
+verlas aplicadas:
 
 | Token | Uso | Hex |
 |---|---|---|
-| Ink | Texto principal, fondo modo oscuro | `#111110` |
-| Paper | Fondo principal, texto sobre oscuro | `#FAF9F5` |
-| Steel | Texto secundario, metadata | `#6E6B63` |
-| Line | Bordes, separadores | `#E2DFD5` |
-| **Accent — Sello** | Acentos, links, CTA, nodo IA del isotipo | `#D9891F` |
-| Accent (tint, para fondos oscuros) | Variante clara del acento en dark mode | `#E8A94D` |
+| Ink | Texto principal, fondo modo oscuro | `#111111` |
+| Paper | Fondo principal, texto sobre oscuro | `#FFFFFF` |
+| Steel | Texto secundario, metadata | `#6B6B6B` |
+| Line | Bordes, separadores | `#E4E4E4` |
 
-El acento no es el violeta/verde típico de marcas de IA — es un ámbar tipo sello de cera, que
-conecta directamente con el concepto de "gremio" (insignia, oficio, artesanía) sin perder
-modernidad. Usarlo con moderación: es un acento, no un color de fondo.
+| Opción de acento | Hex | Nota |
+|---|---|---|
+| 1 — Azul cobalto | `#1D4ED8` | Recomendado: confianza técnica, sirve para clínicas y campañas |
+| 2 — Verde pino | `#14532D` | Sobrio, evita el verde neón típico de IA |
+| 3 — Rojo ladrillo | `#9A2B2B` | El más audaz, poco usado en marcas de IA |
+| 4 — Violeta ciruela | `#4C2A63` | Asociado a IA pero en tono apagado, no brillante |
+
+**Pendiente:** confirmar cuál de las 4 queda como acento oficial (o descartar y pedir otra ronda).
 
 ## 4. Tipografía
 
-- **Títulos / display:** [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk),
-  peso 600–700. Geométrica, con carácter técnico. Usar en headers, nombre de marca, números
-  grandes.
-- **Texto / cuerpo:** [IBM Plex Sans](https://fonts.google.com/specimen/IBM+Plex+Sans), peso
-  400–500. Muy legible, con un aire de ingeniería que refuerza "oficio técnico".
-- **Datos / mono:** [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono) para
-  cifras, dominios, fragmentos de código o specs en materiales técnicos.
+**Helvetica**, vía el stack `"Helvetica Neue", Helvetica, Arial, sans-serif` — sin costo: en
+Mac/iOS se renderiza la Helvetica real (viene con el sistema operativo); en Windows/Android cae
+a Arial, un clon casi idéntico. Un único peso/familia para todo (títulos, cuerpo y datos),
+usando variaciones de tamaño y peso (regular/bold) para la jerarquía — el approach clásico
+"Swiss design", limpio y sin decoración tipográfica de más.
 
-Las tres son gratuitas en Google Fonts.
+Si en algún momento se necesita la licencia completa de Helvetica (para impresos de alta
+calidad, PDFs institucionales, etc.), es paga (Monotype) — evaluar esa compra si el volumen de
+piezas impresas lo justifica.
 
-## 5. Logo
+## 5. Logo — fuera de alcance
 
-Archivos fuente en [`/brand/logo`](./logo):
+El logo definitivo lo va a diseñar una diseñadora externa. Este documento no define un logo
+final; su trabajo es servir de brief (nombre, tono, paleta, tipografía) para ella.
 
-- `seal-mark.svg` — isotipo principal: insignia hexagonal (el "sello del gremio") con tres
-  nodos conectados. El nodo superior en color acento representa la capa de IA; los otros dos,
-  en negro, representan al equipo/cliente. Úsalo solo, como favicon grande, marca de agua o
-  ícono de redes.
-- `monogram.svg` — versión compacta "G86" en placa redondeada. Para favicon chico y avatar de
-  redes sociales (Instagram, WhatsApp Business).
-- `wordmark.svg` — logotipo de texto "GUILD86" (el "86" en color acento). Para usos donde el
-  isotipo no entra o ya está presente cerca (ej. footer de web).
-- `lockup-horizontal.svg` — versión combinada (isotipo + wordmark), la lockup principal para
-  headers, tarjetas personales, firmas de email y membrete.
-
-**Reglas de uso:**
-- Espacio de resguardo mínimo alrededor del logo: el ancho del isotipo hexagonal (no pegar
-  texto ni bordes de tarjeta encima).
-- Tamaño mínimo: isotipo no menor a 24px de alto (favicon), lockup no menor a 120px de ancho.
-- No estirar, no rotar, no cambiar el color del acento por otro color.
-- Sobre fondos oscuros, invertir: isotipo y texto en `Paper (#FAF9F5)`, nodo de acento se
-  mantiene en `#E8A94D` (variante clara).
-- No poner el isotipo sobre fotos o fondos con mucho contraste sin una placa sólida detrás.
+Como referencia exploratoria (no vinculante, no usar en producción) quedaron guardados 4 bocetos
+conceptuales anteriores en [`/brand/logo`](./logo) y [`/brand/logo-options.html`](./logo-options.html) —
+pueden servir de insumo/inspiración para la diseñadora, pero no son la decisión final.
 
 ## 6. Aplicaciones previstas (fase 2/3)
 
-- Tarjeta personal (frente: lockup horizontal sobre Paper; dorso: isotipo grande sobre Ink)
+- Tarjeta personal (una vez que la diseñadora entregue el logo)
 - Sitio web propio con portfolio (Visión Norte, sistema de denuncias, portal de campaña, etc.)
-- Redes sociales: avatar = monogram sobre Ink, portada = lockup horizontal
+- Redes sociales: misma paleta y tipografía, avatar a definir con el logo final
 - Firma de email y propuestas comerciales (PDF) con la misma paleta y tipografía
 
 ## 7. Próximos pasos
 
-1. Confirmar y registrar dominio (`guild86.com` / `guild86.ai` / `guild86.com.ar`) — ver
+1. Confirmar el acento de color entre las 4 opciones (o pedir otra ronda).
+2. Confirmar y registrar dominio (`guild86.com` / `guild86.ai` / `guild86.com.ar`) — ver
    `naming.md`.
-2. Reservar handles de redes sociales.
-3. Vicente valida nombre, paleta y logo (o pide ajustes).
-4. Fase 2: sitio web propio con portfolio de proyectos (Visión Norte, sistema de denuncias,
-   portal de campaña).
-5. Fase 3: plantillas de redes sociales y tarjeta personal para imprimir.
+3. Reservar handles de redes sociales.
+4. Briefear a la diseñadora externa con este documento (nombre, tono, paleta, tipografía) para
+   el logo definitivo.
+5. Fase 2: sitio web propio con portfolio de proyectos (Visión Norte, sistema de denuncias,
+   portal de campaña) — puede arrancar en paralelo, usando placeholder de logo hasta que esté listo.
+6. Fase 3: plantillas de redes sociales y tarjeta personal para imprimir.

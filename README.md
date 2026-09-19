@@ -3,27 +3,27 @@
 Repositorio de trabajo para armar la identidad de marca de **Vicente** — su estudio de
 ingeniería de IA y automatización — y, más adelante, su sitio web con portfolio.
 
-## Estado: Fase 1 — Identidad de marca ✅ (en revisión)
+## Estado: Fase 1 — Identidad de marca (en revisión)
 
 - [x] Nombre: **Guild 86** (ver [`brand/naming.md`](brand/naming.md))
-- [x] Paleta de colores y tipografía
-- [x] Concepto de logo (isotipo, monograma, wordmark, lockup)
+- [x] Tipografía: Helvetica
+- [ ] Paleta de colores — 4 opciones de acento en evaluación (ver [`brand/color-options.html`](brand/color-options.html))
 - [x] Manual de marca v1 ([`brand/brand-guidelines.md`](brand/brand-guidelines.md))
-- [ ] Validación de Vicente (nombre / paleta / logo)
+- [~] Logo — **fuera de alcance**, lo hace una diseñadora externa (quedan bocetos exploratorios
+      como referencia, no vinculantes)
 - [ ] Registro de dominio y handles de redes
 
 ## Estructura del repo
 
 ```
 brand/
-  naming.md              — racional del nombre + chequeo de dominios
-  brand-guidelines.md     — manual de marca (paleta, tipografía, uso del logo)
-  style-guide.html         — versión visual navegable del manual de marca
-  logo/
-    seal-mark.svg          — isotipo principal (insignia)
-    monogram.svg           — "G86" compacto (favicon / avatar)
-    wordmark.svg            — logotipo de texto
-    lockup-horizontal.svg   — isotipo + wordmark combinados
+  naming.md               — racional del nombre + chequeo de dominios
+  brand-guidelines.md      — manual de marca (paleta, tipografía, alcance del logo)
+  style-guide.html          — versión visual navegable del manual de marca
+  color-options.html        — comparación de las 4 opciones de acento de color
+  logo/                     — bocetos exploratorios de logo (referencia para la diseñadora, no definitivos)
+    seal-mark.svg, monogram.svg, wordmark.svg, lockup-horizontal.svg
+    concepts/               — 3 conceptos alternativos descartados como decisión final
 ```
 
 ## Próximas fases

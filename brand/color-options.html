@@ -1,0 +1,151 @@
+<title>Opciones de color</title>
+<style>
+  :root {
+    --bg: #FAFAFA; --surface: #FFFFFF; --fg: #111111; --fg-muted: #6B6B6B;
+    --border: #E4E4E4; --accent: #1D4ED8; --accent-soft: #E7EDFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111111; --surface: #1A1A1A; --fg: #FAFAFA; --fg-muted: #A3A3A3;
+      --border: #2C2C2C; --accent: #5B7FFF; --accent-soft: #1E2748;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111111; --surface: #1A1A1A; --fg: #FAFAFA; --fg-muted: #A3A3A3;
+    --border: #2C2C2C; --accent: #5B7FFF; --accent-soft: #1E2748;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--fg); padding: 0 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding-block: 48px 90px; }
+  h1 { font-weight: 700; font-size: clamp(26px,6vw,36px); margin: 0 0 8px; letter-spacing: -0.01em; text-wrap: balance; }
+  .intro { color: var(--fg-muted); max-width: 64ch; font-size: 16px; margin-bottom: 6px; }
+  .meta { font-size: 12px; color: var(--fg-muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 40px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+  .card { border: 1px solid var(--border); border-radius: 14px; background: var(--surface); overflow: hidden; }
+  .hero { padding: 30px 26px 24px; display: flex; flex-direction: column; gap: 14px; border-bottom: 1px solid var(--border); }
+  .word { font-weight: 700; font-size: 26px; letter-spacing: -0.02em; }
+  .word .dot { color: var(--card-accent); }
+  .tag { font-size: 13.5px; color: var(--fg-muted); }
+  .ui-row { display: flex; align-items: center; gap: 10px; padding: 20px 26px; flex-wrap: wrap; }
+  .btn { background: var(--card-accent); color: #fff; font-size: 13.5px; font-weight: 600; padding: 9px 16px; border-radius: 8px; }
+  .btn.outline { background: transparent; color: var(--card-accent); border: 1.5px solid var(--card-accent); }
+  .chip { font-size: 12px; color: var(--card-accent); border: 1px solid var(--card-accent); border-radius: 100px; padding: 4px 10px; }
+  .strip { display: flex; }
+  .strip div { height: 8px; flex: 1; }
+  .body { padding: 4px 26px 24px; display: flex; flex-direction: column; gap: 8px; }
+  .letter { font-size: 12px; color: var(--card-accent); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+  .name { font-weight: 700; font-size: 18px; }
+  .hex { font-size: 12.5px; color: var(--fg-muted); }
+  .desc { font-size: 14px; line-height: 1.55; color: var(--fg); }
+
+  .note { margin-top: 44px; padding: 18px 22px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; font-size: 14.5px; max-width: 70ch; }
+  .note p { margin: 0 0 8px; } .note p:last-child { margin-bottom: 0; }
+</style>
+
+<div class="wrap">
+  <h1>Opciones de color — Guild 86</h1>
+  <p class="intro">Base neutra en blanco y negro (sin cambios), tipografía Helvetica, y cuatro
+    acentos posibles para reemplazar el ámbar. Cada tarjeta muestra el mismo bloque de marca
+    aplicado, para que se vea de verdad en uso, no solo el color suelto.</p>
+  <div class="meta">4 acentos · base neutra fija · sin isotipo (a cargo de la diseñadora)</div>
+
+  <div class="grid">
+
+    <div class="card" style="--card-accent:#1D4ED8">
+      <div class="hero">
+        <div class="word">GUILD86<span class="dot">.</span></div>
+        <div class="tag">Sistemas de IA y automatización a medida</div>
+      </div>
+      <div class="ui-row">
+        <div class="btn">Agendar demo</div>
+        <div class="btn outline">Ver casos</div>
+        <div class="chip">Nuevo</div>
+      </div>
+      <div class="strip"><div style="background:#111111"></div><div style="background:#1D4ED8"></div><div style="background:#FFFFFF;border-top:1px solid #E4E4E4"></div></div>
+      <div class="body">
+        <span class="letter">Opción 1</span>
+        <div class="name">Azul cobalto</div>
+        <div class="hex">#1D4ED8</div>
+        <p class="desc">El más "institucional": transmite confianza y seriedad técnica. Funciona
+          bien con clientes como clínicas o campañas políticas, sin ser el típico celeste
+          corporativo aburrido.</p>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent:#14532D">
+      <div class="hero">
+        <div class="word">GUILD86<span class="dot">.</span></div>
+        <div class="tag">Sistemas de IA y automatización a medida</div>
+      </div>
+      <div class="ui-row">
+        <div class="btn">Agendar demo</div>
+        <div class="btn outline">Ver casos</div>
+        <div class="chip">Nuevo</div>
+      </div>
+      <div class="strip"><div style="background:#111111"></div><div style="background:#14532D"></div><div style="background:#FFFFFF;border-top:1px solid #E4E4E4"></div></div>
+      <div class="body">
+        <span class="letter">Opción 2</span>
+        <div class="name">Verde pino</div>
+        <div class="hex">#14532D</div>
+        <p class="desc">Verde oscuro, no el verde neón típico de IA. Da una sensación de
+          "sistema que funciona" (semáforo en verde), sobrio y distinto sin ser estridente.</p>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent:#9A2B2B">
+      <div class="hero">
+        <div class="word">GUILD86<span class="dot">.</span></div>
+        <div class="tag">Sistemas de IA y automatización a medida</div>
+      </div>
+      <div class="ui-row">
+        <div class="btn">Agendar demo</div>
+        <div class="btn outline">Ver casos</div>
+        <div class="chip">Nuevo</div>
+      </div>
+      <div class="strip"><div style="background:#111111"></div><div style="background:#9A2B2B"></div><div style="background:#FFFFFF;border-top:1px solid #E4E4E4"></div></div>
+      <div class="body">
+        <span class="letter">Opción 3</span>
+        <div class="name">Rojo ladrillo</div>
+        <div class="hex">#9A2B2B</div>
+        <p class="desc">El más audaz y menos usado en marcas de IA — por eso destaca. Da energía
+          y carácter sin caer en el rojo "alerta" puro.</p>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent:#4C2A63">
+      <div class="hero">
+        <div class="word">GUILD86<span class="dot">.</span></div>
+        <div class="tag">Sistemas de IA y automatización a medida</div>
+      </div>
+      <div class="ui-row">
+        <div class="btn">Agendar demo</div>
+        <div class="btn outline">Ver casos</div>
+        <div class="chip">Nuevo</div>
+      </div>
+      <div class="strip"><div style="background:#111111"></div><div style="background:#4C2A63"></div><div style="background:#FFFFFF;border-top:1px solid #E4E4E4"></div></div>
+      <div class="body">
+        <span class="letter">Opción 4</span>
+        <div class="name">Violeta ciruela</div>
+        <div class="hex">#4C2A63</div>
+        <p class="desc">Asociado a IA pero en un tono apagado, no el violeta brillante típico de
+          startups. Sofisticado, pero es el más "esperable" del rubro.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <p><b>Sobre la tipografía:</b> uso el stack <code>"Helvetica Neue", Helvetica, Arial,
+      sans-serif</code>. En Mac/iPhone se ve la Helvetica real (viene instalada en el sistema,
+      sin costo). En Windows/Android cae a Arial, que es prácticamente un clon 1:1 — gratis
+      también. La licencia completa de Helvetica (para PDFs, impresión, etc.) es paga si en algún
+      momento la diseñadora la necesita para el logo o materiales impresos.</p>
+    <p><b>Mi recomendación:</b> Azul cobalto (Opción 1) — es el que mejor combina con el tono
+      "técnico y cercano" que definimos, y da confianza sin sonar genérico. Pero cualquiera de
+      las cuatro funciona sobre la base blanco/negro.</p>
+  </div>
+</div>
