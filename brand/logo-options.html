@@ -1,0 +1,181 @@
+<title>Opciones de logo</title>
+<style>
+  :root {
+    --bg: #FAF9F5;
+    --surface: #FFFFFF;
+    --fg: #111110;
+    --fg-muted: #6E6B63;
+    --border: #E2DFD5;
+    --accent: #D9891F;
+    --accent-soft: #F3E3CB;
+    --mark-ink: #111110;
+    --mark-paper: #FAF9F5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111110; --surface: #191815; --fg: #FAF9F5; --fg-muted: #A8A499;
+      --border: #2C2A26; --accent: #E8A94D; --accent-soft: #3A2C15;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111110; --surface: #191815; --fg: #FAF9F5; --fg-muted: #A8A499;
+    --border: #2C2A26; --accent: #E8A94D; --accent-soft: #3A2C15;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: 'IBM Plex Sans', system-ui, sans-serif; padding: 0 20px; }
+  .wrap { max-width: 900px; margin: 0 auto; padding-block: 48px 90px; }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(26px,6vw,36px); margin: 0 0 8px; text-wrap: balance; }
+  .intro { color: var(--fg-muted); max-width: 62ch; font-size: 16px; margin-bottom: 6px; }
+  .meta { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--fg-muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 40px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .card { border: 1px solid var(--border); border-radius: 16px; background: var(--surface); overflow: hidden; display: flex; flex-direction: column; }
+  .stages { display: grid; grid-template-columns: 1fr 1fr; }
+  .stage { height: 128px; display: flex; align-items: center; justify-content: center; }
+  .stage.light { background: var(--mark-paper); }
+  .stage.dark { background: var(--mark-ink); }
+  .body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 10px; }
+  .letter { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent); letter-spacing: .08em; text-transform: uppercase; }
+  .name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; }
+  .desc { font-size: 14.5px; color: var(--fg); line-height: 1.55; }
+  .fit { font-size: 13px; color: var(--fg-muted); border-top: 1px solid var(--border); padding-top: 10px; margin-top: 2px; }
+  .fit b { color: var(--fg); font-weight: 500; }
+
+  .note { margin-top: 44px; padding: 18px 20px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; font-size: 14.5px; max-width: 68ch; }
+  .note p { margin: 0 0 8px; }
+  .note p:last-child { margin-bottom: 0; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<div class="wrap">
+  <h1>Opciones de logo — Guild 86</h1>
+  <p class="intro">Cuatro caminos distintos para el isotipo de Guild 86. Cada uno se puede ver
+    sobre fondo claro y oscuro. Elegí uno (entero, tal cual) o decime qué elementos de cada uno
+    te gustan y armo una versión combinada.</p>
+  <div class="meta">4 conceptos · para validar con Vicente</div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="stages">
+        <div class="stage light">
+          <svg viewBox="0 0 120 120" style="width:68px;height:68px">
+            <polygon points="106,60 83,100 37,100 14,60 37,20 83,20" fill="none" stroke="#111110" stroke-width="4"/>
+            <line x1="60" y1="42" x2="46" y2="72" stroke="#111110" stroke-width="2.5"/>
+            <line x1="60" y1="42" x2="74" y2="72" stroke="#111110" stroke-width="2.5"/>
+            <line x1="46" y1="72" x2="74" y2="72" stroke="#111110" stroke-width="2.5"/>
+            <circle cx="60" cy="42" r="5" fill="#D9891F"/><circle cx="46" cy="72" r="5" fill="#111110"/><circle cx="74" cy="72" r="5" fill="#111110"/>
+          </svg>
+        </div>
+        <div class="stage dark">
+          <svg viewBox="0 0 120 120" style="width:68px;height:68px">
+            <polygon points="106,60 83,100 37,100 14,60 37,20 83,20" fill="none" stroke="#FAF9F5" stroke-width="4"/>
+            <line x1="60" y1="42" x2="46" y2="72" stroke="#FAF9F5" stroke-width="2.5"/>
+            <line x1="60" y1="42" x2="74" y2="72" stroke="#FAF9F5" stroke-width="2.5"/>
+            <line x1="46" y1="72" x2="74" y2="72" stroke="#FAF9F5" stroke-width="2.5"/>
+            <circle cx="60" cy="42" r="5" fill="#E8A94D"/><circle cx="46" cy="72" r="5" fill="#FAF9F5"/><circle cx="74" cy="72" r="5" fill="#FAF9F5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="body">
+        <span class="letter">Opción A — Sello</span>
+        <div class="name">Insignia hexagonal</div>
+        <p class="desc">Un hexágono a modo de sello de gremio, con 3 nodos conectados: el de
+          arriba (color) es la IA, los otros dos son el equipo y el cliente trabajando juntos.</p>
+        <p class="fit"><b>Ideal para:</b> transmitir comunidad + red/tecnología a la vez. Es el
+          más "insignia", el más distinto de un logo genérico de IA.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="stages">
+        <div class="stage light">
+          <svg viewBox="0 0 120 120" style="width:68px;height:68px">
+            <polyline points="25,45 25,25 45,25" fill="none" stroke="#111110" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="75,25 95,25 95,45" fill="none" stroke="#111110" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="95,75 95,95 75,95" fill="none" stroke="#111110" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="45,95 25,95 25,75" fill="none" stroke="#111110" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="60" y="70" font-family="'IBM Plex Mono',monospace" font-weight="600" font-size="26" fill="#D9891F" text-anchor="middle">86</text>
+          </svg>
+        </div>
+        <div class="stage dark">
+          <svg viewBox="0 0 120 120" style="width:68px;height:68px">
+            <polyline points="25,45 25,25 45,25" fill="none" stroke="#FAF9F5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="75,25 95,25 95,45" fill="none" stroke="#FAF9F5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="95,75 95,95 75,95" fill="none" stroke="#FAF9F5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="45,95 25,95 25,75" fill="none" stroke="#FAF9F5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="60" y="70" font-family="'IBM Plex Mono',monospace" font-weight="600" font-size="26" fill="#E8A94D" text-anchor="middle">86</text>
+          </svg>
+        </div>
+      </div>
+      <div class="body">
+        <span class="letter">Opción B — Foco</span>
+        <div class="name">Mira / reticle + 86</div>
+        <p class="desc">Cuatro escuadras de encuadre (como el foco de una cámara) alrededor del
+          número 86. Transmite precisión: "enfocamos el problema y lo automatizamos".</p>
+        <p class="fit"><b>Ideal para:</b> un perfil más developer/técnico, tipo herramienta de
+          precisión. Funciona muy bien chico (favicon).</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="stages">
+        <div class="stage light">
+          <svg viewBox="0 0 120 120" style="width:68px;height:68px">
+            <polygon points="30,18 90,18 90,58 60,104 30,58" fill="none" stroke="#111110" stroke-width="4" stroke-linejoin="round"/>
+            <polyline points="46,48 58,60 46,72" fill="none" stroke="#D9891F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="60,48 72,60 60,72" fill="none" stroke="#111110" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="stage dark">
+          <svg viewBox="0 0 120 120" style="width:68px;height:68px">
+            <polygon points="30,18 90,18 90,58 60,104 30,58" fill="none" stroke="#FAF9F5" stroke-width="4" stroke-linejoin="round"/>
+            <polyline points="46,48 58,60 46,72" fill="none" stroke="#E8A94D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="60,48 72,60 60,72" fill="none" stroke="#FAF9F5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="body">
+        <span class="letter">Opción C — Escudo</span>
+        <div class="name">Escudo de gremio</div>
+        <p class="desc">Un escudo clásico (el crest tradicional de un gremio) con dos flechas
+          hacia adelante adentro, representando avance y automatización de procesos.</p>
+        <p class="fit"><b>Ideal para:</b> un aire más serio/institucional — encaja bien con
+          clientes tipo clínicas o campañas políticas.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="stages">
+        <div class="stage light">
+          <svg viewBox="0 0 220 60" style="width:150px">
+            <text x="0" y="45" font-family="'IBM Plex Mono',monospace" font-weight="500" font-size="34" fill="#111110">guild86<tspan fill="#D9891F">_</tspan></text>
+          </svg>
+        </div>
+        <div class="stage dark">
+          <svg viewBox="0 0 220 60" style="width:150px">
+            <text x="0" y="45" font-family="'IBM Plex Mono',monospace" font-weight="500" font-size="34" fill="#FAF9F5">guild86<tspan fill="#E8A94D">_</tspan></text>
+          </svg>
+        </div>
+      </div>
+      <div class="body">
+        <span class="letter">Opción D — Terminal</span>
+        <div class="name">Wordmark sin ícono</div>
+        <p class="desc">Sin isotipo: solo el nombre en minúscula, tipografía mono, con un guion
+          bajo final tipo cursor de terminal parpadeando. Todo texto, cero decoración.</p>
+        <p class="fit"><b>Ideal para:</b> el más minimalista y flexible en tamaños chicos, pero
+          menos "logo" distintivo para redes/avatar (necesitaría un monograma aparte).</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <p><b>Mi recomendación:</b> la Opción A (sello hexagonal) es la que mejor combina "gremio" +
+      "IA" en un solo símbolo y es la más memorable como ícono de marca — por eso arranqué
+      armando el manual completo con esa. Pero las cuatro son válidas.</p>
+    <p>Decime cuál te cierra (o si querés mezclar, ej. "el escudo de la C pero con los nodos de
+      la A adentro") y actualizo el manual de marca con la versión final.</p>
+  </div>
+</div>

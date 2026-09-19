@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <polyline points="25,45 25,25 45,25" fill="none" stroke="#111110" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="75,25 95,25 95,45" fill="none" stroke="#111110" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="95,75 95,95 75,95" fill="none" stroke="#111110" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="45,95 25,95 25,75" fill="none" stroke="#111110" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="60" y="70" font-family="'IBM Plex Mono', monospace" font-weight="600" font-size="26" fill="#D9891F" text-anchor="middle">86</text>
+</svg>
