@@ -40,12 +40,14 @@
   });
 
   /* ---------------------------------------------------------------------
-     Scroll reveal
+     Scroll reveal (fades/slides + square mask reveals on photo frames)
   --------------------------------------------------------------------- */
   const revealEls = document.querySelectorAll("[data-reveal]");
+  const maskEls = document.querySelectorAll("[data-reveal-mask]");
 
   if (reducedMotion || !("IntersectionObserver" in window)) {
     revealEls.forEach((el) => el.classList.add("in-view"));
+    maskEls.forEach((el) => el.classList.add("in-view"));
   } else {
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -62,6 +64,23 @@
       el.style.transitionDelay = `${Math.min(i % 5, 4) * 60}ms`;
       revealObserver.observe(el);
     });
+
+    // Masked elements are clipped down to a tiny sliver before reveal, so
+    // observing them directly starves the intersection ratio below any
+    // threshold. Observe their (unclipped) parent instead.
+    const maskObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const child = entry.target.querySelector("[data-reveal-mask]");
+            if (child) child.classList.add("in-view");
+            maskObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+    );
+    maskEls.forEach((el) => maskObserver.observe(el.parentElement || el));
   }
 
   /* ---------------------------------------------------------------------
@@ -92,6 +111,22 @@
   const processFill = document.getElementById("process-line-fill");
   const processSteps = document.querySelectorAll(".process-step");
 
+  /* ---------------------------------------------------------------------
+     Parallax sutil — planos de fondo/medio a velocidades distintas
+  --------------------------------------------------------------------- */
+  const parallaxEls = Array.from(document.querySelectorAll("[data-parallax]")).map((el) => ({
+    el,
+    factor: parseFloat(el.dataset.parallax) || 0,
+  }));
+
+  /* ---------------------------------------------------------------------
+     Brand moment: el Bravo Square crece hasta llenar la pantalla
+  --------------------------------------------------------------------- */
+  const brandMoment = document.getElementById("brand-moment");
+  const bmSquare = document.getElementById("bm-square");
+  const bmLine1 = brandMoment ? brandMoment.querySelector(".bm-line-1") : null;
+  const bmLine2 = brandMoment ? brandMoment.querySelector(".bm-line-2") : null;
+
   let ticking = false;
 
   const updateScrollLinked = () => {
@@ -120,6 +155,36 @@
         const r = step.getBoundingClientRect();
         step.classList.toggle("is-active", r.top < scanY);
       });
+    }
+
+    if (parallaxEls.length) {
+      parallaxEls.forEach(({ el, factor }) => {
+        const rect = el.getBoundingClientRect();
+        const centerDelta = rect.top + rect.height / 2 - viewportH / 2;
+        el.style.transform = `translateY(${(-centerDelta * factor).toFixed(2)}px)`;
+      });
+    }
+
+    if (brandMoment && bmSquare) {
+      const rect = brandMoment.getBoundingClientRect();
+      const total = rect.height - viewportH;
+      const progressed = -rect.top;
+      const pct = Math.min(1, Math.max(0, total > 0 ? progressed / total : 0));
+
+      if (bmLine1) bmLine1.classList.toggle("is-visible", pct >= 0.03 && pct < 0.3);
+      if (bmLine2) bmLine2.classList.toggle("is-visible", pct >= 0.32 && pct < 0.92);
+
+      const maxSize = Math.hypot(viewportH, window.innerWidth) * 1.15;
+      const growStart = 0.34;
+      const growEnd = 0.86;
+      let size = 14;
+      if (pct > growStart) {
+        const growPct = Math.min(1, (pct - growStart) / (growEnd - growStart));
+        const eased = growPct * growPct * (3 - 2 * growPct);
+        size = 14 + eased * (maxSize - 14);
+      }
+      bmSquare.style.width = `${size}px`;
+      bmSquare.style.height = `${size}px`;
     }
 
     ticking = false;

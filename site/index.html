@@ -48,20 +48,31 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="inicio">
-    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="hero-bg-square" data-parallax="0.06" aria-hidden="true"></div>
 
     <div class="hero-inner">
-      <p class="hero-eyebrow" data-reveal><i class="sq"></i>Transformación digital B2B</p>
+      <div class="hero-copy">
+        <p class="hero-eyebrow" data-reveal><i class="sq"></i>Transformación digital B2B</p>
 
-      <div class="hero-logo-wrap" data-reveal>
-        <img class="hero-logo" src="assets/bravo-wordmark.png" alt="Bravo." width="499" height="148">
-        <span class="hero-logo-dot" aria-hidden="true"></span>
+        <div class="hero-logo-wrap" data-reveal>
+          <img class="hero-logo" src="assets/bravo-wordmark.png" alt="Bravo." width="499" height="148">
+          <span class="hero-logo-dot" aria-hidden="true"></span>
+        </div>
+
+        <p class="hero-slogan" data-reveal>
+          Transformación digital a medida,<br>
+          con firma propia.
+        </p>
       </div>
 
-      <p class="hero-slogan" data-reveal>
-        Transformación digital a medida,<br>
-        con firma propia.
-      </p>
+      <!-- midground plane — photo revealed through a growing Bravo Square mask -->
+      <div class="hero-photo-col" data-reveal>
+        <div class="photo-frame hero-photo-frame" data-reveal-mask>
+          <span class="photo-frame-tag">PHOTO</span>
+          <p class="photo-frame-caption">Fotografía editorial vertical — manos trabajando sobre laptop, luz natural, oficina neutra.</p>
+        </div>
+        <span class="bravo-square photo-frame--seal hero-photo-seal" aria-hidden="true"></span>
+      </div>
 
       <div class="hero-foot">
         <p class="hero-desc" data-reveal>
@@ -74,27 +85,6 @@
           <a href="#contacto" class="btn btn-solid"><span>Hablemos</span></a>
         </div>
       </div>
-    </div>
-
-    <!-- abstract systems visual: nodes + connecting lines -->
-    <div class="hero-system" aria-hidden="true" data-reveal>
-      <svg viewBox="0 0 420 420" fill="none">
-        <g class="hs-lines" stroke="#d8d8d5" stroke-width="1">
-          <line x1="60" y1="70" x2="220" y2="150" />
-          <line x1="220" y1="150" x2="360" y2="90" />
-          <line x1="220" y1="150" x2="150" y2="290" />
-          <line x1="220" y1="150" x2="340" y2="310" />
-          <line x1="150" y1="290" x2="70" y2="360" />
-        </g>
-        <g class="hs-nodes">
-          <circle cx="60" cy="70" r="4" />
-          <circle cx="360" cy="90" r="4" />
-          <circle cx="150" cy="290" r="4" />
-          <circle cx="340" cy="310" r="4" />
-          <circle cx="70" cy="360" r="4" />
-          <circle class="hs-node-main" cx="220" cy="150" r="7" />
-        </g>
-      </svg>
     </div>
 
     <div class="scroll-cue" aria-hidden="true">
@@ -227,9 +217,14 @@
             </ul>
           </div>
           <div class="service-visual sv-chat" aria-hidden="true">
-            <div class="sv-bubble sv-bubble-in">¿Tienen turno para el jueves?</div>
-            <div class="sv-typing"><span></span><span></span><span></span></div>
-            <div class="sv-bubble sv-bubble-out">Sí — quedan lugares a las 10 y a las 16.</div>
+            <p class="sv-wa-label">WHATSAPP</p>
+            <p class="sv-bubble">"Hola, quisiera hacer un pedido."</p>
+            <div class="sv-flow">
+              <p class="sv-flow-step">Consulta interpretada</p>
+              <p class="sv-flow-step">Stock verificado</p>
+              <p class="sv-flow-step">Pedido #2048</p>
+              <p class="sv-flow-step sv-flow-final">Confirmado <span class="bravo-square"></span></p>
+            </div>
           </div>
         </div>
       </article>
@@ -260,11 +255,11 @@
                 <line x1="120" y1="100" x2="210" y2="170" />
               </g>
               <g class="sv-int-nodes" fill="#0a0a0a">
-                <circle cx="30" cy="30" r="5" />
-                <circle cx="210" cy="30" r="5" />
-                <circle cx="30" cy="170" r="5" />
-                <circle cx="210" cy="170" r="5" />
-                <circle cx="120" cy="100" r="8" fill="#1d49a7" />
+                <rect x="24" y="24" width="12" height="12" />
+                <rect x="204" y="24" width="12" height="12" />
+                <rect x="24" y="164" width="12" height="12" />
+                <rect x="204" y="164" width="12" height="12" />
+                <rect x="106" y="86" width="28" height="28" fill="#1d49a7" />
               </g>
             </svg>
           </div>
@@ -274,10 +269,17 @@
     </div>
   </section>
 
+  <!-- ============ BRAND MOMENT: el Bravo Square llena la pantalla ============ -->
+  <section class="brand-moment" id="brand-moment" aria-hidden="true">
+    <div class="brand-moment-sticky">
+      <p class="bm-line bm-line-1">NO VENDEMOS<br>TECNOLOGÍA.</p>
+      <p class="bm-line bm-line-2">RESOLVEMOS LO QUE<br>LA TECNOLOGÍA PUEDE<br>MEJORAR. <span class="bravo-square"></span></p>
+      <div class="bm-square" id="bm-square"></div>
+    </div>
+  </section>
+
   <!-- ============ A MEDIDA ============ -->
   <section class="bespoke" id="a-medida">
-    <div class="bespoke-grid-bg" aria-hidden="true"></div>
-
     <h2 class="bespoke-title" data-reveal>
       SI CADA NEGOCIO<br>
       FUNCIONA DISTINTO,<br>
@@ -336,6 +338,15 @@
         <div class="process-content"><h3>Evolucionar</h3><p>Medimos, mantenemos y optimizamos la solución a medida que el negocio evoluciona.</p></div>
       </li>
     </ol>
+
+    <!-- pause: a full-bleed photo break inside the process's movement -->
+    <div class="process-photo-break" data-reveal>
+      <div class="photo-frame process-photo-frame" data-reveal-mask>
+        <span class="photo-frame-tag">PHOTO</span>
+        <p class="photo-frame-caption">Fotografía documental horizontal — equipo trabajando en un espacio real, sin poses.</p>
+      </div>
+      <span class="bravo-square photo-frame--seal"></span>
+    </div>
   </section>
 
   <!--
@@ -351,29 +362,38 @@
 
   <!-- ============ BRAVO / SOBRE NOSOTROS ============ -->
   <section class="about" id="bravo">
-    <span class="eyebrow" data-reveal><i class="sq"></i>Bravo</span>
-    <h2 class="about-title" data-reveal>TECNOLOGÍA<br>PENSADA DESDE<br>EL NEGOCIO.</h2>
+    <div class="about-content">
+      <span class="eyebrow" data-reveal><i class="sq"></i>Bravo</span>
+      <h2 class="about-title" data-reveal>TECNOLOGÍA<br>PENSADA DESDE<br>EL NEGOCIO.</h2>
 
-    <div class="about-grid">
-      <p class="about-text" data-reveal>
-        Bravo nace para transformar problemas y procesos complejos en
-        soluciones digitales simples, eficientes y escalables.
-      </p>
-      <p class="about-text about-text-strong" data-reveal>
-        No partimos de una tecnología.<br>
-        Partimos de una necesidad.
-      </p>
+      <div class="about-grid">
+        <p class="about-text" data-reveal>
+          Bravo nace para transformar problemas y procesos complejos en
+          soluciones digitales simples, eficientes y escalables.
+        </p>
+        <p class="about-text about-text-strong" data-reveal>
+          No partimos de una tecnología.<br>
+          Partimos de una necesidad.
+        </p>
+      </div>
+
+      <div class="about-placeholders" data-reveal>
+        Próximamente — Equipo · Partners · Tecnologías · Clientes · Certificaciones
+      </div>
     </div>
 
-    <div class="about-placeholders" data-reveal>
-      Próximamente — Equipo · Partners · Tecnologías · Clientes · Certificaciones
+    <!-- background plane — photo bleeding off the viewport edge -->
+    <div class="about-photo-col" data-parallax="0.05" aria-hidden="true">
+      <div class="photo-frame about-photo-frame" data-reveal-mask>
+        <span class="photo-frame-tag">PHOTO</span>
+        <p class="photo-frame-caption">Detalle arquitectónico contemporáneo — luz y materiales, sin figuras.</p>
+      </div>
+      <span class="bravo-square photo-frame--seal about-photo-seal"></span>
     </div>
   </section>
 
   <!-- ============ CONTACTO ============ -->
   <section class="contact" id="contacto">
-    <div class="contact-grid-bg" aria-hidden="true"></div>
-
     <div class="contact-copy">
       <span class="eyebrow" data-reveal><i class="sq"></i>Contacto</span>
       <h2 data-reveal>

@@ -130,13 +130,72 @@ svg { display: block; }
   max-width: 46ch;
 }
 
-/* subtle blueprint grid — precision, not decoration */
-.grid-bg-mixin {
-  background-image:
-    linear-gradient(to right, var(--line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
-  background-size: 64px 64px;
+/* ==========================================================================
+   Bravo Square — the brand's living graphic device. Never a circle.
+   ========================================================================== */
+
+.bravo-square {
+  background: var(--blue);
+  display: block;
 }
+
+/* ==========================================================================
+   Photo placeholders — designed voids for future photography.
+   Editorial / human / architectural direction, never stock-tech cliché.
+   ========================================================================== */
+
+.photo-frame {
+  position: relative;
+  overflow: hidden;
+  background: #eeece6;
+  display: flex;
+  align-items: flex-end;
+}
+.photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(135deg, rgba(10,10,10,.035) 0 1px, transparent 1px 13px);
+}
+.photo-frame-tag {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: var(--white);
+  background: var(--ink);
+  padding: 5px 9px;
+  z-index: 2;
+}
+.photo-frame-caption {
+  position: relative;
+  z-index: 2;
+  padding: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  background: linear-gradient(to top, rgba(255,255,255,.92), rgba(255,255,255,0));
+  width: 100%;
+}
+
+.photo-frame--seal {
+  position: absolute;
+  right: -14px;
+  bottom: -14px;
+  width: 30px;
+  height: 30px;
+  z-index: 3;
+}
+
+/* square mask reveal: starts as a tiny square in the middle, grows to full frame */
+[data-reveal-mask] {
+  clip-path: inset(48% 48% 48% 48%);
+  transition: clip-path 1.1s var(--ease);
+}
+[data-reveal-mask].in-view { clip-path: inset(0% 0% 0% 0%); }
 
 /* ==========================================================================
    Buttons — custom wipe treatment, no default SaaS look
@@ -335,15 +394,17 @@ svg { display: block; }
   overflow: hidden;
 }
 
-.hero-grid-bg {
+/* background plane — an oversized Bravo Square, mostly off-canvas */
+.hero-bg-square {
   position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, var(--line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: linear-gradient(to bottom, black, transparent 88%);
-  opacity: .8;
+  right: -18vw;
+  top: -14vw;
+  width: 52vw;
+  height: 52vw;
+  max-width: 760px;
+  max-height: 760px;
+  background: var(--blue-tint);
+  z-index: 0;
 }
 
 .hero-inner {
@@ -351,7 +412,14 @@ svg { display: block; }
   z-index: 2;
   width: 100%;
   padding: 60px var(--gutter) 90px;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  grid-template-areas: "copy photo" "foot foot";
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
 }
+
+.hero-copy { grid-area: copy; min-width: 0; }
 
 .hero-eyebrow {
   display: flex;
@@ -395,7 +463,8 @@ svg { display: block; }
 }
 
 .hero-foot {
-  margin-top: 54px;
+  grid-area: foot;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -412,32 +481,27 @@ svg { display: block; }
 
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
-.hero-system {
-  position: absolute;
-  right: clamp(10px, 4vw, 60px);
-  top: 50%;
-  transform: translateY(-46%);
-  width: clamp(220px, 26vw, 380px);
-  z-index: 1;
-  opacity: .9;
+/* midground plane — editorial photo, revealed by a growing Bravo Square mask */
+.hero-photo-col {
+  grid-area: photo;
+  position: relative;
 }
-.hero-system svg { width: 100%; height: auto; }
-.hs-lines line {
-  stroke-dasharray: 260;
-  stroke-dashoffset: 260;
-  animation: hs-draw 1.8s var(--ease-soft) forwards;
-  animation-delay: .5s;
+.hero-photo-frame {
+  aspect-ratio: 4 / 5;
+  width: 100%;
 }
-@keyframes hs-draw { to { stroke-dashoffset: 0; } }
-.hs-nodes circle { fill: var(--ink-faint); }
-.hs-node-main { fill: var(--blue) !important; animation: hs-pulse 2.6s ease-in-out infinite 2s; }
-@keyframes hs-pulse {
-  0%, 100% { r: 7; opacity: 1; }
-  50% { r: 9; opacity: .7; }
+.hero-photo-seal {
+  width: 34px;
+  height: 34px;
 }
 
 @media (max-width: 980px) {
-  .hero-system { display: none; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas: "copy" "photo" "foot";
+  }
+  .hero-photo-col { max-width: 300px; margin-top: 8px; }
+  .hero-bg-square { width: 76vw; height: 76vw; right: -30vw; top: -20vw; }
 }
 
 .scroll-cue {
@@ -716,7 +780,7 @@ svg { display: block; }
   grid-column: 2;
   margin-top: 8px;
   margin-bottom: 44px;
-  height: 130px;
+  min-height: 130px;
   max-width: 420px;
 }
 
@@ -766,30 +830,54 @@ svg { display: block; }
 .service-row[data-open="true"] .sv-step-final { width: 44px; opacity: 1; }
 .service-row[data-open="true"] .sv-dot-final { transform: scale(1); }
 
-.sv-chat { display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+.sv-chat { height: auto; min-height: 130px; display: flex; flex-direction: column; gap: 0; justify-content: center; }
+.sv-wa-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--ink-faint);
+  margin-bottom: 10px;
+}
 .sv-bubble {
+  align-self: flex-start;
   font-size: 13.5px;
   padding: 10px 14px;
   border: 1px solid var(--line-strong);
   max-width: 82%;
+  margin-bottom: 14px;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity .45s var(--ease), transform .45s var(--ease);
 }
-.sv-bubble-in { align-self: flex-start; }
-.sv-bubble-out { align-self: flex-end; background: var(--blue); color: var(--white); border-color: var(--blue); }
-.sv-typing {
-  align-self: flex-start;
-  display: flex; gap: 4px;
-  padding: 10px 14px;
-  border: 1px solid var(--line-strong);
+.sv-flow { display: flex; flex-direction: column; }
+.sv-flow-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--ink-faint);
+  padding-block: 7px;
   opacity: 0;
-  transition: opacity .3s var(--ease);
+  transform: translateY(6px);
+  transition: opacity .4s var(--ease), transform .4s var(--ease), color .3s var(--ease);
 }
-.sv-typing span { width: 5px; height: 5px; background: var(--ink-faint); border-radius: 50%; }
-.service-row[data-open="true"] .sv-bubble-in { opacity: 1; transform: none; transition-delay: .1s; }
-.service-row[data-open="true"] .sv-typing { opacity: 1; transition-delay: .5s; }
-.service-row[data-open="true"] .sv-bubble-out { opacity: 1; transform: none; transition-delay: 1.3s; }
+.sv-flow-step::before { content: ""; width: 12px; height: 1px; background: var(--line-strong); flex-shrink: 0; }
+.sv-flow-final {
+  color: var(--ink);
+  margin-top: 2px;
+}
+.sv-flow-final .bravo-square { width: 8px; height: 8px; display: inline-block; margin-left: 6px; transform: scale(0); transition: transform .3s var(--ease) .1s; }
+.service-row[data-open="true"] .sv-bubble { opacity: 1; transform: none; transition-delay: .05s; }
+.service-row[data-open="true"] .sv-flow-step { opacity: 1; transform: none; }
+.service-row[data-open="true"] .sv-flow-step:nth-child(1) { transition-delay: .35s; }
+.service-row[data-open="true"] .sv-flow-step:nth-child(2) { transition-delay: .55s; }
+.service-row[data-open="true"] .sv-flow-step:nth-child(3) { transition-delay: .75s; }
+.service-row[data-open="true"] .sv-flow-final { transition-delay: .95s; }
+.service-row[data-open="true"] .sv-flow-final::before { background: var(--blue); }
+.service-row[data-open="true"] .sv-flow-final { color: var(--blue); }
+.service-row[data-open="true"] .sv-flow-final .bravo-square { transform: scale(1); transition-delay: 1.1s; }
 
 .sv-integrations svg { width: 130px; height: 108px; }
 .sv-int-lines line {
@@ -802,7 +890,7 @@ svg { display: block; }
 .sv-int-lines line:nth-child(3) { transition-delay: .25s; }
 .sv-int-lines line:nth-child(4) { transition-delay: .35s; }
 .service-row[data-open="true"] .sv-int-lines line { stroke-dashoffset: 0; }
-.sv-int-nodes circle { transition: r .3s var(--ease); }
+.sv-int-nodes rect { transition: transform .3s var(--ease); transform-box: fill-box; transform-origin: center; }
 
 @media (max-width: 640px) {
   .service-head { grid-template-columns: 40px 1fr 26px; gap: 10px; padding-block: 22px; }
@@ -810,6 +898,52 @@ svg { display: block; }
   .service-text, .service-desc, .service-tags, .service-visual { grid-column: 1; }
   .service-text { grid-template-columns: 1fr; padding-bottom: 30px; }
   .service-ghost { display: none; }
+}
+
+/* ==========================================================================
+   Brand moment — the Bravo Square grows to fill the screen.
+   One transition, used once, between Servicios and A medida.
+   ========================================================================== */
+
+.brand-moment {
+  position: relative;
+  height: 320vh;
+}
+.brand-moment-sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+}
+.bm-line {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(34px, 7vw, 84px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  text-align: center;
+  padding-inline: var(--gutter);
+  opacity: 0;
+  transition: opacity .5s var(--ease);
+}
+.bm-line-1.is-visible, .bm-line-2.is-visible { opacity: 1; }
+.bm-line-2 { position: absolute; }
+.bm-line-2 span.bravo-square { display: inline-block; width: .5em; height: .5em; margin-left: .1em; vertical-align: middle; }
+
+.bm-square {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  background: var(--blue);
 }
 
 /* ==========================================================================
@@ -822,16 +956,6 @@ svg { display: block; }
   color: var(--white);
   padding: clamp(100px, 16vw, 200px) var(--gutter);
   overflow: hidden;
-}
-
-.bespoke-grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(ellipse at center, black, transparent 75%);
 }
 
 .bespoke-title {
@@ -940,10 +1064,9 @@ svg { display: block; }
   position: absolute;
   left: -40px;
   top: 40px;
-  width: 11px; height: 11px;
+  width: 10px; height: 10px;
   background: var(--white);
   border: 1px solid var(--line-strong);
-  border-radius: 50%;
   transform: translateX(-5px);
   transition: background-color .3s var(--ease), border-color .3s var(--ease);
 }
@@ -981,11 +1104,31 @@ svg { display: block; }
   .process-ghost { display: none; }
 }
 
+/* full-bleed photo break — a pause inside the process's movement */
+.process-photo-break {
+  margin-top: clamp(56px, 9vw, 100px);
+  position: relative;
+}
+.process-photo-frame {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+}
+@media (max-width: 700px) {
+  .process-photo-frame { aspect-ratio: 4 / 5; }
+}
+
 /* ==========================================================================
    Bravo / Sobre nosotros
    ========================================================================== */
 
-.about { border-top: 1px solid var(--line); padding: clamp(90px, 13vw, 150px) var(--gutter) clamp(90px, 13vw, 150px); }
+.about {
+  position: relative;
+  border-top: 1px solid var(--line);
+  padding: clamp(90px, 13vw, 150px) 0 clamp(90px, 13vw, 150px) var(--gutter);
+  overflow: hidden;
+}
+
+.about-content { max-width: 62%; }
 
 .about-title {
   margin-top: 22px;
@@ -1017,6 +1160,25 @@ svg { display: block; }
   color: var(--ink-faint);
 }
 
+/* background plane — photo bleeding off the right edge, partly out of view */
+.about-photo-col {
+  position: absolute;
+  right: -6vw;
+  top: 12%;
+  width: 30vw;
+  min-width: 260px;
+  max-width: 420px;
+  z-index: 0;
+}
+.about-photo-frame { aspect-ratio: 3 / 4; }
+.about-photo-seal { width: 30px; height: 30px; }
+
+@media (max-width: 1100px) {
+  .about-content { max-width: 100%; }
+  .about-photo-col { display: none; }
+  .about { padding-right: var(--gutter); }
+}
+
 @media (max-width: 780px) {
   .about-grid { grid-template-columns: 1fr; gap: 28px; }
 }
@@ -1033,17 +1195,6 @@ svg { display: block; }
   grid-template-columns: .95fr 1.05fr;
   gap: clamp(40px, 8vw, 100px);
   overflow: hidden;
-}
-
-.contact-grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, var(--line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: linear-gradient(to bottom, transparent, black 20%, black 70%, transparent);
-  opacity: .7;
 }
 
 .contact-copy { position: relative; z-index: 1; }
