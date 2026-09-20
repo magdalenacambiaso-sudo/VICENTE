@@ -33,3 +33,32 @@ brand/
 - **Fase 3:** plantillas de redes sociales, tarjeta personal, firma de email
 
 Ver el roadmap completo en [`brand/brand-guidelines.md`](brand/brand-guidelines.md#7-próximos-pasos).
+
+---
+
+## BRAVO — sitio web (proyecto aparte)
+
+`site/` contiene el sitio web completo de **BRAVO**, una empresa B2B de
+transformación digital ("Transformación digital a medida, con firma propia.").
+Es un proyecto de marca distinto al de Guild86/Vicente documentado arriba.
+
+Es un sitio estático (HTML/CSS/JS, sin dependencias ni build step). Para
+verlo localmente:
+
+```
+cd site
+python3 -m http.server 8000
+# abrir http://localhost:8000
+```
+
+Estructura:
+
+```
+site/
+  index.html       — todas las secciones (hero, servicios, casos, proceso, contacto, etc.)
+  css/style.css     — sistema de diseño (tokens, tipografía, componentes)
+  js/main.js        — reveals al hacer scroll, acordeón de servicios, menú móvil, formulario
+```
+
+Los casos en la sección "Casos" son placeholders explícitos, listos para
+reemplazarse por proyectos reales.
