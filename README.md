@@ -43,9 +43,18 @@ transformación digital ("Transformación digital a medida, con firma propia.").
 Es un proyecto de marca distinto al de Guild86/Vicente documentado arriba.
 
 La identidad visual nace del logo oficial (`site/assets/bravo-lockup.png` /
-`bravo-wordmark.png`): Helvetica, blanco, negro y el punto azul Bravo como
-recurso gráfico recurrente. Sin serif, sin fuentes externas — solo el stack
-del sistema (`Helvetica Neue`, Helvetica, Arial).
+`bravo-wordmark.png`): Helvetica, blanco, negro y **el Bravo Square** —el
+cuadrado azul del logo, tratado como el dispositivo gráfico central de toda
+la marca, nunca como decoración. Sin serif, sin fuentes externas — solo el
+stack del sistema (`Helvetica Neue`, Helvetica, Arial).
+
+El componente central es `.reveal-window` (`css/style.css`): fotografía
+humana desaturada, borrosa/obstruida en todo el frame excepto dentro del
+Bravo Square, que funciona literalmente como una ventana de claridad —
+responde al cursor en desktop (puntero fino) y se revela al entrar en
+viewport en mobile. Las fotos que usa hoy son referencias temporales de
+moodboard, no assets finales — ver
+`site/assets/photo-placeholders/README.md`.
 
 Es un sitio estático (HTML/CSS/JS, sin dependencias ni build step). Para
 verlo localmente:

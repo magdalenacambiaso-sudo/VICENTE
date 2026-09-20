@@ -65,13 +65,15 @@
         </p>
       </div>
 
-      <!-- midground plane — photo revealed through a growing Bravo Square mask -->
+      <!-- midground plane — a person, obstructed by nothing but distance;
+           the Bravo Square is the one place the image resolves into focus. -->
       <div class="hero-photo-col" data-reveal>
-        <div class="photo-frame hero-photo-frame" data-reveal-mask>
-          <span class="photo-frame-tag">PHOTO</span>
-          <p class="photo-frame-caption">Fotografía editorial vertical — manos trabajando sobre laptop, luz natural, oficina neutra.</p>
+        <div class="reveal-window hero-photo-frame reveal-window--follow" data-reveal
+             style="--wx:22%; --wy:26%; --ws:30%">
+          <img class="rw-img rw-blur" src="assets/photo-placeholders/hero-figure.jpg" alt="">
+          <img class="rw-img rw-clear" src="assets/photo-placeholders/hero-figure.jpg" alt="Fotografía editorial de referencia — a reemplazar por fotografía propia de Bravo.">
+          <span class="rw-frame" aria-hidden="true"></span>
         </div>
-        <span class="bravo-square photo-frame--seal hero-photo-seal" aria-hidden="true"></span>
       </div>
 
       <div class="hero-foot">
@@ -161,11 +163,15 @@
             </ul>
           </div>
           <div class="service-visual sv-platforms" aria-hidden="true">
-            <div class="sv-bar" style="--w:88%"></div>
-            <div class="sv-bar" style="--w:46%"></div>
-            <div class="sv-bar" style="--w:70%"></div>
-            <div class="sv-bar" style="--w:32%"></div>
-            <div class="sv-bar" style="--w:60%"></div>
+            <div class="sv-ui-layer sv-ui-blur">
+              <span style="--w:82%"></span><span style="--w:54%"></span>
+              <span style="--w:68%"></span><span style="--w:40%"></span>
+            </div>
+            <div class="sv-ui-layer sv-ui-clear">
+              <span style="--w:82%"></span><span style="--w:54%"></span>
+              <span style="--w:68%"></span><span style="--w:40%"></span>
+            </div>
+            <span class="sv-ui-frame"></span>
           </div>
         </div>
       </article>
@@ -219,6 +225,7 @@
           <div class="service-visual sv-chat" aria-hidden="true">
             <p class="sv-wa-label">WHATSAPP</p>
             <p class="sv-bubble">"Hola, quisiera hacer un pedido."</p>
+            <div class="sv-mediator" aria-hidden="true"><span class="bravo-square"></span></div>
             <div class="sv-flow">
               <p class="sv-flow-step">Consulta interpretada</p>
               <p class="sv-flow-step">Stock verificado</p>
@@ -339,13 +346,16 @@
       </li>
     </ol>
 
-    <!-- pause: a full-bleed photo break inside the process's movement -->
+    <!-- pause: the process's one manifesto moment.
+         Detrás de la tecnología hay personas — obstructed by glass,
+         resolved by the Bravo Square. -->
     <div class="process-photo-break" data-reveal>
-      <div class="photo-frame process-photo-frame" data-reveal-mask>
-        <span class="photo-frame-tag">PHOTO</span>
-        <p class="photo-frame-caption">Fotografía documental horizontal — equipo trabajando en un espacio real, sin poses.</p>
+      <div class="reveal-window process-photo-frame" data-reveal style="--wx:38%; --wy:32%; --ws:26%">
+        <img class="rw-img rw-blur" src="assets/photo-placeholders/manifesto-glass.jpg" alt="">
+        <img class="rw-img rw-clear" src="assets/photo-placeholders/manifesto-glass.jpg" alt="Fotografía editorial de referencia — a reemplazar por fotografía propia de Bravo.">
+        <span class="rw-frame" aria-hidden="true"></span>
+        <p class="process-photo-caption">Detrás de la tecnología<br>hay personas.</p>
       </div>
-      <span class="bravo-square photo-frame--seal"></span>
     </div>
   </section>
 
@@ -382,13 +392,14 @@
       </div>
     </div>
 
-    <!-- background plane — photo bleeding off the viewport edge -->
-    <div class="about-photo-col" data-parallax="0.05" aria-hidden="true">
-      <div class="photo-frame about-photo-frame" data-reveal-mask>
-        <span class="photo-frame-tag">PHOTO</span>
-        <p class="photo-frame-caption">Detalle arquitectónico contemporáneo — luz y materiales, sin figuras.</p>
+    <!-- background plane — photo bleeding off the viewport edge.
+         A structure built to fit exactly two people: a medida. -->
+    <div class="about-photo-col" data-parallax="0.05">
+      <div class="reveal-window about-photo-frame" data-reveal style="--wx:20%; --wy:26%; --ws:22%">
+        <img class="rw-img rw-blur" src="assets/photo-placeholders/about-structure.jpg" alt="">
+        <img class="rw-img rw-clear" src="assets/photo-placeholders/about-structure.jpg" alt="Fotografía editorial de referencia — a reemplazar por fotografía propia de Bravo.">
+        <span class="rw-frame" aria-hidden="true"></span>
       </div>
-      <span class="bravo-square photo-frame--seal about-photo-seal"></span>
     </div>
   </section>
 

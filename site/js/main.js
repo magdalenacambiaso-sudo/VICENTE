@@ -40,14 +40,14 @@
   });
 
   /* ---------------------------------------------------------------------
-     Scroll reveal (fades/slides + square mask reveals on photo frames)
+     Scroll reveal (fades/slides; reveal-windows grow their square from
+     the same .in-view trigger — the clip-path lives on a child, so the
+     observed element's own intersection ratio is never affected by it)
   --------------------------------------------------------------------- */
   const revealEls = document.querySelectorAll("[data-reveal]");
-  const maskEls = document.querySelectorAll("[data-reveal-mask]");
 
   if (reducedMotion || !("IntersectionObserver" in window)) {
     revealEls.forEach((el) => el.classList.add("in-view"));
-    maskEls.forEach((el) => el.classList.add("in-view"));
   } else {
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -64,23 +64,27 @@
       el.style.transitionDelay = `${Math.min(i % 5, 4) * 60}ms`;
       revealObserver.observe(el);
     });
+  }
 
-    // Masked elements are clipped down to a tiny sliver before reveal, so
-    // observing them directly starves the intersection ratio below any
-    // threshold. Observe their (unclipped) parent instead.
-    const maskObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const child = entry.target.querySelector("[data-reveal-mask]");
-            if (child) child.classList.add("in-view");
-            maskObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
-    );
-    maskEls.forEach((el) => maskObserver.observe(el.parentElement || el));
+  /* ---------------------------------------------------------------------
+     Reveal window — the square follows the cursor on precise pointers.
+     REVELAR: a fixed aperture on touch, a responsive one with a mouse.
+  --------------------------------------------------------------------- */
+  const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+  if (hasFinePointer && !reducedMotion) {
+    document.querySelectorAll(".reveal-window--follow").forEach((win) => {
+      const ws = parseFloat(getComputedStyle(win).getPropertyValue("--ws")) || 28;
+      const half = ws / 2;
+      win.addEventListener("pointermove", (e) => {
+        const rect = win.getBoundingClientRect();
+        const px = ((e.clientX - rect.left) / rect.width) * 100;
+        const py = ((e.clientY - rect.top) / rect.height) * 100;
+        const wx = Math.min(100 - ws, Math.max(0, px - half));
+        const wy = Math.min(100 - ws, Math.max(0, py - half));
+        win.style.setProperty("--wx", `${wx}%`);
+        win.style.setProperty("--wy", `${wy}%`);
+      });
+    });
   }
 
   /* ---------------------------------------------------------------------
