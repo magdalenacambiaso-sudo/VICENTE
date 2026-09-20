@@ -6,11 +6,7 @@
 <title>BRAVO — Transformación digital a medida, con firma propia</title>
 <meta name="description" content="Bravo diseña e implementa soluciones digitales a medida: plataformas, automatización de procesos, IA aplicada e integraciones de sistemas.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='62' y='62' width='30' height='30' fill='%231d49a7'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='60' y='60' width='34' height='34' fill='%231d49a7'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,17 +15,18 @@
 
 <!-- ============ NAV ============ -->
 <header class="site-header" id="site-header">
-  <div class="container header-inner">
-    <a href="#inicio" class="logo" aria-label="Bravo — inicio">BRAVO<span class="logo-dot" aria-hidden="true"></span></a>
+  <div class="header-inner">
+    <a href="#inicio" class="brand-mark" aria-label="Bravo — inicio">
+      <img src="assets/bravo-wordmark.png" alt="Bravo." width="499" height="148">
+    </a>
 
     <nav class="main-nav" aria-label="Navegación principal">
-      <a href="#servicios">Servicios</a>
-      <a href="#casos">Casos</a>
-      <a href="#como-trabajamos">Cómo trabajamos</a>
-      <a href="#bravo">Bravo</a>
+      <a href="#servicios"><span>Servicios</span></a>
+      <a href="#como-trabajamos"><span>Cómo trabajamos</span></a>
+      <a href="#bravo"><span>Bravo</span></a>
     </nav>
 
-    <a href="#contacto" class="btn btn-primary nav-cta">Hablemos</a>
+    <a href="#contacto" class="btn btn-solid nav-cta"><span>Hablemos</span></a>
 
     <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
       <span></span><span></span>
@@ -39,11 +36,10 @@
 
 <div class="mobile-menu" id="mobile-menu">
   <nav aria-label="Navegación móvil">
-    <a href="#servicios">Servicios</a>
-    <a href="#casos">Casos</a>
-    <a href="#como-trabajamos">Cómo trabajamos</a>
-    <a href="#bravo">Bravo</a>
-    <a href="#contacto" class="mobile-cta">Hablemos</a>
+    <a href="#servicios"><span class="mm-num">01</span>Servicios</a>
+    <a href="#como-trabajamos"><span class="mm-num">02</span>Cómo trabajamos</a>
+    <a href="#bravo"><span class="mm-num">03</span>Bravo</a>
+    <a href="#contacto" class="mobile-cta"><span class="mm-num">04</span>Hablemos</a>
   </nav>
   <div class="mobile-menu-foot">Buenos Aires, Argentina.</div>
 </div>
@@ -52,375 +48,385 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="inicio">
-    <div class="container hero-inner">
-      <p class="hero-eyebrow" data-reveal>Estudio de transformación digital B2B</p>
+    <div class="hero-grid-bg" aria-hidden="true"></div>
 
-      <h1 class="hero-title">
-        <span class="hero-title-line" data-reveal>BRAVO<span class="dot dot-hero" aria-hidden="true"></span></span>
-        <span class="hero-title-sub" data-reveal>
-          Transformación digital a medida,<br>
-          con firma propia.
-        </span>
-      </h1>
+    <div class="hero-inner">
+      <p class="hero-eyebrow" data-reveal><i class="sq"></i>Transformación digital B2B</p>
+
+      <div class="hero-logo-wrap" data-reveal>
+        <img class="hero-logo" src="assets/bravo-wordmark.png" alt="Bravo." width="499" height="148">
+        <span class="hero-logo-dot" aria-hidden="true"></span>
+      </div>
+
+      <p class="hero-slogan" data-reveal>
+        Transformación digital a medida,<br>
+        con firma propia.
+      </p>
 
       <div class="hero-foot">
         <p class="hero-desc" data-reveal>
-          Diseñamos e implementamos soluciones digitales que simplifican procesos,
-          conectan operaciones y crean nuevas oportunidades de crecimiento.
+          Diseñamos e implementamos soluciones digitales que simplifican
+          procesos, conectan operaciones y crean nuevas oportunidades de
+          crecimiento.
         </p>
         <div class="hero-ctas" data-reveal>
-          <a href="#servicios" class="btn btn-ghost">Conocé lo que hacemos</a>
-          <a href="#contacto" class="btn btn-primary">Hablemos</a>
+          <a href="#servicios" class="btn btn-outline"><span>Conocé lo que hacemos</span><i class="arrow"></i></a>
+          <a href="#contacto" class="btn btn-solid"><span>Hablemos</span></a>
         </div>
       </div>
     </div>
 
+    <!-- abstract systems visual: nodes + connecting lines -->
+    <div class="hero-system" aria-hidden="true" data-reveal>
+      <svg viewBox="0 0 420 420" fill="none">
+        <g class="hs-lines" stroke="#d8d8d5" stroke-width="1">
+          <line x1="60" y1="70" x2="220" y2="150" />
+          <line x1="220" y1="150" x2="360" y2="90" />
+          <line x1="220" y1="150" x2="150" y2="290" />
+          <line x1="220" y1="150" x2="340" y2="310" />
+          <line x1="150" y1="290" x2="70" y2="360" />
+        </g>
+        <g class="hs-nodes">
+          <circle cx="60" cy="70" r="4" />
+          <circle cx="360" cy="90" r="4" />
+          <circle cx="150" cy="290" r="4" />
+          <circle cx="340" cy="310" r="4" />
+          <circle cx="70" cy="360" r="4" />
+          <circle class="hs-node-main" cx="220" cy="150" r="7" />
+        </g>
+      </svg>
+    </div>
+
     <div class="scroll-cue" aria-hidden="true">
       <span>Desplazate</span>
-      <div class="scroll-cue-line"></div>
+      <div class="scroll-cue-track"><div class="scroll-cue-dot"></div></div>
     </div>
   </section>
 
-  <!-- ============ MANIFIESTO ============ -->
-  <section class="manifesto">
-    <div class="container manifesto-inner">
-      <div class="manifesto-index" data-reveal>
-        <span class="eyebrow"><i class="dot" aria-hidden="true"></i>Filosofía</span>
+  <!-- ============ SPINE: connector from hero into filosofía ============ -->
+  <div class="spine" id="spine-1" aria-hidden="true">
+    <div class="spine-line"><div class="spine-fill"></div></div>
+    <div class="spine-dot"></div>
+  </div>
+
+  <!-- ============ FILOSOFÍA ============ -->
+  <section class="philosophy" id="filosofia">
+    <div class="philosophy-inner">
+      <div class="philosophy-sticky">
+        <span class="eyebrow" data-reveal><i class="sq"></i>Filosofía</span>
+        <h2 class="philosophy-title" data-reveal>
+          <span class="pt-line">PRIMERO</span>
+          <span class="pt-line">ENTENDEMOS</span>
+          <span class="pt-line pt-accent">EL NEGOCIO.</span>
+        </h2>
       </div>
-      <h2 class="manifesto-title" data-reveal>
-        Primero entendemos<br>el negocio.<br>
-        <em>Después</em> pensamos<br>la tecnología.
-      </h2>
-      <p class="manifesto-text" data-reveal>
-        No partimos de una solución predeterminada. Analizamos cómo funciona
-        cada empresa, identificamos oportunidades y desarrollamos la
-        tecnología adecuada para resolverlas.
-      </p>
+
+      <div class="philosophy-scroller">
+        <p class="philosophy-lede" data-reveal>
+          No partimos de una solución predeterminada. Analizamos cómo
+          funciona cada empresa, identificamos oportunidades y desarrollamos
+          la tecnología adecuada para resolverlas.
+        </p>
+
+        <ul class="variable-list" id="variable-list">
+          <li data-reveal><span class="v-dot"></span>Personas</li>
+          <li data-reveal><span class="v-dot"></span>Procesos</li>
+          <li data-reveal><span class="v-dot"></span>Sistemas</li>
+          <li data-reveal><span class="v-dot"></span>Clientes</li>
+          <li data-reveal><span class="v-dot"></span>Objetivos</li>
+        </ul>
+
+        <h3 class="philosophy-after" data-reveal>
+          PENSAMOS <span>LA TECNOLOGÍA.</span>
+        </h3>
+      </div>
     </div>
   </section>
 
   <!-- ============ SERVICIOS ============ -->
   <section class="services" id="servicios">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow"><i class="dot" aria-hidden="true"></i>Servicios</span>
-        <h2>Lo que hacemos</h2>
-        <p>Cuatro formas de trabajar. Un mismo punto de partida: tu negocio.</p>
-      </div>
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><i class="sq"></i>Servicios</span>
+      <h2>LO QUE<br>HACEMOS</h2>
+      <p>Cuatro formas de trabajar. Un mismo punto de partida: tu negocio.</p>
+    </div>
 
-      <div class="services-list">
+    <div class="services-list">
 
-        <article class="service-row" data-reveal>
-          <button class="service-row-head" aria-expanded="false">
-            <span class="service-num">01</span>
-            <span class="service-title">Plataformas digitales</span>
-            <span class="service-toggle" aria-hidden="true"></span>
-          </button>
-          <div class="service-row-body">
+      <!-- 01 PLATAFORMAS -->
+      <article class="service-row" id="s01" data-reveal>
+        <span class="service-ghost" aria-hidden="true">01</span>
+        <button class="service-head" aria-expanded="false">
+          <span class="service-num">01</span>
+          <span class="service-name">Plataformas<br>digitales</span>
+          <span class="service-plus" aria-hidden="true"></span>
+        </button>
+
+        <div class="service-body">
+          <div class="service-text">
             <p class="service-desc">Diseñamos y desarrollamos herramientas digitales pensadas alrededor de cada negocio.</p>
             <ul class="service-tags">
-              <li>Plataformas web</li>
-              <li>E-commerce</li>
-              <li>Sistemas de pedidos</li>
-              <li>Portales para clientes</li>
-              <li>Herramientas internas</li>
-              <li>Aplicaciones web</li>
+              <li>Plataformas web</li><li>E-commerce</li><li>Sistemas de pedidos</li>
+              <li>Portales para clientes</li><li>Herramientas internas</li><li>Aplicaciones web</li>
             </ul>
           </div>
-        </article>
+          <div class="service-visual sv-platforms" aria-hidden="true">
+            <div class="sv-bar" style="--w:88%"></div>
+            <div class="sv-bar" style="--w:46%"></div>
+            <div class="sv-bar" style="--w:70%"></div>
+            <div class="sv-bar" style="--w:32%"></div>
+            <div class="sv-bar" style="--w:60%"></div>
+          </div>
+        </div>
+      </article>
 
-        <article class="service-row" data-reveal>
-          <button class="service-row-head" aria-expanded="false">
-            <span class="service-num">02</span>
-            <span class="service-title">Automatización de procesos</span>
-            <span class="service-toggle" aria-hidden="true"></span>
-          </button>
-          <div class="service-row-body">
+      <!-- 02 AUTOMATIZACIÓN -->
+      <article class="service-row" id="s02" data-reveal>
+        <span class="service-ghost" aria-hidden="true">02</span>
+        <button class="service-head" aria-expanded="false">
+          <span class="service-num">02</span>
+          <span class="service-name">Automatización<br>de procesos</span>
+          <span class="service-plus" aria-hidden="true"></span>
+        </button>
+
+        <div class="service-body">
+          <div class="service-text">
             <p class="service-desc">Transformamos tareas manuales y repetitivas en procesos más simples, rápidos y escalables.</p>
             <ul class="service-tags">
-              <li>Automatización de workflows</li>
-              <li>Procesamiento de información</li>
-              <li>Seguimiento de clientes</li>
-              <li>Generación automática de documentos</li>
-              <li>Notificaciones</li>
-              <li>Automatizaciones operativas</li>
+              <li>Automatización de workflows</li><li>Procesamiento de información</li>
+              <li>Seguimiento de clientes</li><li>Generación automática de documentos</li>
+              <li>Notificaciones</li><li>Automatizaciones operativas</li>
             </ul>
           </div>
-        </article>
+          <div class="service-visual sv-automation" aria-hidden="true">
+            <div class="sv-step">1</div>
+            <div class="sv-step">2</div>
+            <div class="sv-step">3</div>
+            <div class="sv-step">4</div>
+            <div class="sv-step sv-step-final"><span class="sv-dot-final"></span></div>
+          </div>
+        </div>
+      </article>
 
-        <article class="service-row" data-reveal>
-          <button class="service-row-head" aria-expanded="false">
-            <span class="service-num">03</span>
-            <span class="service-title">IA &amp; atención automatizada</span>
-            <span class="service-toggle" aria-hidden="true"></span>
-          </button>
-          <div class="service-row-body">
+      <!-- 03 IA & ATENCIÓN -->
+      <article class="service-row" id="s03" data-reveal>
+        <span class="service-ghost" aria-hidden="true">03</span>
+        <button class="service-head" aria-expanded="false">
+          <span class="service-num">03</span>
+          <span class="service-name">IA &amp; atención<br>automatizada</span>
+          <span class="service-plus" aria-hidden="true"></span>
+        </button>
+
+        <div class="service-body">
+          <div class="service-text">
             <p class="service-desc">Integramos inteligencia artificial donde genera una mejora concreta en la operación.</p>
             <ul class="service-tags">
-              <li>Automatización de WhatsApp</li>
-              <li>Asistentes inteligentes</li>
-              <li>Atención 24/7</li>
-              <li>Toma automatizada de pedidos</li>
-              <li>Respuestas a consultas</li>
-              <li>Clasificación y derivación de conversaciones</li>
-              <li>Asistentes internos</li>
+              <li>Automatización de WhatsApp</li><li>Asistentes inteligentes</li><li>Atención 24/7</li>
+              <li>Toma automatizada de pedidos</li><li>Respuestas a consultas</li>
+              <li>Clasificación y derivación de conversaciones</li><li>Asistentes internos</li>
             </ul>
           </div>
-        </article>
+          <div class="service-visual sv-chat" aria-hidden="true">
+            <div class="sv-bubble sv-bubble-in">¿Tienen turno para el jueves?</div>
+            <div class="sv-typing"><span></span><span></span><span></span></div>
+            <div class="sv-bubble sv-bubble-out">Sí — quedan lugares a las 10 y a las 16.</div>
+          </div>
+        </div>
+      </article>
 
-        <article class="service-row" data-reveal>
-          <button class="service-row-head" aria-expanded="false">
-            <span class="service-num">04</span>
-            <span class="service-title">Integraciones &amp; sistemas</span>
-            <span class="service-toggle" aria-hidden="true"></span>
-          </button>
-          <div class="service-row-body">
+      <!-- 04 INTEGRACIONES -->
+      <article class="service-row" id="s04" data-reveal>
+        <span class="service-ghost" aria-hidden="true">04</span>
+        <button class="service-head" aria-expanded="false">
+          <span class="service-num">04</span>
+          <span class="service-name">Integraciones<br>&amp; sistemas</span>
+          <span class="service-plus" aria-hidden="true"></span>
+        </button>
+
+        <div class="service-body">
+          <div class="service-text">
             <p class="service-desc">Conectamos las herramientas que una empresa ya utiliza para que funcionen como parte de un mismo ecosistema.</p>
             <ul class="service-tags">
-              <li>CRM</li>
-              <li>ERP</li>
-              <li>Medios de pago</li>
-              <li>WhatsApp</li>
-              <li>E-commerce</li>
-              <li>APIs</li>
-              <li>Bases de datos</li>
-              <li>Dashboards</li>
-              <li>Sistemas propios</li>
+              <li>CRM</li><li>ERP</li><li>Medios de pago</li><li>WhatsApp</li><li>E-commerce</li>
+              <li>APIs</li><li>Bases de datos</li><li>Dashboards</li><li>Sistemas propios</li>
             </ul>
           </div>
-        </article>
+          <div class="service-visual sv-integrations" aria-hidden="true">
+            <svg viewBox="0 0 240 200" fill="none">
+              <g class="sv-int-lines" stroke="#1d49a7" stroke-width="1.4">
+                <line x1="120" y1="100" x2="30" y2="30" />
+                <line x1="120" y1="100" x2="210" y2="30" />
+                <line x1="120" y1="100" x2="30" y2="170" />
+                <line x1="120" y1="100" x2="210" y2="170" />
+              </g>
+              <g class="sv-int-nodes" fill="#0a0a0a">
+                <circle cx="30" cy="30" r="5" />
+                <circle cx="210" cy="30" r="5" />
+                <circle cx="30" cy="170" r="5" />
+                <circle cx="210" cy="170" r="5" />
+                <circle cx="120" cy="100" r="8" fill="#1d49a7" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </article>
 
-      </div>
-
-      <div class="services-foot" data-reveal>
-        <button class="btn btn-ghost" id="services-toggle-all">Explorar nuestros servicios</button>
-      </div>
     </div>
   </section>
 
   <!-- ============ A MEDIDA ============ -->
-  <section class="bespoke">
-    <div class="container bespoke-inner">
-      <h2 class="bespoke-title" data-reveal>
-        Si cada negocio funciona distinto,<br>
-        ¿por qué su tecnología <em>debería ser igual</em>?
-      </h2>
+  <section class="bespoke" id="a-medida">
+    <div class="bespoke-grid-bg" aria-hidden="true"></div>
 
-      <div class="bespoke-grid">
-        <div class="bespoke-col" data-reveal>
-          <p class="bespoke-lead">Bravo no fuerza a las empresas a adaptarse a una herramienta genérica.</p>
-          <p class="bespoke-lead">Primero entiende:</p>
-          <ul class="bespoke-list">
-            <li>Personas</li>
-            <li>Procesos</li>
-            <li>Sistemas</li>
-            <li>Clientes</li>
-            <li>Objetivos</li>
-          </ul>
-          <p class="bespoke-lead">Y después diseña la solución.</p>
-        </div>
+    <h2 class="bespoke-title" data-reveal>
+      SI CADA NEGOCIO<br>
+      FUNCIONA DISTINTO,<br>
+      <span>¿POR QUÉ SU TECNOLOGÍA<br>DEBERÍA SER IGUAL?</span>
+    </h2>
 
-        <div class="bespoke-col bespoke-quote" data-reveal>
-          <p class="bespoke-signature">
-            A medida.<br>
-            <span>Con firma propia.</span>
-          </p>
-        </div>
-      </div>
+    <div class="bespoke-variables" data-reveal aria-hidden="true">
+      <span style="--i:0">Personas</span>
+      <span style="--i:1">Procesos</span>
+      <span style="--i:2">Sistemas</span>
+      <span style="--i:3">Clientes</span>
+      <span style="--i:4">Objetivos</span>
     </div>
-  </section>
 
-  <!-- ============ CASOS ============ -->
-  <section class="cases" id="casos">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow"><i class="dot" aria-hidden="true"></i>Casos</span>
-        <h2>Casos</h2>
-        <p>Trabajos en preparación. Esta sección se irá completando con casos reales a medida que se publiquen.</p>
-      </div>
+    <p class="bespoke-note" data-reveal>Bravo no fuerza a las empresas a adaptarse a una herramienta genérica. Primero entiende. Después diseña la solución.</p>
 
-      <div class="cases-list">
-
-        <article class="case" data-reveal>
-          <div class="case-media">
-            <span class="case-media-label">Imagen del proyecto</span>
-          </div>
-          <div class="case-body">
-            <span class="case-index">Caso 01</span>
-            <dl class="case-fields">
-              <div><dt>Cliente</dt><dd class="placeholder">A confirmar</dd></div>
-              <div><dt>Desafío</dt><dd class="placeholder">Próximamente</dd></div>
-              <div><dt>Solución</dt><dd class="placeholder">Próximamente</dd></div>
-              <div><dt>Implementación</dt><dd class="placeholder">Próximamente</dd></div>
-              <div><dt>Impacto</dt><dd class="placeholder">Próximamente</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="case case-reverse" data-reveal>
-          <div class="case-media">
-            <span class="case-media-label">Imagen del proyecto</span>
-          </div>
-          <div class="case-body">
-            <span class="case-index">Caso 02</span>
-            <dl class="case-fields">
-              <div><dt>Cliente</dt><dd class="placeholder">A confirmar</dd></div>
-              <div><dt>Desafío</dt><dd class="placeholder">Próximamente</dd></div>
-              <div><dt>Solución</dt><dd class="placeholder">Próximamente</dd></div>
-              <div><dt>Implementación</dt><dd class="placeholder">Próximamente</dd></div>
-              <div><dt>Impacto</dt><dd class="placeholder">Próximamente</dd></div>
-            </dl>
-          </div>
-        </article>
-
-        <article class="case" data-reveal>
-          <div class="case-media">
-            <span class="case-media-label">Imagen del proyecto</span>
-          </div>
-          <div class="case-body">
-            <span class="case-index">Caso 03</span>
-            <dl class="case-fields">
-              <div><dt>Cliente</dt><dd class="placeholder">A confirmar</dd></div>
-              <div><dt>Desafío</dt><dd class="placeholder">Próximamente</dd></div>
-              <div><dt>Solución</dt><dd class="placeholder">Próximamente</dd></div>
-              <div><dt>Implementación</dt><dd class="placeholder">Próximamente</dd></div>
-              <div><dt>Impacto</dt><dd class="placeholder">Próximamente</dd></div>
-            </dl>
-          </div>
-        </article>
-
-      </div>
-    </div>
+    <p class="bespoke-signature" data-reveal>
+      A MEDIDA.<br>
+      CON FIRMA PROPIA. <span class="sig-dot"></span>
+    </p>
   </section>
 
   <!-- ============ CÓMO TRABAJAMOS ============ -->
   <section class="process" id="como-trabajamos">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow"><i class="dot" aria-hidden="true"></i>Cómo trabajamos</span>
-        <h2>De un problema concreto<br>a una solución que funciona.</h2>
-      </div>
-
-      <ol class="process-list" id="process-list">
-        <li class="process-step" data-reveal>
-          <span class="process-num">01</span>
-          <div class="process-content">
-            <h3>Entender</h3>
-            <p>Analizamos el negocio, sus procesos y dónde existe una oportunidad.</p>
-          </div>
-        </li>
-        <li class="process-step" data-reveal>
-          <span class="process-num">02</span>
-          <div class="process-content">
-            <h3>Diseñar</h3>
-            <p>Definimos la solución y cómo debe integrarse con la operación existente.</p>
-          </div>
-        </li>
-        <li class="process-step" data-reveal>
-          <span class="process-num">03</span>
-          <div class="process-content">
-            <h3>Construir</h3>
-            <p>Desarrollamos e implementamos la tecnología.</p>
-          </div>
-        </li>
-        <li class="process-step" data-reveal>
-          <span class="process-num">04</span>
-          <div class="process-content">
-            <h3>Integrar</h3>
-            <p>La conectamos con los sistemas y herramientas que la empresa ya utiliza.</p>
-          </div>
-        </li>
-        <li class="process-step" data-reveal>
-          <span class="process-num">05</span>
-          <div class="process-content">
-            <h3>Evolucionar</h3>
-            <p>Medimos, mantenemos y optimizamos la solución a medida que el negocio evoluciona.</p>
-          </div>
-        </li>
-
-        <div class="process-line" aria-hidden="true">
-          <div class="process-line-fill" id="process-line-fill"></div>
-        </div>
-      </ol>
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><i class="sq"></i>Cómo trabajamos</span>
+      <h2>DE UN PROBLEMA<br>CONCRETO A UNA<br>SOLUCIÓN QUE FUNCIONA.</h2>
     </div>
+
+    <ol class="process-list" id="process-list">
+      <div class="process-line" aria-hidden="true"><div class="process-line-fill" id="process-line-fill"></div></div>
+
+      <li class="process-step" data-reveal>
+        <span class="process-ghost">01</span>
+        <span class="process-num">01</span>
+        <div class="process-content"><h3>Entender</h3><p>Analizamos el negocio, sus procesos y dónde existe una oportunidad.</p></div>
+      </li>
+      <li class="process-step" data-reveal>
+        <span class="process-ghost">02</span>
+        <span class="process-num">02</span>
+        <div class="process-content"><h3>Diseñar</h3><p>Definimos la solución y cómo debe integrarse con la operación existente.</p></div>
+      </li>
+      <li class="process-step" data-reveal>
+        <span class="process-ghost">03</span>
+        <span class="process-num">03</span>
+        <div class="process-content"><h3>Construir</h3><p>Desarrollamos e implementamos la tecnología.</p></div>
+      </li>
+      <li class="process-step" data-reveal>
+        <span class="process-ghost">04</span>
+        <span class="process-num">04</span>
+        <div class="process-content"><h3>Integrar</h3><p>La conectamos con los sistemas y herramientas que la empresa ya utiliza.</p></div>
+      </li>
+      <li class="process-step" data-reveal>
+        <span class="process-ghost">05</span>
+        <span class="process-num">05</span>
+        <div class="process-content"><h3>Evolucionar</h3><p>Medimos, mantenemos y optimizamos la solución a medida que el negocio evoluciona.</p></div>
+      </li>
+    </ol>
   </section>
+
+  <!--
+    ============ CASOS ============
+    La sección de Casos queda preparada en el markup (ver git history /
+    versión anterior para el detalle completo de campos CLIENTE / DESAFÍO /
+    SOLUCIÓN / IMPLEMENTACIÓN / IMPACTO) pero se mantiene oculta hasta que
+    existan casos reales para mostrar — no se publican placeholders.
+    Para reactivarla: quitar el atributo `hidden` de <section id="casos">
+    y agregar de nuevo "Casos" a la navegación y al footer.
+  -->
+  <section class="cases" id="casos" hidden></section>
 
   <!-- ============ BRAVO / SOBRE NOSOTROS ============ -->
   <section class="about" id="bravo">
-    <div class="container about-inner">
-      <span class="eyebrow" data-reveal><i class="dot" aria-hidden="true"></i>Bravo</span>
-      <h2 class="about-title" data-reveal>Tecnología pensada<br>desde el negocio.</h2>
+    <span class="eyebrow" data-reveal><i class="sq"></i>Bravo</span>
+    <h2 class="about-title" data-reveal>TECNOLOGÍA<br>PENSADA DESDE<br>EL NEGOCIO.</h2>
 
-      <div class="about-grid">
-        <p class="about-text" data-reveal>
-          Bravo nace para transformar problemas y procesos complejos en
-          soluciones digitales simples, eficientes y escalables.
-        </p>
-        <p class="about-text about-text-em" data-reveal>
-          No partimos de una tecnología.<br>
-          Partimos de una necesidad.
-        </p>
-      </div>
+    <div class="about-grid">
+      <p class="about-text" data-reveal>
+        Bravo nace para transformar problemas y procesos complejos en
+        soluciones digitales simples, eficientes y escalables.
+      </p>
+      <p class="about-text about-text-strong" data-reveal>
+        No partimos de una tecnología.<br>
+        Partimos de una necesidad.
+      </p>
+    </div>
 
-      <div class="about-placeholders" data-reveal>
-        Próximamente — Equipo · Partners · Tecnologías · Clientes · Certificaciones
-      </div>
+    <div class="about-placeholders" data-reveal>
+      Próximamente — Equipo · Partners · Tecnologías · Clientes · Certificaciones
     </div>
   </section>
 
   <!-- ============ CONTACTO ============ -->
   <section class="contact" id="contacto">
-    <div class="container contact-inner">
-      <div class="contact-copy" data-reveal>
-        <span class="eyebrow"><i class="dot" aria-hidden="true"></i>Contacto</span>
-        <h2>Hablemos.</h2>
-        <p>Contanos qué quieren resolver.<br>Nosotros pensamos cómo hacerlo.</p>
+    <div class="contact-grid-bg" aria-hidden="true"></div>
 
-        <button class="meeting-link" type="button" id="meeting-link">
-          Agendar una reunión
-          <span>— muy pronto</span>
-        </button>
-      </div>
+    <div class="contact-copy">
+      <span class="eyebrow" data-reveal><i class="sq"></i>Contacto</span>
+      <h2 data-reveal>
+        ¿QUÉ PODRÍA<br>
+        FUNCIONAR MEJOR<br>
+        EN TU EMPRESA?
+      </h2>
+      <p class="contact-cta-line" data-reveal>HABLEMOS. <span class="sig-dot"></span></p>
 
-      <form class="contact-form" id="contact-form" data-reveal novalidate>
-        <div class="field">
-          <label for="name">Nombre</label>
-          <input type="text" id="name" name="name" required autocomplete="name">
-        </div>
-        <div class="field">
-          <label for="company">Empresa</label>
-          <input type="text" id="company" name="company" required autocomplete="organization">
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required autocomplete="email">
-        </div>
-        <div class="field">
-          <label for="message">¿En qué podemos ayudarlos?</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary form-submit">Enviar</button>
-
-        <p class="form-success" id="form-success" role="status" aria-live="polite">
-          Gracias. Recibimos tu mensaje — te vamos a responder a la brevedad.
-        </p>
-      </form>
+      <button class="meeting-link" type="button" id="meeting-link" data-reveal>
+        <span>Agendar una reunión</span>
+        <em>— muy pronto</em>
+      </button>
     </div>
+
+    <form class="contact-form" id="contact-form" data-reveal novalidate>
+      <div class="field">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="company">Empresa</label>
+        <input type="text" id="company" name="company" required autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="message">¿Qué quieren resolver?</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid form-submit"><span>Enviar</span></button>
+
+      <p class="form-success" id="form-success" role="status" aria-live="polite">
+        Gracias. Recibimos tu mensaje — te vamos a responder a la brevedad.
+      </p>
+    </form>
   </section>
 
 </main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <span class="logo">BRAVO<span class="logo-dot" aria-hidden="true"></span></span>
-      <p>Transformación digital a medida, con firma propia.</p>
-    </div>
+  <div class="footer-top">
+    <img class="footer-logo" src="assets/bravo-wordmark.png" alt="Bravo." width="499" height="148">
+    <p>Transformación digital a medida, con firma propia.</p>
+  </div>
 
+  <div class="footer-grid">
     <nav class="footer-nav" aria-label="Navegación de pie de página">
       <a href="#servicios">Servicios</a>
-      <a href="#casos">Casos</a>
+      <a href="#como-trabajamos">Cómo trabajamos</a>
       <a href="#bravo">Bravo</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -428,11 +434,11 @@
     <div class="footer-meta">
       <a href="mailto:hola@bravo.studio">Email</a>
       <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-      <span class="footer-location">Buenos Aires, Argentina.</span>
+      <span>Buenos Aires, Argentina.</span>
     </div>
   </div>
 
-  <div class="container footer-legal">
+  <div class="footer-legal">
     <span>© <span id="year"></span> Bravo.</span>
     <a href="#">Legales</a>
     <a href="#">Privacidad</a>

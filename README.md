@@ -42,6 +42,11 @@ Ver el roadmap completo en [`brand/brand-guidelines.md`](brand/brand-guidelines.
 transformación digital ("Transformación digital a medida, con firma propia.").
 Es un proyecto de marca distinto al de Guild86/Vicente documentado arriba.
 
+La identidad visual nace del logo oficial (`site/assets/bravo-lockup.png` /
+`bravo-wordmark.png`): Helvetica, blanco, negro y el punto azul Bravo como
+recurso gráfico recurrente. Sin serif, sin fuentes externas — solo el stack
+del sistema (`Helvetica Neue`, Helvetica, Arial).
+
 Es un sitio estático (HTML/CSS/JS, sin dependencias ni build step). Para
 verlo localmente:
 
@@ -55,10 +60,15 @@ Estructura:
 
 ```
 site/
-  index.html       — todas las secciones (hero, servicios, casos, proceso, contacto, etc.)
-  css/style.css     — sistema de diseño (tokens, tipografía, componentes)
-  js/main.js        — reveals al hacer scroll, acordeón de servicios, menú móvil, formulario
+  index.html                    — todas las secciones (hero, servicios, proceso, contacto, etc.)
+  css/style.css                  — sistema de diseño (tokens, tipografía, componentes)
+  js/main.js                     — reveals al hacer scroll, acordeón de servicios, línea de
+                                    progreso, menú móvil, formulario
+  assets/bravo-lockup.png        — logo oficial completo (wordmark + slogan), fondo transparente
+  assets/bravo-wordmark.png      — solo "Bravo." con el punto, fondo transparente (nav / footer)
 ```
 
-Los casos en la sección "Casos" son placeholders explícitos, listos para
-reemplazarse por proyectos reales.
+La sección "Casos" queda preparada en el markup (`<section id="casos" hidden>`)
+pero oculta hasta que existan proyectos reales para mostrar — no se publican
+placeholders ni clientes inventados. Ver el comentario en `index.html` para
+reactivarla.

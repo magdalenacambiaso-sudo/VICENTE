@@ -59,36 +59,31 @@
       { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
     );
     revealEls.forEach((el, i) => {
-      el.style.transitionDelay = `${Math.min(i % 4, 3) * 70}ms`;
+      el.style.transitionDelay = `${Math.min(i % 5, 4) * 60}ms`;
       revealObserver.observe(el);
     });
   }
 
   /* ---------------------------------------------------------------------
-     Servicios: accordion + "explorar todo"
+     Servicios: acordeón + demo visual asociada
   --------------------------------------------------------------------- */
   const serviceRows = document.querySelectorAll(".service-row");
-  const toggleAllBtn = document.getElementById("services-toggle-all");
-
-  const setRowOpen = (row, open) => {
-    row.dataset.open = String(open);
-    row.querySelector(".service-row-head").setAttribute("aria-expanded", String(open));
-  };
 
   serviceRows.forEach((row) => {
-    const head = row.querySelector(".service-row-head");
+    const head = row.querySelector(".service-head");
     head.addEventListener("click", () => {
-      setRowOpen(row, row.dataset.open !== "true");
+      const open = row.dataset.open === "true";
+      row.dataset.open = String(!open);
+      head.setAttribute("aria-expanded", String(!open));
     });
   });
 
-  if (toggleAllBtn) {
-    toggleAllBtn.addEventListener("click", () => {
-      const anyClosed = Array.from(serviceRows).some((r) => r.dataset.open !== "true");
-      serviceRows.forEach((row) => setRowOpen(row, anyClosed));
-      toggleAllBtn.textContent = anyClosed ? "Ocultar detalle" : "Explorar nuestros servicios";
-    });
-  }
+  /* ---------------------------------------------------------------------
+     Spine: hero -> filosofía, línea + punto según progreso de scroll
+  --------------------------------------------------------------------- */
+  const spine = document.getElementById("spine-1");
+  const spineFill = spine ? spine.querySelector(".spine-fill") : null;
+  const spineDot = spine ? spine.querySelector(".spine-dot") : null;
 
   /* ---------------------------------------------------------------------
      Cómo trabajamos: línea de progreso + pasos activos
@@ -97,12 +92,23 @@
   const processFill = document.getElementById("process-line-fill");
   const processSteps = document.querySelectorAll(".process-step");
 
-  if (processList && processFill) {
-    let ticking = false;
+  let ticking = false;
 
-    const updateProcess = () => {
+  const updateScrollLinked = () => {
+    const viewportH = window.innerHeight;
+
+    if (spine && spineFill && spineDot) {
+      const rect = spine.getBoundingClientRect();
+      const start = viewportH * 0.85;
+      const total = rect.height + viewportH * 0.15;
+      const progressed = start - rect.top;
+      const pct = Math.min(1, Math.max(0, progressed / total));
+      spineFill.style.height = `${pct * 100}%`;
+      spineDot.style.top = `${pct * 100}%`;
+    }
+
+    if (processList && processFill) {
       const rect = processList.getBoundingClientRect();
-      const viewportH = window.innerHeight;
       const start = viewportH * 0.85;
       const total = rect.height + viewportH * 0.3;
       const progressed = start - rect.top;
@@ -114,21 +120,21 @@
         const r = step.getBoundingClientRect();
         step.classList.toggle("is-active", r.top < scanY);
       });
+    }
 
-      ticking = false;
-    };
+    ticking = false;
+  };
 
-    const requestUpdate = () => {
-      if (!ticking) {
-        requestAnimationFrame(updateProcess);
-        ticking = true;
-      }
-    };
+  const requestUpdate = () => {
+    if (!ticking) {
+      requestAnimationFrame(updateScrollLinked);
+      ticking = true;
+    }
+  };
 
-    updateProcess();
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate);
-  }
+  updateScrollLinked();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
 
   /* ---------------------------------------------------------------------
      Formulario de contacto (front-end only)
@@ -151,7 +157,7 @@
   const meetingLink = document.getElementById("meeting-link");
   if (meetingLink) {
     meetingLink.addEventListener("click", () => {
-      meetingLink.querySelector("span").textContent = "— la agenda se habilita pronto";
+      meetingLink.querySelector("em").textContent = "— la agenda se habilita pronto";
     });
   }
 
@@ -171,7 +177,7 @@
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      const offset = 88;
+      const offset = 76;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: reducedMotion ? "auto" : "smooth" });
     });
