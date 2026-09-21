@@ -833,6 +833,47 @@ svg { display: block; }
 }
 
 /* ==========================================================================
+   Territorio conceptual — detrás de la tecnología hay personas.
+   Cinco pares en tensión; el punto azul entre ambos es un nodo,
+   no una decoración (una de las funciones puntuales del Bravo Square).
+   ========================================================================== */
+
+.territory { border-top: 1px solid var(--line); padding-bottom: clamp(60px, 9vw, 120px); }
+.territory .section-head { padding-bottom: clamp(30px, 5vw, 56px); }
+.territory .section-head h2 { max-width: 11ch; }
+
+.polarity-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+  padding-inline: var(--gutter);
+}
+.polarity-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  font-size: clamp(22px, 3.6vw, 38px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.polarity-list li .p-human { color: var(--ink); }
+.polarity-list li .p-digital { color: var(--ink-faint); font-weight: 500; }
+.polarity-sq {
+  width: 8px; height: 8px;
+  background: var(--blue);
+  flex-shrink: 0;
+  transform: scale(0);
+  transition: transform .5s var(--ease);
+}
+.polarity-list li.in-view .polarity-sq { transform: scale(1); }
+
+@media (max-width: 640px) {
+  .polarity-list li { font-size: clamp(19px, 5vw, 26px); gap: 12px; }
+}
+
+/* ==========================================================================
    La frase humana — un momento de pausa, no una campaña.
    ========================================================================== */
 
@@ -1026,6 +1067,14 @@ svg { display: block; }
 }
 .about-text { font-size: 18px; line-height: 1.6; color: var(--ink-soft); max-width: 40ch; }
 .about-text-strong { font-weight: 700; color: var(--ink); font-size: 22px; }
+
+.about-not {
+  margin-top: 28px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-faint);
+  max-width: 58ch;
+}
 
 .about-placeholders {
   margin-top: 56px;
