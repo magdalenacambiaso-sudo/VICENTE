@@ -22,11 +22,13 @@
   const closeMenu = () => {
     menuToggle.setAttribute("aria-expanded", "false");
     mobileMenu.classList.remove("is-open");
+    header.classList.remove("menu-open");
     document.body.style.overflow = "";
   };
   const openMenu = () => {
     menuToggle.setAttribute("aria-expanded", "true");
     mobileMenu.classList.add("is-open");
+    header.classList.add("menu-open");
     document.body.style.overflow = "hidden";
   };
 
@@ -40,9 +42,7 @@
   });
 
   /* ---------------------------------------------------------------------
-     Scroll reveal (fades/slides; reveal-windows grow their square from
-     the same .in-view trigger — the clip-path lives on a child, so the
-     observed element's own intersection ratio is never affected by it)
+     Scroll reveal — soft fades/slides on entry
   --------------------------------------------------------------------- */
   const revealEls = document.querySelectorAll("[data-reveal]");
 
@@ -63,27 +63,6 @@
     revealEls.forEach((el, i) => {
       el.style.transitionDelay = `${Math.min(i % 5, 4) * 60}ms`;
       revealObserver.observe(el);
-    });
-  }
-
-  /* ---------------------------------------------------------------------
-     Reveal window — the square follows the cursor on precise pointers.
-     REVELAR: a fixed aperture on touch, a responsive one with a mouse.
-  --------------------------------------------------------------------- */
-  const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
-  if (hasFinePointer && !reducedMotion) {
-    document.querySelectorAll(".reveal-window--follow").forEach((win) => {
-      const ws = parseFloat(getComputedStyle(win).getPropertyValue("--ws")) || 28;
-      const half = ws / 2;
-      win.addEventListener("pointermove", (e) => {
-        const rect = win.getBoundingClientRect();
-        const px = ((e.clientX - rect.left) / rect.width) * 100;
-        const py = ((e.clientY - rect.top) / rect.height) * 100;
-        const wx = Math.min(100 - ws, Math.max(0, px - half));
-        const wy = Math.min(100 - ws, Math.max(0, py - half));
-        win.style.setProperty("--wx", `${wx}%`);
-        win.style.setProperty("--wy", `${wy}%`);
-      });
     });
   }
 
@@ -109,27 +88,12 @@
   const spineDot = spine ? spine.querySelector(".spine-dot") : null;
 
   /* ---------------------------------------------------------------------
-     Cómo trabajamos: línea de progreso + pasos activos
-  --------------------------------------------------------------------- */
-  const processList = document.getElementById("process-list");
-  const processFill = document.getElementById("process-line-fill");
-  const processSteps = document.querySelectorAll(".process-step");
-
-  /* ---------------------------------------------------------------------
      Parallax sutil — planos de fondo/medio a velocidades distintas
   --------------------------------------------------------------------- */
   const parallaxEls = Array.from(document.querySelectorAll("[data-parallax]")).map((el) => ({
     el,
     factor: parseFloat(el.dataset.parallax) || 0,
   }));
-
-  /* ---------------------------------------------------------------------
-     Brand moment: el Bravo Square crece hasta llenar la pantalla
-  --------------------------------------------------------------------- */
-  const brandMoment = document.getElementById("brand-moment");
-  const bmSquare = document.getElementById("bm-square");
-  const bmLine1 = brandMoment ? brandMoment.querySelector(".bm-line-1") : null;
-  const bmLine2 = brandMoment ? brandMoment.querySelector(".bm-line-2") : null;
 
   let ticking = false;
 
@@ -146,49 +110,12 @@
       spineDot.style.top = `${pct * 100}%`;
     }
 
-    if (processList && processFill) {
-      const rect = processList.getBoundingClientRect();
-      const start = viewportH * 0.85;
-      const total = rect.height + viewportH * 0.3;
-      const progressed = start - rect.top;
-      const pct = Math.min(1, Math.max(0, progressed / total));
-      processFill.style.height = `${pct * 100}%`;
-
-      const scanY = viewportH * 0.7;
-      processSteps.forEach((step) => {
-        const r = step.getBoundingClientRect();
-        step.classList.toggle("is-active", r.top < scanY);
-      });
-    }
-
     if (parallaxEls.length) {
       parallaxEls.forEach(({ el, factor }) => {
         const rect = el.getBoundingClientRect();
         const centerDelta = rect.top + rect.height / 2 - viewportH / 2;
         el.style.transform = `translateY(${(-centerDelta * factor).toFixed(2)}px)`;
       });
-    }
-
-    if (brandMoment && bmSquare) {
-      const rect = brandMoment.getBoundingClientRect();
-      const total = rect.height - viewportH;
-      const progressed = -rect.top;
-      const pct = Math.min(1, Math.max(0, total > 0 ? progressed / total : 0));
-
-      if (bmLine1) bmLine1.classList.toggle("is-visible", pct >= 0.03 && pct < 0.3);
-      if (bmLine2) bmLine2.classList.toggle("is-visible", pct >= 0.32 && pct < 0.92);
-
-      const maxSize = Math.hypot(viewportH, window.innerWidth) * 1.15;
-      const growStart = 0.34;
-      const growEnd = 0.86;
-      let size = 14;
-      if (pct > growStart) {
-        const growPct = Math.min(1, (pct - growStart) / (growEnd - growStart));
-        const eased = growPct * growPct * (3 - 2 * growPct);
-        size = 14 + eased * (maxSize - 14);
-      }
-      bmSquare.style.width = `${size}px`;
-      bmSquare.style.height = `${size}px`;
     }
 
     ticking = false;

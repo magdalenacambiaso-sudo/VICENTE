@@ -43,17 +43,18 @@ transformación digital ("Transformación digital a medida, con firma propia.").
 Es un proyecto de marca distinto al de Guild86/Vicente documentado arriba.
 
 La identidad visual nace del logo oficial (`site/assets/bravo-lockup.png` /
-`bravo-wordmark.png`): Helvetica, blanco, negro y **el Bravo Square** —el
-cuadrado azul del logo, tratado como el dispositivo gráfico central de toda
-la marca, nunca como decoración. Sin serif, sin fuentes externas — solo el
+`bravo-wordmark.png`): Helvetica, blanco, negro y **Bravo Blue**, con **el
+Bravo Square** —el cuadrado azul del logo— como firma gráfica que aparece
+con moderación (a veces solo el punto de "Bravo■", a veces aislado, casi
+nunca explicando un concepto). Sin serif, sin fuentes externas — solo el
 stack del sistema (`Helvetica Neue`, Helvetica, Arial).
 
-El componente central es `.reveal-window` (`css/style.css`): fotografía
-humana desaturada, borrosa/obstruida en todo el frame excepto dentro del
-Bravo Square, que funciona literalmente como una ventana de claridad —
-responde al cursor en desktop (puntero fino) y se revela al entrar en
-viewport en mobile. Las fotos que usa hoy son referencias temporales de
-moodboard, no assets finales — ver
+El hero es una fotografía humana a pantalla completa (personas detrás de
+una superficie translúcida) con la identidad viviendo limpia por encima.
+La fotografía se muestra siempre "en plano" (componente `.plain-photo` en
+`css/style.css`, con un desplazamiento de escala muy lento) — sin máscaras,
+sin seguimiento de cursor, sin metáforas animadas por sección. Las fotos que
+usa hoy son referencias temporales de moodboard, no assets finales — ver
 `site/assets/photo-placeholders/README.md`.
 
 Es un sitio estático (HTML/CSS/JS, sin dependencias ni build step). Para
@@ -71,10 +72,12 @@ Estructura:
 site/
   index.html                    — todas las secciones (hero, servicios, proceso, contacto, etc.)
   css/style.css                  — sistema de diseño (tokens, tipografía, componentes)
-  js/main.js                     — reveals al hacer scroll, acordeón de servicios, línea de
-                                    progreso, menú móvil, formulario
+  js/main.js                     — reveals al hacer scroll, acordeón de servicios, menú móvil,
+                                    parallax sutil, formulario
   assets/bravo-lockup.png        — logo oficial completo (wordmark + slogan), fondo transparente
-  assets/bravo-wordmark.png      — solo "Bravo." con el punto, fondo transparente (nav / footer)
+  assets/bravo-wordmark.png      — solo "Bravo." con el punto, fondo transparente (footer)
+  assets/bravo-wordmark-white.png — versión blanca del wordmark (nav sobre el hero fotográfico)
+  assets/photo-placeholders/     — fotografía temporal de moodboard (ver su propio README)
 ```
 
 La sección "Casos" queda preparada en el markup (`<section id="casos" hidden>`)
