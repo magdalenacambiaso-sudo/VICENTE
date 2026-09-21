@@ -23,6 +23,13 @@ estos archivos puntuales.
 
 | Archivo | Usado en | Concepto |
 |---|---|---|
-| `hero-glass.jpg` | Hero (foto a pantalla completa) | Personas detrás de una superficie translúcida — la tecnología está a la vista, las personas detrás. |
+| `hero-glass.jpg` | Hero (foto a pantalla completa) | Una escena amplia detrás de una superficie translúcida — mesa, sillas, varias siluetas, mucho aire — no un retrato cerrado de una sola persona. |
 | `manifesto-glass.jpg` | La frase humana | "La transformación es digital. El criterio sigue siendo humano." |
 | `about-structure.jpg` | Bravo / Sobre nosotros | Una estructura hecha a medida para dos personas. |
+
+`hero-glass.jpg` está recortado con encuadre abierto a propósito: el objetivo
+es que se lea como una escena (mesa, sillas, arquitectura, varias personas),
+no como un primer plano ampliado de una sola figura. Al usarse con
+`object-fit: cover` a pantalla completa, un recorte casi cuadrado o muy
+ajustado termina agrandando artificialmente a las personas — por eso el
+archivo actual conserva una relación de aspecto cercana a la del viewport.
