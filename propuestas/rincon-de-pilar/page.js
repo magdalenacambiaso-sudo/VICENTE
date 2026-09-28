@@ -12,7 +12,7 @@
   var OV = {t:{}, i:{}};
   try { var raw = JSON.parse($("ov").textContent || "{}"); OV.t = raw.t || {}; OV.i = raw.i || {}; } catch(e){}
 
-  var EDSEL = "h1,h2,h3,h4,p,li,dt,dd,.lbl,.cap,.v,.k,.n,.t,.x,.i,.ap,.who,.bub,.legend,.sub,.mono,.url,.links,.ev,.dt,figcaption,span.e";
+  var EDSEL = "h1,h2,h3,h4,p,li,dt,dd,.big,.quote,.lbl,.cap,.v,.k,.n,.t,.x,.i,.ap,.who,.bub,.legend,.sub,.mono,.url,.links,.ev,.dt,figcaption,span.e";
   var ORIG_T = {}, ORIG_I = {};
   FR.forEach(function(f){
     var all = Array.prototype.slice.call(f.querySelectorAll(EDSEL)).filter(function(el){
@@ -55,7 +55,8 @@
     cur = i;
     var f = FR[i];
     f.classList.add("on"); f.removeAttribute("aria-hidden"); f.scrollTop = 0;
-    document.body.classList.toggle("tone-dark", f.classList.contains("dark"));
+    document.body.classList.toggle("tone-dark", f.classList.contains("dark") || f.classList.contains("topo"));
+    document.body.classList.toggle("cover", i === 0);
     try { document.body.style.setProperty("--cbg", getComputedStyle(f).backgroundColor); } catch(e){}
     $("cur").textContent = pad(i);
     $("prev").disabled = i === 0; $("next").disabled = i === N;
