@@ -57,6 +57,7 @@ ul,ol{list-style:none}
 .lead{font-size:34px;line-height:1.35;font-weight:300;color:var(--calido)}
 .txt{font-size:23px;line-height:1.6;color:var(--texto)}
 .sm{font-size:19px;line-height:1.55;color:#7A7372}
+.rows li{padding:12px 0;border-bottom:1.5px solid #D2D2D1}
 .tight .txt{font-size:20px;line-height:1.5}
 .note{font-size:17px;color:var(--oscuro);letter-spacing:.02em}
 .oc{color:var(--ocre)}
@@ -173,7 +174,7 @@ std("Contenido", "Qué incluye esta propuesta", `
     <div class="item"><span class="num">01</span><span class="lab">El sitio web</span><p class="txt">Qué incluye el sitio desarrollado para Rincón de Pilar, cómo está organizado y el resultado medido.</p></div>
     <div class="item"><span class="num">02</span><span class="lab">Próximos pasos posibles</span><p class="txt">Mejoras opcionales para sumar a la web en el tiempo, según necesidad.</p></div>
     <div class="item"><span class="num">03</span><span class="lab">Atención automatizada</span><p class="txt">Dos alternativas para automatizar la atención por WhatsApp, con distinto nivel de alcance.</p></div>
-    <div class="item"><span class="num">04</span><span class="lab">Implementación</span><p class="txt">Cómo avanzamos, plazos y forma de pago.</p></div>
+    <div class="item"><span class="num">04</span><span class="lab">Implementación</span><p class="txt">Cómo avanzamos, tiempos estimados y forma de pago.</p></div>
   </div>`,
   "Este documento resume lo que ya incluye el sitio web desarrollado para Rincón de Pilar, las mejoras que se le pueden sumar a futuro, y dos alternativas para automatizar la atención por WhatsApp.");
 
@@ -182,7 +183,7 @@ raw(`<section class="page" style="grid-template-columns:600px 1fr 640px">
   <aside class="side"><span class="sec">Introducción</span><h2>Del primer clic a una consulta real.</h2></aside>
   <div class="main narrow">
     <p class="lead">Un sitio a medida, con diseño premium/editorial, pensado para transmitir el nivel del espacio y convertir visitas en consultas reales.</p>
-    <div class="item"><span class="lab">El objetivo</span><p class="txt">Que quien busca dónde celebrar encuentre a Rincón de Pilar, recorra el espacio y haga su consulta.</p></div>
+    <div class="item"><span class="lab">Esta propuesta incluye</span><ul class="txt rows"><li>Lo que ya incluye el sitio web desarrollado para Rincón de Pilar.</li><li>Las mejoras que se le pueden sumar a futuro.</li><li>Dos alternativas para automatizar la atención por WhatsApp.</li></ul></div>
     ${foot()}
   </div>
   <div class="photo bw"><img src="${A.pareja}" alt="" style="object-position:45% 30%"></div>
@@ -190,7 +191,7 @@ raw(`<section class="page" style="grid-template-columns:600px 1fr 640px">
 
 /* ------------------------------------------------------------ 03 Visión general */
 const inN = [["Buscadores", "SEO"], ["Celular, tablet y PC", "Responsive"], ["WhatsApp", "Botón en todo el sitio"], ["Formulario de contacto", "Propio"]];
-const outN = [["Panel de consultas", "Formulario"], ["Mensaje automático", "Opción A"], ["Recepcionista digital", "Opción B"], ["Recepción", "Personas"], ["Mejoras opcionales", "A futuro"]];
+const outN = [["Panel de consultas", "Incluido en el sitio"], ["Mensaje automático", "Opción A · propuesta"], ["Recepcionista digital", "Opción B · propuesta"], ["Recepción", "Personas"], ["Mejoras opcionales", "Opcional · a futuro"]];
 let d = `<svg viewBox="0 0 1100 600" width="1100" height="600" style="display:block;font-family:Raleway">`;
 const iy = (i) => 90 + i * 140, oy = (i) => 60 + i * 120;
 inN.forEach(([n, k], i) => {
@@ -198,20 +199,20 @@ inN.forEach(([n, k], i) => {
   d += `<text x="280" y="${iy(i) - 4}" text-anchor="end" font-size="23" fill="#6B6463">${n}</text><text x="280" y="${iy(i) + 24}" text-anchor="end" font-size="15" fill="#969696">${k}</text>`;
 });
 outN.forEach(([n, k], i) => {
-  d += `<path d="M650 300 C700 300 700 ${oy(i)} 800 ${oy(i)}" fill="none" stroke="${i === 2 ? "#9E8364" : "#AFAFAE"}" stroke-width="${i === 2 ? 2.5 : 1.5}"/>`;
+  d += `<path d="M650 300 C700 300 700 ${oy(i)} 800 ${oy(i)}" fill="none" stroke="${i === 2 ? "#9E8364" : "#AFAFAE"}" stroke-width="${i === 2 ? 2.5 : 1.5}"${i > 0 ? ' stroke-dasharray="7 7"' : ""}/>`;
   d += `<text x="820" y="${oy(i) - 4}" font-size="23" fill="#6B6463">${n}</text><text x="820" y="${oy(i) + 24}" font-size="15" fill="#969696">${k}</text>`;
 });
-d += `<path d="M810 ${oy(2) + 34} C790 ${oy(2) + 60} 790 ${oy(3) - 50} 810 ${oy(3) - 26}" fill="none" stroke="#9E8364" stroke-width="2.5"/>`;
+d += `<path d="M810 ${oy(2) + 34} C790 ${oy(2) + 60} 790 ${oy(3) - 50} 810 ${oy(3) - 26}" fill="none" stroke="#9E8364" stroke-width="2.5" stroke-dasharray="7 7"/>`;
 d += `<circle cx="550" cy="300" r="100" fill="#6B6463"/><text x="550" y="292" text-anchor="middle" font-size="22" fill="#fff" font-weight="400">Sitio web</text><text x="550" y="322" text-anchor="middle" font-size="22" fill="#fff" font-weight="400">Rincón de Pilar</text>`;
 d += `</svg>`;
 std("Visión general", "Un sitio en el centro. La atención, conectada.", `
   <div style="display:flex;justify-content:space-between;width:1100px"><span class="cap">Entradas</span><span class="cap">Núcleo</span><span class="cap">Servicios</span></div>
   <div style="margin-top:-28px">${d}</div>
-  <p class="sm">En ocre, el recorrido de una consulta por WhatsApp hasta recepción. Opción A y Opción B son alternativas.</p>`);
+  <div style="display:flex;gap:48px;align-items:center;flex-wrap:wrap" class="sm"><span style="display:flex;align-items:center;gap:12px"><svg width="48" height="4"><line x1="0" y1="2" x2="48" y2="2" stroke="#6B6463" stroke-width="2"/></svg>Ya incluido en el sitio</span><span style="display:flex;align-items:center;gap:12px"><svg width="48" height="4"><line x1="0" y1="2" x2="48" y2="2" stroke="#6B6463" stroke-width="2" stroke-dasharray="7 7"/></svg>Propuesto u opcional</span><span>En ocre: una consulta por WhatsApp hasta recepción (Opción B). Opción A y Opción B son alternativas.</span></div>`);
 
 /* ------------------------------------------------------------ 04 Recorrido */
 const steps = [
-  ["Encuentra", "Aparece en buscadores.", "SEO"],
+  ["Encuentra", "El sitio está optimizado para aparecer en buscadores.", "SEO"],
   ["Recorre", "El Espacio, los Eventos, los Servicios y la Galería completa, desde celular, tablet o PC.", "diseño responsive"],
   ["Día / Noche", "Cambia la portada entre modo Día y modo Noche.", "selector en la portada"],
   ["Consulta", "Por WhatsApp, con el botón presente en todo el sitio, o con el formulario de contacto propio.", "botón de WhatsApp · formulario"],
@@ -234,7 +235,7 @@ std("01 · El sitio web", "Estructura del sitio.", `
   <div class="grid3" style="margin-top:20px">
     ${est.map(([t, x], i) => `<div class="item"><span class="num">${String(i + 1).padStart(2, "0")}</span><span class="lab" style="font-size:28px">${t}</span><p class="txt">${x}</p></div>`).join("")}
   </div>
-  <p class="sm">Sitio en línea: rincon-de-pilar.vercel.app</p>`, "Seis secciones, pensadas para recorrer el espacio y llegar a la consulta.");
+  <p class="sm">Sitio en línea: rincon-de-pilar.vercel.app</p>`, "Sitio a medida, con diseño premium/editorial.");
 
 /* ------------------------------------------------------------ 07 Funcionalidad */
 const feats = ["Botón de WhatsApp directo en todo el sitio", "Formulario de contacto integrado", "Galería fotográfica completa, optimizada para que cargue rápido", "Panel para organizar las consultas que llegan por el formulario", "Optimizado para aparecer en buscadores (SEO)", "Funciona perfecto en celular, tablet y PC", "Accesible (cumple estándares web internacionales)"];
@@ -290,8 +291,8 @@ raw(`<section class="page div ocre">
 std("03 · Atención automatizada", "Las dos opciones, lado a lado.", `
   <div class="cmp">
     <div></div><div class="ch"><small>OPCIÓN A</small>Mensaje automático</div><div class="ch"><small>OPCIÓN B</small>Recepcionista digital personalizado</div>
-    <div class="rh">Qué es</div><div>Un mensaje predeterminado, redactado con inteligencia artificial, que responde automáticamente ni bien alguien escribe por WhatsApp.</div><div>Un sistema que contesta todos los WhatsApp que entran, filtra de qué se trata cada consulta y arma una base de datos de clientes.</div>
-    <div class="rh">Alcance</div><div>Es un texto fijo: siempre responde lo mismo, no mantiene una conversación.</div><div>Cuando detecta interés o un pedido de presupuesto, deriva automáticamente la conversación a recepción. Tono, estilo y respuestas a medida.</div>
+    <div class="rh">Qué es</div><div>Un mensaje predeterminado, redactado con inteligencia artificial, que responde automáticamente ni bien alguien escribe por WhatsApp, con información básica del salón, horarios de atención y datos de contacto para seguir la consulta.</div><div>Un sistema que contesta todos los WhatsApp que entran, filtra de qué se trata cada consulta y arma una base de datos de clientes (nombre, tipo de evento, fecha, cantidad de invitados).</div>
+    <div class="rh">Alcance</div><div>Es un texto fijo: siempre responde lo mismo, no mantiene una conversación.</div><div>Cuando detecta que el cliente está realmente interesado o pide un presupuesto, deriva automáticamente la conversación a recepción. Tono, estilo y respuestas a medida: no es un mensaje genérico.</div>
     <div class="rh">Tiempo estimado</div><div>3 a 5 días hábiles</div><div>2 a 3 semanas</div>
     <div class="rh">Forma de pago</div><div>50% al inicio · 50% contra entrega</div><div>50% al inicio · 50% contra entrega</div>
   </div>`, "Se puede arrancar con la más simple y pasar a la completa más adelante.");
@@ -327,14 +328,14 @@ std("03 · Atención automatizada · Opción B", "Recepcionista digital personal
 const fl = [["Entra", "Alguien escribe por WhatsApp."], ["Contesta", "El sistema contesta todos los WhatsApp que entran."], ["Filtra", "Identifica de qué se trata cada consulta."], ["Registra", "Arma la base de datos de clientes con lo que va pidiendo: nombre, tipo de evento, fecha y cantidad de invitados."], ["Detecta", "Reconoce cuándo el cliente está realmente interesado o pide un presupuesto."], ["Deriva", "Pasa automáticamente la conversación a recepción."]];
 std("03 · Atención automatizada · Opción B", "Un mensaje entra una vez. Llega ordenado a recepción.", `
   <div class="flow" style="margin-top:60px">${fl.map(([t, x], i) => `<div class="${i === 5 ? "last" : ""}"><span class="num">${String(i + 1).padStart(2, "0")}</span><h3>${t}</h3><p class="sm" style="color:#4E4847">${x}</p></div>`).join("")}</div>`,
-  "Lo que el cliente cuenta en la conversación queda registrado en la base de datos de clientes y acompaña la consulta hasta que la toma recepción.");
+  "En la Opción B, el sistema arma una base de datos de clientes con la información que va pidiendo y, cuando detecta interés real o un pedido de presupuesto, deriva la conversación a recepción.");
 
 /* ------------------------------------------------------------ 16 Continuidad */
 std("Continuidad entre roles", "El sistema responde primero. Recepción sigue la conversación.", `
   <div class="lanes">
-    <div class="who">Recepcionista digital<small>Opción B</small></div><div>Contesta todos los WhatsApp que entran.</div><div>Filtra la consulta y pide nombre, tipo de evento, fecha y cantidad de invitados.</div><div>Detecta interés o pedido de presupuesto y deriva.</div>
-    <div class="who">Recepción<small>Personas</small></div><div class="none">—</div><div class="none">—</div><div class="hand">Recibe la conversación con los datos del cliente y la continúa.</div>
-    <div class="who">Panel de consultas<small>Sitio web</small></div><div>Ordena las consultas que llegan por el formulario del sitio.</div><div class="none">—</div><div>Recepción las retoma desde el panel.</div>
+    <div class="who">Recepcionista digital<small>Opción B</small></div><div>Contesta todos los WhatsApp que entran.</div><div>Filtra de qué se trata cada consulta y arma una base de datos de clientes: nombre, tipo de evento, fecha y cantidad de invitados.</div><div>Detecta cuándo el cliente está realmente interesado o pide un presupuesto, y deriva automáticamente la conversación.</div>
+    <div class="who">Recepción<small>Personas</small></div><div class="none">—</div><div class="none">—</div><div class="hand">Recibe la conversación derivada y la continúa.</div>
+    <div class="who">Panel de consultas<small>Ya incluido en el sitio</small></div><div>Organiza las consultas que llegan por el formulario del sitio.</div><div class="none">—</div><div class="none">—</div>
   </div>`, "Se puede arrancar con la opción más simple, el mensaje automático, y pasar a la completa más adelante.");
 
 /* ------------------------------------------------------------ 17 Seguridad y criterio humano (photo) */
@@ -343,8 +344,8 @@ raw(`<section class="page" style="grid-template-columns:1fr 760px">
     <span class="lab" style="max-width:640px">Seguridad y criterio humano</span>
     <p style="font-size:66px;font-weight:300;line-height:1.12;color:#6B6463;max-width:18ch">La transformación es digital. El criterio sigue siendo humano.</p>
     <div class="grid2" style="gap:56px">
-      <div class="item"><span class="lab oc">Ciberseguridad</span><p class="sm" style="color:#4E4847">El sistema reúne datos de clientes: nombre, tipo de evento, fecha y cantidad de invitados. Cuidarlos es parte del proyecto desde el inicio.</p></div>
-      <div class="item"><span class="lab oc">Personas detrás del sistema</span><p class="sm" style="color:#4E4847">Cuando un cliente está realmente interesado o pide un presupuesto, la conversación pasa a recepción. El tono, el estilo y las respuestas los define Rincón de Pilar.</p></div>
+      <div class="item"><span class="lab oc">Ciberseguridad</span><p class="sm" style="color:#4E4847">En la Opción B, el sistema arma una base de datos de clientes: nombre, tipo de evento, fecha y cantidad de invitados. Las medidas para resguardarla se definen con Rincón de Pilar.</p></div>
+      <div class="item"><span class="lab oc">Personas detrás del sistema</span><p class="sm" style="color:#4E4847">Cuando un cliente está realmente interesado o pide un presupuesto, la conversación pasa a recepción. El tono, el estilo y las respuestas se configuran a medida de Rincón.</p></div>
     </div>
     <p class="note">Medidas técnicas específicas a definir con Rincón de Pilar.</p>
     ${foot()}
@@ -357,12 +358,12 @@ const ben = (v, on) => `<div style="padding:18px 0 20px;border-bottom:1.5px soli
 std("Impacto", "Qué cambia, y para quién.", `
   <div class="grid3" style="gap:56px">
     <div><span class="lab oc" style="font-size:24px">Quien busca dónde celebrar</span>
-      ${ben("Encuentra el salón cuando lo busca.", "optimización para buscadores (SEO).")}
-      ${ben("Recorre el espacio desde el celular, sin esperas.", "diseño responsive y galería optimizada.")}
+      ${ben("Puede encontrar el sitio en buscadores.", "sitio optimizado para aparecer en buscadores (SEO).")}
+      ${ben("Recorre el espacio desde celular, tablet o PC.", "diseño responsive y galería optimizada para que cargue rápido.")}
       ${ben("Recibe respuesta apenas escribe por WhatsApp.", "Opción A u Opción B.")}</div>
     <div><span class="lab oc" style="font-size:24px">Recepción</span>
       ${ben("Tiene las consultas del formulario ordenadas.", "panel de consultas.")}
-      ${ben("Recibe a los clientes interesados con sus datos ya reunidos.", "Opción B y base de datos de clientes.")}</div>
+      ${ben("Recibe las conversaciones de clientes realmente interesados o que piden presupuesto.", "derivación automática de la Opción B.")}</div>
     <div><span class="lab oc" style="font-size:24px">Rincón de Pilar</span>
       ${ben("Transmite el nivel del espacio.", "diseño premium/editorial y galería completa.")}
       ${ben("Convierte visitas en consultas reales.", "botón de WhatsApp en todo el sitio y formulario integrado.")}
@@ -371,14 +372,14 @@ std("Impacto", "Qué cambia, y para quién.", `
   </div>`);
 
 /* ------------------------------------------------------------ 19 Implementación */
-const imp = [["Selección de imágenes", "El punto de partida para cerrar el sitio."], ["Sitio web", "Estructura y funcionalidad incluida, listas para recibir consultas."], ["Atención por WhatsApp", "Elegir entre Opción A y Opción B. Se puede empezar por la más simple."], ["Voz de Rincón", "En la Opción B, configurar tono, estilo y respuestas a medida."], ["Mejoras opcionales", "Se suman en el tiempo, según necesidad."]];
+const imp = [["Selección de imágenes", "Desde ahí corre el tiempo estimado del sitio."], ["Sitio web", "2 días, una vez hecha la selección de imágenes."], ["Atención por WhatsApp", "Elegir entre Opción A y Opción B. Se puede empezar por la más simple."], ["Voz de Rincón", "En la Opción B, configurar tono, estilo y respuestas a medida."], ["Mejoras opcionales", "Se suman en el tiempo, según necesidad."]];
 std("04 · Implementación", "Cómo avanzamos.", `
   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:32px">
     ${imp.map(([t, x], i) => `<div class="item"><span class="num">${String(i + 1).padStart(2, "0")}</span><span class="lab" style="font-size:24px">${t}</span><p class="sm" style="color:#4E4847">${x}</p></div>`).join("")}
   </div>
   <div class="grid2" style="gap:72px;margin-top:20px">
-    <div class="item"><span class="lab oc">Plazos</span><p class="lead">Los plazos se definen tras el relevamiento.</p><p class="sm">Los tiempos estimados de cada pieza figuran en su página.</p></div>
-    <div class="item"><span class="lab oc">Forma de pago</span><p class="lead">50% para arrancar y 50% cuando el producto final está entregado y funcionando.</p><p class="sm">Aplica a ambas opciones de automatización de WhatsApp.</p></div>
+    <div class="item"><span class="lab oc">Tiempos estimados</span><ul class="txt rows"><li><b style="font-weight:500">Sitio web:</b> 2 días, una vez hecha la selección de imágenes.</li><li><b style="font-weight:500">Opción A:</b> 3 a 5 días hábiles.</li><li><b style="font-weight:500">Opción B:</b> 2 a 3 semanas.</li></ul></div>
+    <div class="item"><span class="lab oc">Forma de pago</span><p class="lead">En ambos casos de automatización, el desarrollo se paga en dos partes: 50% para arrancar y 50% cuando el producto final está entregado y funcionando.</p></div>
   </div>`);
 
 /* ------------------------------------------------------------ 20 Cierre */
