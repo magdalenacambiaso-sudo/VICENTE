@@ -12,13 +12,13 @@ const asset = (f) => {
 };
 const A = {
   font: asset("raleway.woff2"),
-  bravo: asset("bravo.png"),
+  bravo: asset("bravo-seal.png"),
+  cierre: asset("cierre.jpg"),
   rincon: asset("rincon-wordmark.png"),
   rinconLight: asset("rincon-stack-light.png"),
   pattern: asset("rincon-pattern.png"),
   vista: asset("foto-vista.jpg"),
   pareja: asset("foto-pareja.jpg"),
-  fiesta: asset("foto-fiesta.jpg"),
 };
 
 const css = `
@@ -26,7 +26,7 @@ const css = `
 /* Rincón de Pilar system: light grey ground, warm grey, ocre accent, Raleway.
    Layout: warm-grey side panel holds the section and title; the light side holds content
    grouped under small labels with a rule, as in the Rincón brand manual. */
-:root{--claro:#EBEBEB;--blanco:#F6F6F5;--calido:#6B6463;--ocre:#9E8364;--oscuro:#969696;--texto:#4E4847}
+:root{--claro:#F1F1F0;--blanco:#FAFAF9;--calido:#6B6463;--ocre:#9E8364;--oscuro:#969696;--texto:#34302F;--suave:#5E5857;--micro:#77706F;--regla:#D3CFCC}
 @page{size:1920px 1080px;margin:0}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--claro)}
@@ -38,28 +38,44 @@ ul,ol{list-style:none}
 
 /* side panel */
 .side{background:var(--calido);color:#fff;padding:96px 72px 80px;display:flex;flex-direction:column;gap:40px}
-.side .sec{font-size:19px;font-weight:400;letter-spacing:.02em;color:#D6CFCB;padding-bottom:16px;border-bottom:1.5px solid #8C8482}
+.side .sec{font-size:19px;font-weight:500;letter-spacing:.02em;color:#F1ECE9;padding-bottom:16px;border-bottom:1.5px solid #8C8482}
 .side h2{font-size:62px;font-weight:300;line-height:1.1;letter-spacing:-.005em;color:#fff}
-.side .intro{margin-top:auto;font-size:22px;line-height:1.55;font-weight:400;color:#E4DEDA}
+.side .intro{margin-top:auto;font-size:22px;line-height:1.55;font-weight:400;color:#F5F1EE}
 
 /* main area */
 .main{padding:96px 110px 150px;display:flex;flex-direction:column;justify-content:center;gap:56px;position:relative;min-width:0}
 .narrow .foot > span:first-child{display:none}
-.foot{position:absolute;left:110px;right:110px;bottom:52px;display:flex;align-items:center;justify-content:space-between;font-size:15px;color:var(--oscuro);letter-spacing:.02em}
+.foot{position:absolute;left:110px;right:110px;bottom:52px;display:flex;align-items:center;justify-content:space-between;font-size:15px;color:var(--micro);letter-spacing:.02em}
 .foot .r{display:flex;align-items:center;gap:26px}
-.seal{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--oscuro)}
+.seal{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--micro)}
 .seal img{height:19px;width:auto;display:block}
 .pn{font-variant-numeric:tabular-nums;color:var(--calido)}
 
 /* groups: label + rule (Rincón manual) */
-.lab{font-size:19px;font-weight:400;color:var(--calido);padding-bottom:14px;border-bottom:1.5px solid var(--oscuro);display:block}
+.lab{font-size:19px;font-weight:500;color:var(--calido);padding-bottom:14px;border-bottom:1.5px solid var(--oscuro);display:block}
 .lab.oc{border-color:var(--ocre)}
 .lead{font-size:34px;line-height:1.35;font-weight:300;color:var(--calido)}
 .txt{font-size:23px;line-height:1.6;color:var(--texto)}
-.sm{font-size:19px;line-height:1.55;color:#7A7372}
-.rows li{padding:12px 0;border-bottom:1.5px solid #D2D2D1}
+.sm{font-size:19px;line-height:1.55;color:var(--suave)}
+.rows li{padding:12px 0;border-bottom:1.5px solid var(--regla)}
 .tight .txt{font-size:20px;line-height:1.5}
-.note{font-size:17px;color:var(--oscuro);letter-spacing:.02em}
+.note-oc{font-size:24px;line-height:1.45;color:var(--texto);padding-left:22px;border-left:3px solid var(--ocre);max-width:34ch}
+.terms{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.terms.one{grid-template-columns:1fr;gap:28px}
+.terms .lead{margin-top:14px;font-size:30px}
+.cmp .key{font-size:24px;color:var(--calido);font-weight:500;line-height:1.4}
+.cmp .fig{font-size:28px;color:var(--calido)}
+.flow5{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1.5px solid var(--calido)}
+.flow5 > div{padding:20px 26px 0 0;position:relative;display:grid;gap:8px;align-content:start}
+.flow5 > div::before{content:"";position:absolute;top:-8px;left:0;width:14px;height:14px;border-radius:50%;background:var(--claro);border:1.5px solid var(--calido)}
+.flow5 > div.last::before{background:var(--ocre);border-color:var(--ocre)}
+.flow5 > div:not(:last-child)::after{content:"→";position:absolute;right:10px;top:16px;color:var(--ocre);font-size:22px}
+.flow5 h3{font-size:25px;font-weight:500;color:var(--calido)}
+.flow5 p{font-size:17px;line-height:1.45;color:var(--suave);max-width:22ch}
+.phone.sm-ph{width:300px;height:560px}
+.seal-c{position:absolute;right:110px;bottom:340px;display:flex;align-items:center;gap:14px;font-size:16px;color:var(--micro)}
+.seal-c img{height:24px;width:auto;display:block}
+.note{font-size:17px;color:var(--micro);letter-spacing:.02em}
 .oc{color:var(--ocre)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:56px 72px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:56px 60px}
@@ -80,9 +96,9 @@ ul,ol{list-style:none}
 .cover .rl img,.logo img{display:block;width:100%;height:auto}
 .cover .vr{width:1.5px;height:250px;background:var(--ocre)}
 .cover .tx{display:grid;gap:18px;width:560px}
-.cover .tx .k{font-size:21px;color:var(--oscuro);letter-spacing:.02em}
+.cover .tx .k{font-size:21px;color:var(--micro);letter-spacing:.02em}
 .cover .tx h1{font-size:48px;font-weight:500;line-height:1.15;color:var(--calido)}
-.cover .tx .d{font-size:26px;font-weight:300;color:var(--oscuro)}
+.cover .tx .d{font-size:26px;font-weight:400;color:var(--micro)}
 .cover .sealbox{position:absolute;right:96px;bottom:108px;background:var(--claro);padding:18px 24px;display:flex;align-items:center;gap:16px;font-size:16px;color:var(--calido)}
 .cover .sealbox img{height:24px;width:auto}
 
@@ -105,26 +121,26 @@ ul,ol{list-style:none}
 .phone .scr{height:100%;border-radius:32px;border:1.5px solid #D6D6D5;overflow:hidden;display:flex;flex-direction:column;background:var(--blanco)}
 .phone .top{padding:22px 22px 16px;border-bottom:1.5px solid #DDDDDC;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--oscuro)}
 .phone .top img{height:14px;width:auto}
-.chat{flex:1;background:var(--claro);padding:18px 16px;display:grid;gap:12px;align-content:start;font-size:15px;line-height:1.45;color:var(--texto)}
+.chat{flex:1;background:#E8E8E7;padding:18px 16px;display:grid;gap:12px;align-content:start;font-size:15px;line-height:1.45;color:var(--texto)}
 .bub{max-width:86%;background:#fff;padding:11px 14px;border-left:2px solid var(--ocre)}
 .bub.me{justify-self:end;background:#DCDCDB;border:0}
 .bub .w{display:block;font-size:12px;color:var(--oscuro);margin-bottom:4px;letter-spacing:.03em}
 .ph{color:var(--oscuro)}
-.cap{font-size:15px;color:var(--oscuro);letter-spacing:.03em}
+.cap{font-size:15px;color:var(--micro);letter-spacing:.03em}
 .browser{border:1.5px solid #B9B9B8;background:var(--blanco)}
-.browser .bar{height:36px;border-bottom:1.5px solid #DDDDDC;display:flex;align-items:center;gap:8px;padding:0 16px;font-size:13px;color:var(--oscuro)}
+.browser .bar{height:36px;border-bottom:1.5px solid #DDDDDC;display:flex;align-items:center;gap:8px;padding:0 16px;font-size:13px;color:var(--micro)}
 .browser .bar i{width:9px;height:9px;border:1.5px solid #B9B9B8;border-radius:50%}
 .browser .bar span{margin-left:14px}
 .prow{display:grid;grid-template-columns:90px 1fr 190px;padding:16px 24px;border-bottom:1.5px solid #E0E0DF;font-size:17px;align-items:baseline}
-.prow.hd{font-size:14px;color:var(--oscuro);letter-spacing:.04em}
-.prow .d{color:var(--oscuro)}
+.prow.hd{font-size:14px;color:var(--micro);letter-spacing:.04em}
+.prow .d{color:var(--micro)}
 .prow .e{color:var(--ocre)}
 .prow.sel{background:#E4E1DC}
 
 /* tables */
 .cmp{display:grid;grid-template-columns:230px 1fr 1fr;border-top:1.5px solid var(--calido)}
-.cmp > div{padding:24px 28px 26px 0;border-bottom:1.5px solid #CFCFCE;font-size:21px;line-height:1.5}
-.cmp .rh{font-size:17px;color:var(--oscuro);letter-spacing:.02em;padding-top:28px}
+.cmp > div{padding:22px 28px 22px 0;border-bottom:1.5px solid var(--regla);font-size:21px;line-height:1.5}
+.cmp .rh{font-size:17px;color:var(--micro);font-weight:500;letter-spacing:.02em;padding-top:28px}
 .cmp .ch{font-size:34px;font-weight:300;color:var(--calido);line-height:1.2;padding-top:30px}
 .cmp .ch small{display:block;font-size:17px;color:var(--ocre);font-weight:500;letter-spacing:.06em;margin-bottom:10px}
 .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:28px;position:relative}
@@ -165,7 +181,7 @@ raw(`<section class="page cover">
       <span class="d">Septiembre 2026</span>
     </div>
   </div>
-  <div class="sealbox"><span>Una propuesta de</span><img src="${A.bravo}" alt="Bravo"></div>
+  <div class="seal-c"><span>Una propuesta de</span><img src="${A.bravo}" alt="Bravo"></div>
 </section>`);
 
 /* ------------------------------------------------------------ 01 Contenido */
@@ -220,7 +236,7 @@ const steps = [
 ];
 std("Recorrido", "Cómo llega una consulta.", `
   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:36px;margin-top:40px">
-    ${steps.map(([t, x, s], i) => `<div class="item"><span class="num">${String(i + 1).padStart(2, "0")}</span><span class="lab ${i === 3 ? "oc" : ""}" style="font-size:26px;color:#6B6463">${t}</span><p class="sm" style="color:#4E4847">${x}</p><p class="note">Se apoya en: ${s}</p></div>`).join("")}
+    ${steps.map(([t, x, s], i) => `<div class="item"><span class="num">${String(i + 1).padStart(2, "0")}</span><span class="lab ${i === 3 ? "oc" : ""}" style="font-size:26px;color:#6B6463">${t}</span><p class="sm" style="color:var(--texto)">${x}</p><p class="note">Se apoya en: ${s}</p></div>`).join("")}
   </div>`, "Del buscador a la consulta, en cinco pasos.");
 
 /* ------------------------------------------------------------ 05 Divider: El sitio web (photo) */
@@ -241,13 +257,13 @@ std("01 · El sitio web", "Estructura del sitio.", `
 const feats = ["Botón de WhatsApp directo en todo el sitio", "Formulario de contacto integrado", "Galería fotográfica completa, optimizada para que cargue rápido", "Panel para organizar las consultas que llegan por el formulario", "Optimizado para aparecer en buscadores (SEO)", "Funciona perfecto en celular, tablet y PC", "Accesible (cumple estándares web internacionales)"];
 std("01 · El sitio web", "Funcionalidad ya incluida.", `
   <div style="display:grid;grid-template-columns:1.25fr .75fr;gap:96px;align-items:start">
-    <div><span class="lab">Incluye</span><ul>${feats.map((f) => `<li class="txt" style="padding:15px 0;border-bottom:1.5px solid #D2D2D1">${f}</li>`).join("")}</ul></div>
+    <div><span class="lab">Incluye</span><ul>${feats.map((f) => `<li class="txt" style="padding:15px 0;border-bottom:1.5px solid var(--regla)">${f}</li>`).join("")}</ul></div>
     <div class="item"><span class="lab">Tiempo estimado</span><span class="big" style="margin-top:18px">2 días</span><p class="txt">Una vez hecha la selección de imágenes.</p></div>
   </div>`, "Pensado para convertir visitas en consultas.");
 
 /* ------------------------------------------------------------ 08 Resultado medido */
 const C = 2 * Math.PI * 70;
-const ring = (v, n) => `<div class="item" style="justify-items:start"><svg width="170" height="170" viewBox="0 0 170 170"><circle cx="85" cy="85" r="70" fill="none" stroke="#D2D2D1" stroke-width="3"/><circle cx="85" cy="85" r="70" fill="none" stroke="#9E8364" stroke-width="3" stroke-dasharray="${((v / 100) * C).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 85 85)"/><text x="85" y="98" text-anchor="middle" font-family="Raleway" font-size="42" font-weight="300" fill="#6B6463">${v}</text></svg><span class="txt" style="color:#6B6463">${n}</span></div>`;
+const ring = (v, n) => `<div class="item" style="justify-items:start"><svg width="170" height="170" viewBox="0 0 170 170"><circle cx="85" cy="85" r="70" fill="none" stroke="var(--regla)" stroke-width="3"/><circle cx="85" cy="85" r="70" fill="none" stroke="#9E8364" stroke-width="3" stroke-dasharray="${((v / 100) * C).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 85 85)"/><text x="85" y="98" text-anchor="middle" font-family="Raleway" font-size="42" font-weight="300" fill="#6B6463">${v}</text></svg><span class="txt" style="color:#6B6463">${n}</span></div>`;
 std("01 · El sitio web", "Resultado medido.", `
   <div><span class="lab">Auditoría técnica de Google (Lighthouse) · sitio de escritorio</span>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:40px">${ring(99, "Performance")}${ring(100, "Accesibilidad")}${ring(100, "Buenas prácticas")}${ring(100, "SEO")}</div></div>
@@ -287,110 +303,62 @@ raw(`<section class="page div ocre">
   </div></div>
 </section>`);
 
-/* ------------------------------------------------------------ 12 Comparación */
-std("03 · Atención automatizada", "Las dos opciones, lado a lado.", `
+/* ------------------------------------------------------------ 12 Las dos opciones */
+std("03 · Atención automatizada", "Las dos opciones.", `
   <div class="cmp">
     <div></div><div class="ch"><small>OPCIÓN A</small>Mensaje automático</div><div class="ch"><small>OPCIÓN B</small>Recepcionista digital personalizado</div>
-    <div class="rh">Qué es</div><div>Un mensaje predeterminado, redactado con inteligencia artificial, que responde automáticamente ni bien alguien escribe por WhatsApp, con información básica del salón, horarios de atención y datos de contacto para seguir la consulta.</div><div>Un sistema que contesta todos los WhatsApp que entran, filtra de qué se trata cada consulta y arma una base de datos de clientes (nombre, tipo de evento, fecha, cantidad de invitados).</div>
-    <div class="rh">Alcance</div><div>Es un texto fijo: siempre responde lo mismo, no mantiene una conversación.</div><div>Cuando detecta que el cliente está realmente interesado o pide un presupuesto, deriva automáticamente la conversación a recepción. Tono, estilo y respuestas a medida: no es un mensaje genérico.</div>
-    <div class="rh">Tiempo estimado</div><div>3 a 5 días hábiles</div><div>2 a 3 semanas</div>
+    <div class="rh">En síntesis</div><div class="key">Respuesta fija y automática.</div><div class="key">Sistema conversacional que entiende la consulta, reúne información y deriva a recepción.</div>
+    <div class="rh">Qué hace</div><div>Responde ni bien alguien escribe, con un mensaje predeterminado redactado con IA: información básica del salón, horarios y datos de contacto.</div><div>Contesta todos los WhatsApp, filtra cada consulta, arma una base de datos de clientes y detecta interés real o pedido de presupuesto.</div>
+    <div class="rh">Diferencia</div><div>Siempre responde lo mismo. No mantiene una conversación.</div><div>Conversa con tono, estilo y respuestas a medida de Rincón. No es un mensaje genérico.</div>
+    <div class="rh">Tiempo estimado</div><div class="fig">3 a 5 días hábiles</div><div class="fig">2 a 3 semanas</div>
     <div class="rh">Forma de pago</div><div>50% al inicio · 50% contra entrega</div><div>50% al inicio · 50% contra entrega</div>
   </div>`, "Se puede arrancar con la más simple y pasar a la completa más adelante.");
 
 /* ------------------------------------------------------------ 13 Opción A */
 const phone = (bubbles) => `<div class="phone"><div class="scr"><div class="top"><img src="${A.rincon}" alt="Rincón de Pilar"><span>WhatsApp</span></div><div class="chat">${bubbles}</div></div></div>`;
+const terms = (t, cls = "") => `<div class="terms ${cls}"><div><span class="lab">Tiempo estimado</span><p class="lead">${t}</p></div><div><span class="lab">Forma de pago</span><p class="lead">50% al inicio · 50% contra entrega</p></div></div>`;
 std("03 · Atención automatizada · Opción A", "Mensaje automático.", `
-  <div style="display:grid;grid-template-columns:1fr 360px;gap:96px;align-items:center">
-    <div style="display:grid;gap:40px">
-      <div class="item"><span class="lab">Qué es</span><p class="txt">Un mensaje predeterminado, redactado con inteligencia artificial, que responde automáticamente ni bien alguien escribe por WhatsApp: información básica del salón, horarios de atención y los datos de contacto para seguir la consulta.</p></div>
-      <div class="item"><span class="lab">Alcance</span><p class="txt">Es un texto fijo: siempre responde lo mismo, no mantiene una conversación.</p></div>
-      <div class="grid2" style="gap:40px"><div class="item"><span class="lab">Tiempo estimado</span><p class="lead">3 a 5 días hábiles</p></div><div class="item"><span class="lab">Forma de pago</span><p class="lead">50% al inicio · 50% contra entrega</p></div></div>
+  <div style="display:grid;grid-template-columns:1fr 360px;gap:110px;align-items:center">
+    <div style="display:grid;gap:44px">
+      <p class="lead" style="font-size:38px;max-width:24ch">Un mensaje predeterminado, redactado con IA, que responde automáticamente ni bien alguien escribe.</p>
+      <div class="item"><span class="lab">Qué incluye</span><ul class="txt rows"><li>Información básica del salón</li><li>Horarios de atención</li><li>Datos de contacto para seguir la consulta</li></ul></div>
+      <p class="note-oc">Es un texto fijo: siempre responde lo mismo. No mantiene una conversación.</p>
+      ${terms("3 a 5 días hábiles")}
     </div>
     <div style="display:grid;gap:14px;justify-items:center">${phone(`<div class="bub me">Hola, quería hacer una consulta por el salón.</div><div class="bub"><span class="w">Respuesta automática</span>Gracias por escribir a Rincón de Pilar. <span class="ph">[Información básica del salón]</span><br><br>Horarios de atención: <span class="ph">[a completar]</span><br>Para seguir la consulta: <span class="ph">[datos de contacto]</span></div>`)}${legend}</div>
   </div>`);
 
 /* ------------------------------------------------------------ 14 Opción B */
+const steps3 = [["WhatsApp", "Contesta todos los mensajes que entran."], ["Filtra", "Identifica de qué se trata la consulta."], ["Registra", "Pide y guarda nombre, tipo de evento, fecha e invitados."], ["Detecta interés", "Reconoce interés real o pedido de presupuesto."], ["Recepción", "Recibe la conversación, con la información ya reunida."]];
 std("03 · Atención automatizada · Opción B", "Recepcionista digital personalizado.", `
-  <div style="display:grid;grid-template-columns:1fr 340px 240px;gap:48px;align-items:center">
-    <div style="display:grid;gap:28px" class="tight">
-      <div class="item"><span class="lab">Qué es</span><p class="txt">Un sistema que contesta todos los WhatsApp que entran, filtra de qué se trata cada consulta y arma una base de datos de clientes con la información que va pidiendo (nombre, tipo de evento, fecha, cantidad de invitados). Cuando detecta que el cliente está realmente interesado o pide un presupuesto, deriva automáticamente la conversación a recepción.</p></div>
-      <div class="item"><span class="lab">A medida</span><p class="txt">Habla como Rincón quiera: el tono, el estilo y las respuestas se configuran a medida, no es un mensaje genérico.</p></div>
-      <div class="item"><span class="lab">Tiempo estimado · Forma de pago</span><p class="lead" style="font-size:28px">2 a 3 semanas · 50% al inicio, 50% contra entrega</p></div>
-    </div>
-    <div style="display:grid;gap:14px;justify-items:center">${phone(`<div class="bub me">Hola! Quiero info para una fiesta de 15.</div><div class="bub">¡Hola! Con gusto. ¿Me decís tu nombre, la fecha que tienen en mente y cuántos invitados serían?</div><div class="bub me">Martina. Sábado 14 de marzo, unos 120.</div><div class="bub">Gracias, Martina. ¿Querés que te preparemos un presupuesto?</div><div class="bub me">Sí, por favor.</div>`)}${legend}</div>
-    <div style="display:grid;gap:0">
+  <div class="flow5">${steps3.map(([t, x], i) => `<div class="${i === 4 ? "last" : ""}"><h3>${t}</h3><p>${x}</p></div>`).join("")}</div>
+  <div style="display:grid;grid-template-columns:330px 250px 1fr;gap:56px;align-items:center">
+    <div style="display:grid;gap:12px;justify-items:center">${phone(`<div class="bub me">Hola! Quiero info para una fiesta de 15.</div><div class="bub">¡Hola! Con gusto. ¿Me decís tu nombre, la fecha que tienen en mente y cuántos invitados serían?</div><div class="bub me">Martina. Sábado 14 de marzo, unos 120.</div><div class="bub">Gracias, Martina. ¿Querés que te preparemos un presupuesto?</div><div class="bub me">Sí, por favor.</div>`).replace('class="phone"', 'class="phone sm-ph"')}${legend}</div>
+    <div style="display:grid">
       <span class="lab oc" style="font-size:17px">Base de datos de clientes</span>
-      ${[["Nombre", "Martina R."], ["Tipo de evento", "Fiesta de 15"], ["Fecha", "Sábado 14 de marzo"], ["Invitados", "120"], ["Siguiente paso", "Pidió presupuesto → recepción"]].map(([k, v]) => `<div style="padding:14px 0;border-bottom:1.5px solid #D2D2D1"><div class="cap">${k}</div><div style="font-size:19px;color:#4E4847;margin-top:4px">${v}</div></div>`).join("")}
+      ${[["Nombre", "Martina R."], ["Tipo de evento", "Fiesta de 15"], ["Fecha", "Sábado 14 de marzo"], ["Invitados", "120"], ["Siguiente paso", "Pidió presupuesto → recepción"]].map(([k, v]) => `<div style="padding:12px 0;border-bottom:1.5px solid var(--regla)"><div class="cap">${k}</div><div style="font-size:19px;color:var(--texto);margin-top:3px">${v}</div></div>`).join("")}
+    </div>
+    <div style="display:grid;gap:40px">
+      <p class="note-oc">Habla como Rincón quiera: tono, estilo y respuestas se configuran a medida. No es un mensaje genérico.</p>
+      ${terms("2 a 3 semanas", "one")}
     </div>
   </div>`);
 
-/* ------------------------------------------------------------ 15 Conexión */
-const fl = [["Entra", "Alguien escribe por WhatsApp."], ["Contesta", "El sistema contesta todos los WhatsApp que entran."], ["Filtra", "Identifica de qué se trata cada consulta."], ["Registra", "Arma la base de datos de clientes con lo que va pidiendo: nombre, tipo de evento, fecha y cantidad de invitados."], ["Detecta", "Reconoce cuándo el cliente está realmente interesado o pide un presupuesto."], ["Deriva", "Pasa automáticamente la conversación a recepción."]];
-std("03 · Atención automatizada · Opción B", "Un mensaje entra una vez. Llega ordenado a recepción.", `
-  <div class="flow" style="margin-top:60px">${fl.map(([t, x], i) => `<div class="${i === 5 ? "last" : ""}"><span class="num">${String(i + 1).padStart(2, "0")}</span><h3>${t}</h3><p class="sm" style="color:#4E4847">${x}</p></div>`).join("")}</div>`,
-  "En la Opción B, el sistema arma una base de datos de clientes con la información que va pidiendo y, cuando detecta interés real o un pedido de presupuesto, deriva la conversación a recepción.");
-
-/* ------------------------------------------------------------ 16 Continuidad */
-std("Continuidad entre roles", "El sistema responde primero. Recepción sigue la conversación.", `
-  <div class="lanes">
-    <div class="who">Recepcionista digital<small>Opción B</small></div><div>Contesta todos los WhatsApp que entran.</div><div>Filtra de qué se trata cada consulta y arma una base de datos de clientes: nombre, tipo de evento, fecha y cantidad de invitados.</div><div>Detecta cuándo el cliente está realmente interesado o pide un presupuesto, y deriva automáticamente la conversación.</div>
-    <div class="who">Recepción<small>Personas</small></div><div class="none">—</div><div class="none">—</div><div class="hand">Recibe la conversación derivada y la continúa.</div>
-    <div class="who">Panel de consultas<small>Ya incluido en el sitio</small></div><div>Organiza las consultas que llegan por el formulario del sitio.</div><div class="none">—</div><div class="none">—</div>
-  </div>`, "Se puede arrancar con la opción más simple, el mensaje automático, y pasar a la completa más adelante.");
-
-/* ------------------------------------------------------------ 17 Seguridad y criterio humano (photo) */
-raw(`<section class="page" style="grid-template-columns:1fr 760px">
-  <div class="main" style="padding:110px 110px 150px 110px;justify-content:center;gap:64px">
-    <span class="lab" style="max-width:640px">Seguridad y criterio humano</span>
-    <p style="font-size:66px;font-weight:300;line-height:1.12;color:#6B6463;max-width:18ch">La transformación es digital. El criterio sigue siendo humano.</p>
-    <div class="grid2" style="gap:56px">
-      <div class="item"><span class="lab oc">Ciberseguridad</span><p class="sm" style="color:#4E4847">En la Opción B, el sistema arma una base de datos de clientes: nombre, tipo de evento, fecha y cantidad de invitados. Las medidas para resguardarla se definen con Rincón de Pilar.</p></div>
-      <div class="item"><span class="lab oc">Personas detrás del sistema</span><p class="sm" style="color:#4E4847">Cuando un cliente está realmente interesado o pide un presupuesto, la conversación pasa a recepción. El tono, el estilo y las respuestas se configuran a medida de Rincón.</p></div>
-    </div>
-    <p class="note">Medidas técnicas específicas a definir con Rincón de Pilar.</p>
-    ${foot()}
-  </div>
-  <div class="photo bw"><img src="${A.fiesta}" alt="" style="object-position:50% 45%"></div>
-</section>`);
-
-/* ------------------------------------------------------------ 18 Impacto */
-const ben = (v, on) => `<div style="padding:18px 0 20px;border-bottom:1.5px solid #D2D2D1;display:grid;gap:8px"><span style="font-size:23px;color:#4E4847;line-height:1.35">${v}</span><span class="note">Se apoya en: ${on}</span></div>`;
-std("Impacto", "Qué cambia, y para quién.", `
-  <div class="grid3" style="gap:56px">
-    <div><span class="lab oc" style="font-size:24px">Quien busca dónde celebrar</span>
-      ${ben("Puede encontrar el sitio en buscadores.", "sitio optimizado para aparecer en buscadores (SEO).")}
-      ${ben("Recorre el espacio desde celular, tablet o PC.", "diseño responsive y galería optimizada para que cargue rápido.")}
-      ${ben("Recibe respuesta apenas escribe por WhatsApp.", "Opción A u Opción B.")}</div>
-    <div><span class="lab oc" style="font-size:24px">Recepción</span>
-      ${ben("Tiene las consultas del formulario ordenadas.", "panel de consultas.")}
-      ${ben("Recibe las conversaciones de clientes realmente interesados o que piden presupuesto.", "derivación automática de la Opción B.")}</div>
-    <div><span class="lab oc" style="font-size:24px">Rincón de Pilar</span>
-      ${ben("Transmite el nivel del espacio.", "diseño premium/editorial y galería completa.")}
-      ${ben("Convierte visitas en consultas reales.", "botón de WhatsApp en todo el sitio y formulario integrado.")}
-      ${ben("Atiende con su propia voz.", "tono, estilo y respuestas configurados a medida (Opción B).")}
-      ${ben("Crece por etapas.", "mejoras opcionales, sin hacerlas todas juntas.")}</div>
-  </div>`);
-
-/* ------------------------------------------------------------ 19 Implementación */
+/* ------------------------------------------------------------ 15 Implementación */
 const imp = [["Selección de imágenes", "Desde ahí corre el tiempo estimado del sitio."], ["Sitio web", "2 días, una vez hecha la selección de imágenes."], ["Atención por WhatsApp", "Elegir entre Opción A y Opción B. Se puede empezar por la más simple."], ["Voz de Rincón", "En la Opción B, configurar tono, estilo y respuestas a medida."], ["Mejoras opcionales", "Se suman en el tiempo, según necesidad."]];
 std("04 · Implementación", "Cómo avanzamos.", `
   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:32px">
-    ${imp.map(([t, x], i) => `<div class="item"><span class="num">${String(i + 1).padStart(2, "0")}</span><span class="lab" style="font-size:24px">${t}</span><p class="sm" style="color:#4E4847">${x}</p></div>`).join("")}
+    ${imp.map(([t, x], i) => `<div class="item"><span class="num">${String(i + 1).padStart(2, "0")}</span><span class="lab" style="font-size:24px">${t}</span><p class="sm">${x}</p></div>`).join("")}
   </div>
   <div class="grid2" style="gap:72px;margin-top:20px">
     <div class="item"><span class="lab oc">Tiempos estimados</span><ul class="txt rows"><li><b style="font-weight:500">Sitio web:</b> 2 días, una vez hecha la selección de imágenes.</li><li><b style="font-weight:500">Opción A:</b> 3 a 5 días hábiles.</li><li><b style="font-weight:500">Opción B:</b> 2 a 3 semanas.</li></ul></div>
     <div class="item"><span class="lab oc">Forma de pago</span><p class="lead">En ambos casos de automatización, el desarrollo se paga en dos partes: 50% para arrancar y 50% cuando el producto final está entregado y funcionando.</p></div>
   </div>`);
 
-/* ------------------------------------------------------------ 20 Cierre */
-raw(`<section class="page cover" style="background:#6B6463">
-  <div style="position:absolute;inset:0;display:grid;place-items:center">
-    <div style="display:grid;justify-items:center;gap:56px">
-      <div style="width:210px"><img src="${A.rinconLight}" alt="Rincón de Pilar" style="width:100%;display:block"></div>
-      <p style="font-size:26px;font-weight:300;color:#E4DEDA;letter-spacing:.02em">Sitio web y automatización de WhatsApp · Septiembre 2026</p>
-    </div>
-  </div>
-  <div class="sealbox" style="background:#EBEBEB"><span>Una propuesta de</span><img src="${A.bravo}" alt="Bravo"></div>
+/* ------------------------------------------------------------ 16 Cierre: photo + Bravo */
+raw(`<section class="page" style="display:block;background:#161413">
+  <img src="${A.cierre}" alt="" style="position:absolute;inset:0;width:100%;height:100%;display:block">
+  <p style="position:absolute;left:112px;bottom:78px;margin:0;font-size:21px;font-weight:400;color:#EFEAE7;letter-spacing:.02em">Propuesta comercial para Rincón de Pilar · Septiembre 2026</p>
 </section>`);
 
 const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Propuesta comercial · Rincón de Pilar</title><style>${css}</style></head><body>${pages.join("\n")}</body></html>`;
