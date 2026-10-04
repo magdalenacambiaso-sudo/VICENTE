@@ -43,11 +43,12 @@ transformación digital ("Transformación digital a medida, con firma propia.").
 Es un proyecto de marca distinto al de Guild86/Vicente documentado arriba.
 
 La identidad visual nace del wordmark oficial (`site/assets/bravo-wordmark.png` /
-`bravo-wordmark-white.png`): Helvetica, blanco y negro, sin el cuadrado azul
-en el logotipo en sí (se probó como punto final y no convenció). El Bravo
-Blue y el pequeño cuadrado se mantienen como firma gráfica aparte, usados
-con moderación dentro del copy y la interfaz (p. ej. "firma propia■",
-"HABLEMOS■") — pero ya no como parte del logo. Sin serif, sin fuentes
+`bravo-wordmark-white.png`): Helvetica, blanco y negro. El cuadrado azul
+("Bravo Square") que antes aparecía como punto en el logo y como firma
+gráfica suelta en el copy y la interfaz se probó y no convenció — está
+completamente retirado del sistema visual, no solo del logotipo. **Azul
+Bravo** sigue siendo el color de acento (links, hover, numeración), pero
+ya no hay ningún elemento cuadrado en pantalla. Sin serif, sin fuentes
 externas — solo el stack del sistema (`Helvetica Neue`, Helvetica, Arial).
 
 El hero es una fotografía humana a pantalla completa (personas detrás de

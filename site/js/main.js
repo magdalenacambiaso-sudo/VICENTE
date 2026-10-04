@@ -81,11 +81,10 @@
   });
 
   /* ---------------------------------------------------------------------
-     Spine: hero -> filosofía, línea + punto según progreso de scroll
+     Spine: hero -> filosofía, línea de progreso según el scroll
   --------------------------------------------------------------------- */
   const spine = document.getElementById("spine-1");
   const spineFill = spine ? spine.querySelector(".spine-fill") : null;
-  const spineDot = spine ? spine.querySelector(".spine-dot") : null;
 
   /* ---------------------------------------------------------------------
      Parallax sutil — planos de fondo/medio a velocidades distintas
@@ -100,14 +99,13 @@
   const updateScrollLinked = () => {
     const viewportH = window.innerHeight;
 
-    if (spine && spineFill && spineDot) {
+    if (spine && spineFill) {
       const rect = spine.getBoundingClientRect();
       const start = viewportH * 0.85;
       const total = rect.height + viewportH * 0.15;
       const progressed = start - rect.top;
       const pct = Math.min(1, Math.max(0, progressed / total));
       spineFill.style.height = `${pct * 100}%`;
-      spineDot.style.top = `${pct * 100}%`;
     }
 
     if (parallaxEls.length) {

@@ -96,18 +96,8 @@ svg { display: block; }
 }
 
 /* ==========================================================================
-   Shared primitives: square/dot, eyebrow, blueprint grid bg, ghost numerals
+   Shared primitives: eyebrow, blueprint grid bg, ghost numerals
    ========================================================================== */
-
-.sq {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  background: var(--blue);
-  margin-right: 10px;
-  vertical-align: middle;
-  flex-shrink: 0;
-}
 
 .eyebrow {
   display: inline-flex;
@@ -136,15 +126,6 @@ svg { display: block; }
   font-weight: 400;
   color: var(--ink-soft);
   max-width: 46ch;
-}
-
-/* ==========================================================================
-   Bravo Square — the brand's living graphic device. Never a circle.
-   ========================================================================== */
-
-.bravo-square {
-  background: var(--blue);
-  display: block;
 }
 
 /* ==========================================================================
@@ -449,16 +430,6 @@ svg { display: block; }
   max-width: 15ch;
   text-shadow: 0 1px 20px rgba(0, 0, 0, .3);
 }
-.hero-headline .sq-period {
-  display: inline-block;
-  width: .3em;
-  height: .3em;
-  margin-left: .07em;
-  background: var(--blue);
-  vertical-align: baseline;
-  transform: translateY(.03em);
-}
-
 .hero-sub {
   margin-top: 10px;
   font-size: 13px;
@@ -503,20 +474,6 @@ svg { display: block; }
   width: 1px; height: 22px;
   background: rgba(255, 255, 255, .35);
   position: relative;
-}
-.scroll-cue-dot {
-  position: absolute;
-  left: 50%; top: 0;
-  width: 3px; height: 3px;
-  background: var(--blue);
-  transform: translate(-50%, 0);
-  animation: cue-travel 3.2s ease-in-out infinite;
-}
-@keyframes cue-travel {
-  0% { top: 0; opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { top: calc(100% - 3px); opacity: 0; }
 }
 
 .hero-tags {
@@ -568,15 +525,6 @@ svg { display: block; }
   height: 0%;
   background: var(--blue);
   transition: height .1s linear;
-}
-.spine-dot {
-  position: absolute;
-  left: 50%;
-  top: 0%;
-  width: 8px; height: 8px;
-  background: var(--blue);
-  transform: translate(-50%, -50%);
-  transition: top .1s linear;
 }
 
 /* ==========================================================================
@@ -896,14 +844,7 @@ svg { display: block; }
 }
 .polarity-list li .p-human { color: var(--ink); }
 .polarity-list li .p-digital { color: var(--ink-faint); font-weight: 400; }
-.polarity-sq {
-  width: 5px; height: 5px;
-  background: var(--blue);
-  flex-shrink: 0;
-  transform: scale(0);
-  transition: transform .5s var(--ease);
-}
-.polarity-list li.in-view .polarity-sq { transform: scale(1); }
+.polarity-list li .p-digital::before { content: "/"; margin-right: 14px; color: var(--line-strong); }
 
 /* ==========================================================================
    La frase humana — un momento de pausa, no una campaña.
@@ -935,15 +876,6 @@ svg { display: block; }
   max-width: 24ch;
 }
 .conviction-em { font-weight: 500; }
-.conviction-line .sq-period {
-  display: inline-block;
-  width: .28em;
-  height: .28em;
-  margin-left: .1em;
-  background: var(--blue);
-  vertical-align: baseline;
-  transform: translateY(.03em);
-}
 
 /* ==========================================================================
    A medida
@@ -1002,13 +934,6 @@ svg { display: block; }
   font-weight: 500;
   line-height: 1.16;
   letter-spacing: -.005em;
-}
-.sig-dot {
-  display: inline-block;
-  width: .4em; height: .4em;
-  background: var(--blue);
-  margin-left: .12em;
-  vertical-align: middle;
 }
 
 /* ==========================================================================
