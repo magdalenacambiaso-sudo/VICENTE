@@ -51,13 +51,15 @@ Bravo** sigue siendo el color de acento (links, hover, numeración), pero
 ya no hay ningún elemento cuadrado en pantalla. Sin serif, sin fuentes
 externas — solo el stack del sistema (`Helvetica Neue`, Helvetica, Arial).
 
-El hero es una fotografía humana a pantalla completa (personas detrás de
-una superficie translúcida) con la identidad viviendo limpia por encima.
-La fotografía se muestra siempre "en plano" (componente `.plain-photo` en
-`css/style.css`, con un desplazamiento de escala muy lento) — sin máscaras,
-sin seguimiento de cursor, sin metáforas animadas por sección. Las fotos que
-usa hoy son referencias temporales de moodboard, no assets finales — ver
-`site/assets/photo-placeholders/README.md`.
+El hero es un video humano a pantalla completa (personas caminando detrás
+de un muro translúcido, provisto por el cliente) con la identidad viviendo
+limpia por encima. El header se oscurece/aclara automáticamente según si
+flota sobre el video (blanco) o sobre fondo sólido al hacer scroll (negro).
+El resto de las piezas fotográficas se muestran "en plano" (componente
+`.plain-photo` en `css/style.css`, con un desplazamiento de escala muy
+lento) — sin máscaras, sin seguimiento de cursor, sin metáforas animadas
+por sección. Son referencias temporales de moodboard, no assets finales —
+ver `site/assets/photo-placeholders/README.md`.
 
 Es un sitio estático (HTML/CSS/JS, sin dependencias ni build step). Para
 verlo localmente:
@@ -77,8 +79,8 @@ site/
   js/main.js                     — reveals al hacer scroll, acordeón de servicios, menú móvil,
                                     parallax sutil, formulario
   assets/bravo-wordmark.png      — wordmark "Bravo" sin cuadrado, fondo transparente (footer)
-  assets/bravo-wordmark-white.png — versión blanca del wordmark (nav sobre el hero fotográfico)
-  assets/photo-placeholders/     — fotografía temporal de moodboard (ver su propio README)
+  assets/bravo-wordmark-white.png — versión blanca del wordmark (nav sobre el hero)
+  assets/photo-placeholders/     — video del hero + fotografía temporal de moodboard (ver su propio README)
 ```
 
 La sección "Casos" queda preparada en el markup (`<section id="casos" hidden>`)

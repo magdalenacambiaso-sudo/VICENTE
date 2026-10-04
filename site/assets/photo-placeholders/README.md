@@ -15,21 +15,23 @@ licenciada con la misma dirección:
 - Presencia humana parcialmente oculta/obstruida (vidrio, distancia,
   desenfoque) — nunca caras sonriendo a cámara.
 
-Cada foto se muestra con el componente `.plain-photo` (ver `css/style.css`):
-una imagen simple con un desplazamiento de escala muy lento (`photo-drift`),
-sin máscaras ni interacción. Reemplazar es tan simple como cambiar el `src`
-del `<img>` correspondiente en `index.html` — nada depende técnicamente de
-estos archivos puntuales.
+Cada pieza se muestra con el componente `.plain-photo` (ver `css/style.css`):
+una imagen o video simple con un desplazamiento de escala muy lento
+(`photo-drift`), sin máscaras ni interacción. Reemplazar es tan simple como
+cambiar el `src` del elemento correspondiente en `index.html` — nada depende
+técnicamente de estos archivos puntuales.
 
 | Archivo | Usado en | Concepto |
 |---|---|---|
-| `hero-glass.jpg` | Hero (foto a pantalla completa) | Una escena amplia detrás de una superficie translúcida — mesa, sillas, varias siluetas, mucho aire — no un retrato cerrado de una sola persona. |
+| `hero-video.mp4` / `hero-video-poster.jpg` | Hero (video a pantalla completa) | Personas caminando detrás de un muro de vidrio translúcido — la tecnología está a la vista, las personas detrás. |
 | `manifesto-glass.jpg` | La frase humana | "La transformación es digital. El criterio sigue siendo humano." |
 | `about-structure.jpg` | Bravo / Sobre nosotros | Una estructura hecha a medida para dos personas. |
 
-`hero-glass.jpg` está recortado con encuadre abierto a propósito: el objetivo
-es que se lea como una escena (mesa, sillas, arquitectura, varias personas),
-no como un primer plano ampliado de una sola figura. Al usarse con
-`object-fit: cover` a pantalla completa, un recorte casi cuadrado o muy
-ajustado termina agrandando artificialmente a las personas — por eso el
-archivo actual conserva una relación de aspecto cercana a la del viewport.
+`hero-video.mp4` es un recorte (sin audio) de un clip aportado por el
+cliente. El clip original incluía ~5s de un encuadre cinemascope con barras
+negras arriba y abajo mientras la cámara se alejaba; se descartó ese tramo y
+se usa solo el segmento ya a pantalla completa, para no mostrar barras
+negras dentro del hero. `hero-video-poster.jpg` es el primer frame del
+recorte, usado como `poster` del `<video>` (se ve mientras carga o si el
+video no puede reproducirse). H.264 (High Profile, yuv420p, +faststart) para
+máxima compatibilidad de navegador.
