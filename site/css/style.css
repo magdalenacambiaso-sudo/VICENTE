@@ -819,8 +819,7 @@ svg { display: block; }
 
 /* ==========================================================================
    Territorio conceptual — detrás de la tecnología hay personas.
-   Cinco pares en tensión; el punto azul entre ambos es un nodo,
-   no una decoración (una de las funciones puntuales del Bravo Square).
+   Cinco pares en tensión.
    ========================================================================== */
 
 .territory { border-top: 1px solid var(--line); padding-bottom: clamp(60px, 9vw, 120px); }
