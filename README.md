@@ -42,12 +42,13 @@ Ver el roadmap completo en [`brand/brand-guidelines.md`](brand/brand-guidelines.
 transformación digital ("Transformación digital a medida, con firma propia.").
 Es un proyecto de marca distinto al de Guild86/Vicente documentado arriba.
 
-La identidad visual nace del logo oficial (`site/assets/bravo-lockup.png` /
-`bravo-wordmark.png`): Helvetica, blanco, negro y **Bravo Blue**, con **el
-Bravo Square** —el cuadrado azul del logo— como firma gráfica que aparece
-con moderación (a veces solo el punto de "Bravo■", a veces aislado, casi
-nunca explicando un concepto). Sin serif, sin fuentes externas — solo el
-stack del sistema (`Helvetica Neue`, Helvetica, Arial).
+La identidad visual nace del wordmark oficial (`site/assets/bravo-wordmark.png` /
+`bravo-wordmark-white.png`): Helvetica, blanco y negro, sin el cuadrado azul
+en el logotipo en sí (se probó como punto final y no convenció). El Bravo
+Blue y el pequeño cuadrado se mantienen como firma gráfica aparte, usados
+con moderación dentro del copy y la interfaz (p. ej. "firma propia■",
+"HABLEMOS■") — pero ya no como parte del logo. Sin serif, sin fuentes
+externas — solo el stack del sistema (`Helvetica Neue`, Helvetica, Arial).
 
 El hero es una fotografía humana a pantalla completa (personas detrás de
 una superficie translúcida) con la identidad viviendo limpia por encima.
@@ -74,8 +75,7 @@ site/
   css/style.css                  — sistema de diseño (tokens, tipografía, componentes)
   js/main.js                     — reveals al hacer scroll, acordeón de servicios, menú móvil,
                                     parallax sutil, formulario
-  assets/bravo-lockup.png        — logo oficial completo (wordmark + slogan), fondo transparente
-  assets/bravo-wordmark.png      — solo "Bravo." con el punto, fondo transparente (footer)
+  assets/bravo-wordmark.png      — wordmark "Bravo" sin cuadrado, fondo transparente (footer)
   assets/bravo-wordmark-white.png — versión blanca del wordmark (nav sobre el hero fotográfico)
   assets/photo-placeholders/     — fotografía temporal de moodboard (ver su propio README)
 ```
